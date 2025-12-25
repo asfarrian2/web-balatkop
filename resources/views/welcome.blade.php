@@ -637,7 +637,7 @@
           <div>
             <ul class="flex gap-6 items-center mb-5">
               <li>
-                <a class="instagram" href="#"
+                <a class="instagram" href="https://www.instagram.com/balatkop.provkalsel/" target="_BLANK"
                   ><i
                     class="icofont icofont-instagram dark:text-whiteColor dark:hover:text-secondaryColor"
                   ></i
@@ -1343,1251 +1343,306 @@
           </div>
         </div>
       </section>
-      <!-- courses section -->
+      <!-- events  section -->
       <section>
-        <div
-          class="pt-50px pb-10 md:pt-70px md:pb-50px lg:pt-20 2xl:pt-100px 2xl:pb-70px bg-whiteColor dark:bg-whiteColor-dark"
-        >
-          <div class="filter-container container">
+        <div class="overflow-hidden">
+          <div
+            class="container py-50px md:pt-60px lg:pt-50px lg:pb-20 2xl:pb-100px relative z-0"
+          >
+            <!-- animated bg -->
             <div
-              class="flex gap-15px lg:gap-30px flex-wrap lg:flex-nowrap items-center"
+              class="absolute top-[20%] left-[-135px] z-[-1] animate-move-hor"
             >
-              <!-- courses Left -->
-              <div class="basis-full lg:basis-[500px]" data-aos="fade-up">
+              <svg
+                width="938"
+                height="919"
+                viewBox="0 0 938 919"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M926.588 668.954C845.79 881.299 578.082 976.498 328.645 881.587C79.2083 786.675 -57.5003 537.594 23.2975 325.25C104.095 112.905 842.659 -201.917 722.687 181.03C612.239 533.576 1007.39 456.609 926.588 668.954Z"
+                  fill="url(#paint0_linear_141_3)"
+                ></path>
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_141_3"
+                    x1="621.24"
+                    y1="112.617"
+                    x2="328.645"
+                    y2="881.586"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop
+                      offset="0.9999"
+                      stop-color="#FBAED8"
+                      stop-opacity="0.08"
+                    ></stop>
+                    <stop
+                      offset="1"
+                      stop-color="#B64AA4"
+                      stop-opacity="0"
+                    ></stop>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <!-- heading -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-12 md:gap-30px items-center"
+            >
+              <div class="md:col-start-1 md:col-span-7" data-aos="fade-up">
                 <span
                   class="text-sm font-semibold text-primaryColor bg-whitegrey3 px-6 py-5px mb-5 rounded-full inline-block"
                 >
                   Agenda
                 </span>
                 <h3
-                  class="text-3xl md:text-[35px] lg:text-size-42 leading-[45px] 2xl:leading-[45px] md:leading-[50px] font-bold text-blackColor dark:text-blackColor-dark"
-                  data-aos="fade-up"
+                  class="text-3xl md:text-size-35 2xl:text-size-38 3xl:text-size-42 leading-10 md:leading-45px 2xl:leading-50px 3xl:leading-2xl font-bold rounded text-blackColor dark:text-blackColor-dark mb-5 md:mb-10"
                 >
-                  Jadwal Pelatihan
-                </h3>
-              </div>
-              <!-- courses right -->
-              <div class="basis-full lg:basis-[700px]">
-                <ul
-                  class="filter-controllers flex flex-wrap sm:flex-nowrap justify-start lg:justify-end button-group filters-button-group"
-                  data-aos="fade-up"
-                >
-                  <li>
-                    <button
-                      data-filter="*"
-                      class="is-checked dark:is-checked pr-5 md:pr-10 lg:pr-17px 2xl:pr-10 text-contentColor font-medium hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                    >
-                      Semua
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      data-filter=".filter1"
-                      class="pr-5 md:pr-10 lg:pr-17px 2xl:pr-10 text-contentColor font-medium hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                    >
-                      SDM Koperasi
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      data-filter=".filter2"
-                      class="pr-5 md:pr-10 lg:pr-17px 2xl:pr-10 text-contentColor font-medium hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                    >
-                      SDM Usaha Kecil
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- course cards -->
-
-            <div
-              class="container p-0 filter-contents flex flex-wrap sm:-mx-15px mt-7 lg:mt-10"
-              data-aos="fade-up"
-            >
-              <!-- card 1 -->
-              <div
-                class="w-full sm:w-1/2 lg:w-1/3 group grid-item filter1 filter3"
-              >
-                <div class="tab-content-wrapper sm:px-15px mb-30px">
-                  <div
-                    class="p-15px bg-whiteColor shadow-brand dark:bg-darkdeep3-dark dark:shadow-brand-dark"
-                  >
-                    <!-- card image -->
-                    <div class="relative mb-4">
-                      <a
-                        href="course-details.html"
-                        class="w-full overflow-hidden rounded"
-                      >
-                        <img
-                          src="./assets/images/grid/grid_1.png"
-                          alt=""
-                          class="w-full transition-all duration-300 group-hover:scale-110"
-                        >
-                      </a>
-                      <div
-                        class="absolute left-0 top-1 flex justify-between w-full items-center px-2"
-                      >
-                        <div>
-                          <p
-                            class="text-xs text-whiteColor px-4 py-[3px] bg-secondaryColor rounded font-semibold"
-                          >
-                            Data & Tech
-                          </p>
-                        </div>
-                        <a
-                          class="text-white bg-black bg-opacity-15 rounded hover:bg-primaryColor"
-                          href="#"
-                          ><i class="icofont-heart-alt text-base py-1 px-2"></i
-                        ></a>
-                      </div>
-                    </div>
-                    <!-- card content -->
-                    <div>
-                      <div class="grid grid-cols-2 mb-15px">
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-book-alt pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                              >23 Lesson</span
-                            >
-                          </div>
-                        </div>
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-clock-time pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                              >1 hr 30 min</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                      <a
-                        href="course-details.html"
-                        class="text-xl font-semibold text-blackColor mb-10px font-hind dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
-                      >
-                        Foundation course to under stand about softwere
-                      </a>
-                      <!-- price -->
-                      <div
-                        class="text-lg font-semibold text-primaryColor font-inter mb-4"
-                      >
-                        $32.00
-                        <del class="text-sm text-lightGrey4 font-semibold"
-                          >/ $67.00</del
-                        >
-                        <span class="ml-6"
-                          ><del
-                            class="text-base font-semibold text-secondaryColor3"
-                            >Free</del
-                          ></span
-                        >
-                      </div>
-                      <!-- author and rating-->
-                      <div
-                        class="grid grid-cols-1 md:grid-cols-2 pt-15px border-t border-borderColor"
-                      >
-                        <div>
-                          <a
-                            href="instructor-details.html"
-                            class="text-base font-bold font-hind flex items-center hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                            ><img
-                              class="w-[30px] h-[30px] rounded-full mr-15px"
-                              src="./assets/images/grid/grid_small_1.jpg"
-                              alt=""
-                            >
-                            <span class="flex">Micle john</span>
-                          </a>
-                        </div>
-                        <div class="text-start md:text-end">
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <span class="text-xs text-lightGrey6">(44)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- card 2 -->
-              <div
-                class="w-full sm:w-1/2 lg:w-1/3 group grid-item filter2 filter3"
-              >
-                <div class="tab-content-wrapper sm:px-15px mb-30px">
-                  <div
-                    class="p-15px bg-whiteColor shadow-brand dark:bg-darkdeep3-dark dark:shadow-brand-dark"
-                  >
-                    <!-- card image -->
-                    <div class="relative mb-4">
-                      <a
-                        href="course-details.html"
-                        class="w-full overflow-hidden rounded"
-                      >
-                        <img
-                          src="./assets/images/grid/grid_2.png"
-                          alt=""
-                          class="w-full transition-all duration-300 group-hover:scale-110"
-                        >
-                      </a>
-                      <div
-                        class="absolute left-0 top-1 flex justify-between w-full items-center px-2"
-                      >
-                        <div>
-                          <p
-                            class="text-xs text-whiteColor px-4 py-[3px] bg-blue rounded font-semibold"
-                          >
-                            Mechanical
-                          </p>
-                        </div>
-                        <a
-                          class="text-white bg-black bg-opacity-15 rounded hover:bg-primaryColor"
-                          href="#"
-                          ><i class="icofont-heart-alt text-base py-1 px-2"></i
-                        ></a>
-                      </div>
-                    </div>
-                    <!-- card content -->
-                    <div>
-                      <div class="grid grid-cols-2 mb-15px">
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-book-alt pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                              >29 Lesson</span
-                            >
-                          </div>
-                        </div>
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-clock-time pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                              >2 hr 10 min</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                      <a
-                        href="course-details.html"
-                        class="text-xl font-semibold text-blackColor mb-10px font-hind dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
-                      >
-                        Nidnies course to under stand about softwere
-                      </a>
-                      <!-- price -->
-                      <div
-                        class="text-lg font-semibold text-primaryColor font-inter mb-4"
-                      >
-                        $32.00
-                        <del class="text-sm text-lightGrey4 font-semibold"
-                          >/ $67.00</del
-                        >
-                        <span class="ml-6"
-                          ><del class="text-base font-semibold text-greencolor"
-                            >Free</del
-                          ></span
-                        >
-                      </div>
-                      <!-- author and rating-->
-                      <div
-                        class="grid grid-cols-1 md:grid-cols-2 pt-15px border-t border-borderColor"
-                      >
-                        <div>
-                          <a
-                            href="instructor-details.html"
-                            class="text-base font-bold font-hind flex items-center hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                            ><img
-                              class="w-[30px] h-[30px] rounded-full mr-15px"
-                              src="./assets/images/grid/grid_small_2.jpg"
-                              alt=""
-                            >Rinis Jhon
-                          </a>
-                        </div>
-                        <div class="text-start md:text-end">
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <span class="text-xs text-lightGrey6">(44)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- card 3 -->
-              <div
-                class="w-full sm:w-1/2 lg:w-1/3 group grid-item filter4 filter5"
-              >
-                <div class="tab-content-wrapper sm:px-15px mb-30px">
-                  <div
-                    class="p-15px bg-whiteColor shadow-brand dark:bg-darkdeep3-dark dark:shadow-brand-dark"
-                  >
-                    <!-- card image -->
-                    <div class="relative mb-4">
-                      <a
-                        href="course-details.html"
-                        class="w-full overflow-hidden rounded"
-                      >
-                        <img
-                          src="./assets/images/grid/grid_3.png"
-                          alt=""
-                          class="w-full transition-all duration-300 group-hover:scale-110"
-                        >
-                      </a>
-                      <div
-                        class="absolute left-0 top-1 flex justify-between w-full items-center px-2"
-                      >
-                        <div>
-                          <p
-                            class="text-xs text-whiteColor px-4 py-[3px] bg-secondaryColor2 rounded font-semibold"
-                          >
-                            Development
-                          </p>
-                        </div>
-                        <a
-                          class="text-white bg-black bg-opacity-15 rounded hover:bg-primaryColor"
-                          href="#"
-                          ><i class="icofont-heart-alt text-base py-1 px-2"></i
-                        ></a>
-                      </div>
-                    </div>
-                    <!-- card content -->
-                    <div>
-                      <div class="grid grid-cols-2 mb-15px">
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-book-alt pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                            >
-                              25 Lesson</span
-                            >
-                          </div>
-                        </div>
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-clock-time pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                            >
-                              1 hr 40 min</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                      <a
-                        href="course-details.html"
-                        class="text-xl font-semibold text-blackColor mb-10px font-hind dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
-                      >
-                        Minws course to under stand about solution
-                      </a>
-                      <!-- price -->
-                      <div
-                        class="text-lg font-semibold text-primaryColor font-inter mb-4"
-                      >
-                        $40.00
-                        <del class="text-sm text-lightGrey4 font-semibold"
-                          >/ $67.00</del
-                        >
-                        <span class="ml-6"
-                          ><del
-                            class="text-base font-semibold text-secondaryColor3"
-                            >Free</del
-                          ></span
-                        >
-                      </div>
-                      <!-- author and rating-->
-                      <div
-                        class="grid grid-cols-1 md:grid-cols-2 pt-15px border-t border-borderColor"
-                      >
-                        <div>
-                          <a
-                            href="instructor-details.html"
-                            class="text-base font-bold font-hind flex items-center hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                            ><img
-                              class="w-[30px] h-[30px] rounded-full mr-15px"
-                              src="./assets/images/grid/grid_small_3.jpg"
-                              alt=""
-                            >Micle John
-                          </a>
-                        </div>
-                        <div class="text-start md:text-end">
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <span class="text-xs text-lightGrey6">(44)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- card 4 -->
-              <div class="w-full sm:w-1/2 lg:w-1/3 group grid-item filter4">
-                <div class="tab-content-wrapper sm:px-15px mb-30px">
-                  <div
-                    class="p-15px bg-whiteColor shadow-brand dark:bg-darkdeep3-dark dark:shadow-brand-dark"
-                  >
-                    <!-- card image -->
-                    <div class="relative mb-4">
-                      <a
-                        href="course-details.html"
-                        class="w-full overflow-hidden rounded"
-                      >
-                        <img
-                          src="./assets/images/grid/grid_4.png"
-                          alt=""
-                          class="w-full transition-all duration-300 group-hover:scale-110"
-                        >
-                      </a>
-                      <div
-                        class="absolute left-0 top-1 flex justify-between w-full items-center px-2"
-                      >
-                        <div>
-                          <p
-                            class="text-xs text-whiteColor px-4 py-[3px] bg-greencolor2 rounded font-semibold"
-                          >
-                            Ui & UX Design
-                          </p>
-                        </div>
-                        <a
-                          class="text-white bg-black bg-opacity-15 rounded hover:bg-primaryColor"
-                          href="#"
-                          ><i class="icofont-heart-alt text-base py-1 px-2"></i
-                        ></a>
-                      </div>
-                    </div>
-                    <!-- card content -->
-                    <div>
-                      <div class="grid grid-cols-2 mb-15px">
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-book-alt pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                            >
-                              36 Lesson</span
-                            >
-                          </div>
-                        </div>
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-clock-time pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                              >3 hr 40 min</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                      <a
-                        href="course-details.html"
-                        class="text-xl font-semibold text-blackColor mb-10px font-hind dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
-                      >
-                        Design course to under stand about solution
-                      </a>
-                      <!-- price -->
-                      <div
-                        class="text-lg font-semibold text-primaryColor font-inter mb-4"
-                      >
-                        $40.00
-                        <del class="text-sm text-lightGrey4 font-semibold"
-                          >/ $67.00</del
-                        >
-                        <span class="ml-6"
-                          ><del
-                            class="text-base font-semibold text-secondaryColor3"
-                            >Free</del
-                          ></span
-                        >
-                      </div>
-                      <!-- author and rating-->
-                      <div
-                        class="grid grid-cols-1 md:grid-cols-2 pt-15px border-t border-borderColor"
-                      >
-                        <div>
-                          <a
-                            href="instructor-details.html"
-                            class="text-base font-bold font-hind flex items-center hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                            ><img
-                              class="w-[30px] h-[30px] rounded-full mr-15px"
-                              src="./assets/images/grid/grid_small_4.jpg"
-                              alt=""
-                            >
-                            <span class="flex flex-shrink-0">Micle Robin</span>
-                          </a>
-                        </div>
-                        <div class="text-start md:text-end">
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <span class="text-xs text-lightGrey6">(44)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- card 5 -->
-              <div
-                class="w-full sm:w-1/2 lg:w-1/3 group group grid-item filter1 filter3"
-              >
-                <div class="tab-content-wrapper sm:px-15px mb-30px">
-                  <div
-                    class="p-15px bg-whiteColor shadow-brand dark:bg-darkdeep3-dark dark:shadow-brand-dark"
-                  >
-                    <!-- card image -->
-                    <div class="relative mb-4">
-                      <a
-                        href="course-details.html"
-                        class="w-full overflow-hidden rounded"
-                      >
-                        <img
-                          src="./assets/images/grid/grid_5.png"
-                          alt=""
-                          class="w-full transition-all duration-300 group-hover:scale-110"
-                        >
-                      </a>
-                      <div
-                        class="absolute left-0 top-1 flex justify-between w-full items-center px-2"
-                      >
-                        <div>
-                          <p
-                            class="text-xs text-whiteColor px-4 py-[3px] bg-orange rounded font-semibold"
-                          >
-                            Data & Tech
-                          </p>
-                        </div>
-                        <a
-                          class="text-white bg-black bg-opacity-15 rounded hover:bg-primaryColor"
-                          href="#"
-                          ><i class="icofont-heart-alt text-base py-1 px-2"></i
-                        ></a>
-                      </div>
-                    </div>
-                    <!-- card content -->
-                    <div>
-                      <div class="grid grid-cols-2 mb-15px">
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-book-alt pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                              >36 Lesson</span
-                            >
-                          </div>
-                        </div>
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-clock-time pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                              >3 hr 40 min</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                      <a
-                        href="course-details.html"
-                        class="text-xl font-semibold text-blackColor mb-10px font-hind dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
-                      >
-                        Data course to under stand about solution
-                      </a>
-                      <!-- price -->
-                      <div
-                        class="text-lg font-semibold text-primaryColor font-inter mb-4"
-                      >
-                        $40.00
-                        <del class="text-sm text-lightGrey4 font-semibold"
-                          >/ $67.00</del
-                        >
-                        <span class="ml-6"
-                          ><del
-                            class="text-base font-semibold text-secondaryColor3"
-                            >Free</del
-                          ></span
-                        >
-                      </div>
-                      <!-- author and rating-->
-                      <div
-                        class="grid grid-cols-1 md:grid-cols-2 pt-15px border-t border-borderColor"
-                      >
-                        <div>
-                          <a
-                            href="instructor-details.html"
-                            class="text-base font-bold font-hind flex items-center hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                            ><img
-                              class="w-[30px] h-[30px] rounded-full mr-15px"
-                              src="./assets/images/grid/grid_small_1.jpg"
-                              alt=""
-                            >
-                            <span class="flex flex-shrink-0">Micle Robin</span>
-                          </a>
-                        </div>
-                        <div class="text-start md:text-end">
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <span class="text-xs text-lightGrey6">(44)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- card 6 -->
-              <div
-                class="w-full sm:w-1/2 lg:w-1/3 group grid-item filter2 filter5"
-              >
-                <div class="tab-content-wrapper sm:px-15px mb-30px">
-                  <div
-                    class="p-15px bg-whiteColor shadow-brand dark:bg-darkdeep3-dark dark:shadow-brand-dark"
-                  >
-                    <!-- card image -->
-                    <div class="relative mb-4">
-                      <a
-                        href="course-details.html"
-                        class="w-full overflow-hidden rounded"
-                      >
-                        <img
-                          src="./assets/images/grid/grid_6.png"
-                          alt=""
-                          class="w-full transition-all duration-300 group-hover:scale-110"
-                        >
-                      </a>
-                      <div
-                        class="absolute left-0 top-1 flex justify-between w-full items-center px-2"
-                      >
-                        <div>
-                          <p
-                            class="text-xs text-whiteColor px-4 py-[3px] bg-yellow rounded font-semibold"
-                          >
-                            Big Data
-                          </p>
-                        </div>
-                        <a
-                          class="text-white bg-black bg-opacity-15 rounded hover:bg-primaryColor"
-                          href="#"
-                          ><i class="icofont-heart-alt text-base py-1 px-2"></i
-                        ></a>
-                      </div>
-                    </div>
-                    <!-- card content -->
-                    <div>
-                      <div class="grid grid-cols-2 mb-15px">
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-book-alt pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                            >
-                              30 Lesson</span
-                            >
-                          </div>
-                        </div>
-                        <div class="flex items-center">
-                          <div>
-                            <i
-                              class="icofont-clock-time pr-5px text-primaryColor text-lg"
-                            ></i>
-                          </div>
-                          <div>
-                            <span
-                              class="text-sm text-black dark:text-blackColor-dark"
-                              >3 hr 40 min</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                      <a
-                        href="course-details.html"
-                        class="text-xl font-semibold text-blackColor mb-10px font-hind dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
-                      >
-                        Big data to under stand about solution pacage
-                      </a>
-                      <!-- price -->
-                      <div
-                        class="text-lg font-semibold text-primaryColor font-inter mb-4"
-                      >
-                        $40.00
-                        <del class="text-sm text-lightGrey4 font-semibold"
-                          >/ $67.00</del
-                        >
-                        <span class="ml-6"
-                          ><del
-                            class="text-base font-semibold text-secondaryColor3"
-                          >
-                            Free</del
-                          ></span
-                        >
-                      </div>
-                      <!-- author and rating-->
-                      <div
-                        class="grid grid-cols-1 md:grid-cols-2 pt-15px border-t border-borderColor"
-                      >
-                        <div>
-                          <a
-                            href="instructor-details.html"
-                            class="text-base font-bold font-hind flex items-center hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                            ><img
-                              class="w-[30px] h-[30px] rounded-full mr-15px"
-                              src="./assets/images/grid/grid_small_1.jpg"
-                              alt=""
-                            >
-                            <span class="flex flex-shrink-0">Micle Robin</span>
-                          </a>
-                        </div>
-                        <div class="text-start md:text-end">
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <i class="icofont-star text-size-15 text-yellow"></i>
-                          <span class="text-xs text-lightGrey6">(44)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <br>
-      <!-- pricing plan section -->
-      <section>
-        <div class="container pt-90px pb-100px">
-          <!-- heading -->
-
-          <div class="mb-5 md:mb-10">
-            <div class="relative" data-aos="fade-up">
-              <div>
-                <div class="text-center">
+                  Jadwal
                   <span
-                    class="text-sm font-semibold text-primaryColor bg-whitegrey3 px-6 py-5px mb-5 rounded-full inline-block"
+                    class="relative after:w-full after:h-[7px] z-0 after:bg-secondaryColor after:absolute after:left-0 after:bottom-3 md:after:bottom-5 after:z-[-1]"
+                    >Diklat</span
                   >
-                    Pricing Plan
-                  </span>
-                </div>
-              </div>
-              <h3
-                class="text-3xl md:text-size-35 2xl:text-size-38 3xl:text-size-42 md:leading-45px 2xl:leading-50px 3xl:leading-2xl font-bold text-blackColor dark:text-blackColor-dark text-center"
-              >
-                Choose The Best Package <br >
-                For your Learning
-              </h3>
-            </div>
-          </div>
 
-          <!-- plans -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-30px">
-            <!-- plan 1 -->
-            <div
-              class="p-10 pt-50px bg-lightGrey10 hover:bg-whiteColor hover:shadow-plan transition-all duration-300 rounded-lg dark:bg-lightGrey10-dark dark:hover:bg-whiteColor-dark"
-              data-aos="fade-up"
-            >
-              <!-- plan pricing -->
-              <div class="relative mb-55px">
-                <h3
-                  class="text-size-28 font-semibold text-blackColor leading-45px mb-15px uppercase dark:text-blackColor-dark"
-                >
-                  Free
+                  <br class="hidden md:block" >
+                  SDM Koperasi dan UMKM
                 </h3>
-                <h6
-                  class="text-5xl text-blackColor font-medium mb-15px dark:text-blackColor-dark"
-                >
-                  <span class="text-size-58 pr-1">$</span>0
-                  <span
-                    class="text-size-22 text-contentColor dark:text-contentColor-dark"
-                    >/ month</span
-                  >
-                </h6>
-                <p class="text-blackColor dark:text-blackColor-dark">
-                  Perfect for startup
-                </p>
-                <img
-                  class="absolute top-0 right-0 -translate-y-30px"
-                  src="./assets/images/icon/price__1.png"
-                  alt=""
-                >
               </div>
-              <!-- plan feature -->
-
-              <div>
-                <ul class="flex flex-col gap-y-30px">
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-secondaryColor px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                      >2 user</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-secondaryColor px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                    >
-                      Learning Scope</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-close text-whiteColor bg-lightGrey6 px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                    >
-                      Team collaboration</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-lightGrey6 px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                    >
-                      Export HTML code</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-secondaryColor px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                      >Upload Your Logo</span
-                    >
-                  </li>
-                </ul>
-              </div>
-              <!-- plan bottom -->
-              <div>
-                <a
-                  href="#"
-                  class="w-full py-10px px-25px text-size-15 text-center text-whiteColor bg-primaryColor border border-primaryColor hover:bg-whiteColor hover:text-primaryColor mb-25px mt-30px rounded dark:hover:text-whiteColor dark:hover:bg-whiteColor-dark"
-                  >Get Started</a
-                >
+              <div class="md:col-start-8 md:col-span-5" data-aos="fade-up">
                 <p
-                  class="text-size-15 text-contentColor dark:text-contentColor-dark"
+                  class="text-base text-contentColor dark:text-contentColor-dark relative before:w-1px before:h-full before:bg-darkdeep7 before:absolute before:left-[-30px]"
                 >
-                  No creadit card required
+                  Pendidikan dan Pelatihan ini diselenggarakan sebagai upaya peningkatan kompetensi sumber daya manusia 
+                  Koperasi dan UMKM secara terencana, terarah, dan berkelanjutan.
                 </p>
               </div>
             </div>
-            <!-- plan 2 -->
-            <div
-              class="p-10 pt-50px bg-lightGrey10 hover:bg-whiteColor hover:shadow-plan transition-all duration-300 rounded-lg dark:bg-lightGrey10-dark dark:hover:bg-whiteColor-dark"
-              data-aos="fade-up"
-            >
-              <!-- plan pricing -->
-              <div class="relative mb-55px">
-                <h3
-                  class="text-size-28 font-semibold text-blackColor leading-45px mb-15px uppercase dark:text-blackColor-dark"
-                >
-                  BASIC
-                </h3>
-                <h6
-                  class="text-5xl text-blackColor font-medium mb-15px dark:text-blackColor-dark"
-                >
-                  <span class="text-size-58 pr-1">$</span>29
-                  <span
-                    class="text-size-22 text-contentColor dark:text-contentColor-dark"
-                    >/ month</span
-                  >
-                </h6>
-                <p class="text-blackColor dark:text-blackColor-dark">
-                  Perfect for startup
-                </p>
-                <img
-                  class="absolute top-0 right-0 -translate-y-30px"
-                  src="./assets/images/icon/price__2.png"
-                  alt=""
-                >
-              </div>
-              <!-- plan feature -->
 
-              <div>
-                <ul class="flex flex-col gap-y-30px">
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-secondaryColor px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                      >5 user</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-secondaryColor px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                    >
-                      Learning Scope</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-close text-whiteColor bg-lightGrey6 px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                    >
-                      Team collaboration</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-lightGrey6 px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                    >
-                      Export HTML code</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-secondaryColor px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                      >Upload Your Logo</span
-                    >
-                  </li>
-                </ul>
-              </div>
-              <!-- plan bottom -->
-              <div>
-                <a
-                  href="#"
-                  class="w-full py-10px px-25px text-size-15 text-center text-whiteColor bg-secondaryColor border border-secondaryColor hover:bg-whiteColor hover:text-secondaryColor mb-25px mt-30px rounded dark:hover:text-whiteColor dark:hover:bg-whiteColor-dark"
-                  >Get Started</a
-                >
-                <p
-                  class="text-size-15 text-contentColor dark:text-contentColor-dark"
-                >
-                  No creadit card required
-                </p>
-              </div>
-            </div>
-            <!-- plan 3 -->
-            <div
-              class="p-10 pt-50px bg-lightGrey10 hover:bg-whiteColor hover:shadow-plan transition-all duration-300 rounded-lg dark:bg-lightGrey10-dark dark:hover:bg-whiteColor-dark"
-              data-aos="fade-up"
-            >
-              <!-- plan pricing -->
-              <div class="relative mb-55px">
-                <h3
-                  class="text-size-28 font-semibold text-blackColor leading-45px mb-15px uppercase dark:text-blackColor-dark"
-                >
-                  PRO
-                </h3>
-                <h6
-                  class="text-5xl text-blackColor font-medium mb-15px dark:text-blackColor-dark"
-                >
-                  <span class="text-size-58 pr-1">$</span>59
-                  <span
-                    class="text-size-22 text-contentColor dark:text-contentColor-dark"
-                    >/ month</span
-                  >
-                </h6>
-                <p class="text-blackColor dark:text-blackColor-dark">
-                  Perfect for startup
-                </p>
-                <img
-                  class="absolute top-0 right-0 -translate-y-30px"
-                  src="./assets/images/icon/price__3.png"
-                  alt=""
-                >
-              </div>
-              <!-- plan feature -->
-
-              <div>
-                <ul class="flex flex-col gap-y-30px">
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-secondaryColor px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                      >2 user</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-secondaryColor px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                    >
-                      Learning Scope</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-close text-whiteColor bg-lightGrey6 px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                    >
-                      Team collaboration</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-lightGrey6 px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                    >
-                      Export HTML code</span
-                    >
-                  </li>
-                  <li>
-                    <i
-                      class="icofont-check text-whiteColor bg-secondaryColor px-1 py-3px mr-15px rounded-full text-xs"
-                    ></i
-                    ><span
-                      class="text-lg text-deepblue font-medium dark:text-deepblue-dark"
-                      >Upload Your Logo</span
-                    >
-                  </li>
-                </ul>
-              </div>
-              <!-- plan bottom -->
-              <div>
-                <a
-                  href="#"
-                  class="w-full py-10px px-25px text-size-15 text-center text-whiteColor bg-primaryColor border border-primaryColor hover:bg-whiteColor hover:text-primaryColor mb-25px mt-30px rounded dark:hover:text-whiteColor dark:hover:bg-whiteColor-dark"
-                  >Get Started</a
-                >
-                <p
-                  class="text-size-15 text-contentColor dark:text-contentColor-dark"
-                >
-                  No creadit card required
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Instructor Section-->
-      <section class="bg-lightGrey10 dark:dark:bg-lightGrey10-dark relative">
-        <div>
-          <img
-            src="./assets/images/about/about_6.png"
-            alt=""
-            class="absolute top-[110px] left-[216px] animate-move-hor z-1"
-          >
-          <img
-            src="./assets/images/about/about_7.png"
-            alt=""
-            class="absolute top-[360px] left-[162px] md:left-[262px] lg:left-[318px] 2xl:left-[162px] animate-spin-slow z-1"
-          >
-          <img
-            src="./assets/images/about/about_9.png"
-            alt=""
-            class="absolute top-[430px] left-[156px] md:top-[630px] md:left-[476px] lg:top-[433px] lg:left-[196px] 2xl:top-[430px] 2xl:left-[156px] animate-move-var z-1"
-          >
-        </div>
-        <div class="container pt-20 pb-20 2xl:pt-30 2xl:pb-90px">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15">
-            <div
-              class="lg:col-start-1 lg:col-span-1 md:col-start-1 md:col-span-2"
-              data-aos="fade-up"
-            >
-              <div class="relative">
-                <span
-                  class="text-sm font-semibold text-primaryColor bg-whitegrey3 px-6 py-5px mb-5 rounded-full inline-block"
-                >
-                  Course List
-                </span>
-                <h3
-                  class="text-3xl md:text-size-35 2xl:text-size-38 3xl:text-size-42 leading-10 md:leading-45px 2xl:leading-50px 3xl:leading-2xl font-bold text-blackColor pb-25px dark:text-blackColor-dark"
-                >
-                  What They Say About us
-                </h3>
-                <p
-                  class="text-sm md:text-base text-contentColor mb-5 2xl:mb-45px dark:text-contentColor-dark"
-                >
-                  Construction is a general term meaning the art and science to
-                  form systems organizations and comes from Latin Construction
-                  is
-                </p>
-
-                <div>
-                  <a
-                    class="text-size-15 text-whiteColor bg-secondaryColor px-25px py-10px border border-secondaryColor hover:text-secondaryColor hover:bg-whiteColor inline-block rounded dark:hover:text-whiteColor dark:hover:bg-secondaryColor"
-                    href="#"
-                    >Explore More <i class="icofont-long-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div data-aos="fade-up">
-              <div
-                class="bg-whiteColor px-25px py-50px mb-22px relative dark:bg-whiteColor-dark"
-              >
-                <p
-                  class="text-base lg:text-sm 2xl:text-base text-contentColor dark:text-contentColor-dark"
-                >
-                  “The other hand we denounce righteou indg ation men who are so
-                  beguiled and demoraliz by the the mo ment.Dislike men who so
-                  development co”
-                </p>
-
+            
+              <div class="tab-contents">
+                <!-- Monday Event-->
                 <div
-                  class="text-xl lg:text-3xl text-whiteColor bg-primaryColor w-10 h-10 lg:w-15 lg:h-15 flex items-center justify-center absolute top-0 left-0 md:-translate-y-1/2 md:-translate-x-1/2 z-20"
+                  class="block opacity-100 transition-opacity duration-150 ease-linear"
                 >
-                  <i class="icofont-quote-left"></i>
-                </div>
-                <span
-                  class="w-0 h-0 border-l-12 border-r-12 border-t-15 border-l-transparent border-r-transparent border-t-whiteColor absolute bottom-[-14px] left-[27px] dark:border-t-whiteColor-dark"
-                ></span>
-              </div>
+                  <div class="flex flex-col gap-y-6">
+                    <!-- event 1 -->
+                    <div
+                      class="flex flex-col md:flex-row md:gap-30px lg:gap-10 items-center md:items-star bg-whiteColor dark:whiteColor-dark p-15px md:p-5 transition-all duration-300 group hover:text-whiteColor hover:bg-primaryColor dark:bg-whiteColor-dark dark:hover:bg-primaryColor shadow-experience rounded"
+                      data-aos="fade-up"
+                    >
+                      <!-- event thumb -->
+                      <div class="flex-shrink-0">
+                        <img
+                          src="./assets/images/event/event__1.png"
+                          alt=""
+                          class="w-170px"
+                        >
+                      </div>
+                      <!-- event content -->
+                      <div class="py-18px">
+                        <div>
+                          <p
+                            class="text-sm text-blackColor mb-10px group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
+                          >
+                            <i
+                              class="icofont-clock-time text-primaryColor pr-1 group-hover:text-whiteColor dark:hover:text-whiteColor"
+                            ></i>
+                            <span class="pr-2">10.00Am - 11.00 am</span>
+                            <span
+                              class="text-primaryColor group-hover:text-whiteColor dark:group-hover:text-whiteColor"
+                              >Mirnsdo .H </span
+                            ><span>- Event Speaker</span>
+                          </p>
+                        </div>
+                        <h3
+                          class="text-size-15 md:text-lg lg:text-2xl text-contentColor dark: font-semibold pb-18px group-hover:text-whiteColor dark:text-contentColor-dark dark:group-hover:text-whiteColor"
+                        >
+                          <a
+                            href="event-details.html"
+                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
+                            >Forging relationships between multi to national
+                            governments and global.
+                          </a>
+                        </h3>
+                        <p
+                          class="text-base md:text-sm lg:text-base text-blackColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
+                        >
+                          <a
+                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
+                            href="#"
+                            >Read More
+                            <i class="icofont-simple-right"></i>
+                          </a>
+                        </p>
+                      </div>
+                    </div>
 
-              <div class="flex items-center gap-5 2xl:gap-20">
-                <div>
-                  <img
-                    src="./assets/images/about/about_5.png"
-                    alt=""
-                    class="w-20 h-20 rounded-full"
-                  >
-                </div>
-                <div>
-                  <h4
-                    class="text-xl lg:text-lg 2xl:text-xl font-semibold text-blackColor dark:text-blackColor-dark"
-                  >
-                    Robind Jon
-                  </h4>
-                  <p
-                    class="text-base lg:text-size-15 2xl:text-base text-lightGrey9 dark:text-lightGrey9-dark"
-                  >
-                    Desginer TechBoot
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div data-aos="fade-up">
-              <div
-                class="bg-whiteColor px-25px py-50px mb-22px relative dark:bg-whiteColor-dark"
-              >
-                <p
-                  class="text-base lg:text-sm 2xl:text-base text-contentColor dark:text-contentColor-dark"
-                >
-                  “The other hand we denounce righteou indg ation men who are so
-                  beguiled and demoraliz by the the mo ment.Dislike men who so
-                  development co”
-                </p>
+                    <!-- event 2 -->
+                    <div
+                      class="flex flex-col md:flex-row md:gap-30px lg:gap-10 items-center md:justify-between bg-whiteColor dark:whiteColor-dark p-15px md:p-5 md:pl-45px transition-all duration-300 group hover:text-whiteColor hover:bg-primaryColor dark:bg-whiteColor-dark dark:hover:bg-primaryColor shadow-experience rounded"
+                      data-aos="fade-up"
+                    >
+                      <div class="py-18px">
+                        <div>
+                          <p
+                            class="text-sm text-blackColor mb-10px group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
+                          >
+                            <i
+                              class="icofont-clock-time text-primaryColor pr-1 group-hover:text-whiteColor dark:hover:text-whiteColor"
+                            ></i>
+                            <span class="pr-2">10.00Am - 11.00 am</span>
+                            <span
+                              class="text-primaryColor group-hover:text-whiteColor dark:group-hover:text-whiteColor"
+                              >Mirnsdo .H </span
+                            ><span>- Event Speaker</span>
+                          </p>
+                        </div>
+                        <h3
+                          class="text-size-15 md:text-lg lg:text-2xl text-contentColor dark: font-semibold pb-18px group-hover:text-whiteColor dark:text-contentColor-dark dark:group-hover:text-whiteColor"
+                        >
+                          <a
+                            href="event-details.html"
+                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
+                            >Forging relationships between multi to national
+                            governments and global.
+                          </a>
+                        </h3>
+                        <p
+                          class="text-base md:text-sm lg:text-base text-blackColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
+                        >
+                          <a
+                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
+                            href="#"
+                            >Read More
+                            <i class="icofont-simple-right"></i>
+                          </a>
+                        </p>
+                      </div>
+                      <!-- event thumb -->
+                      <div
+                        class="flex-shrink-0 flex flex-col items-center md:items-end"
+                      >
+                        <img
+                          src="./assets/images/event/event__2.png"
+                          alt=""
+                          class="w-170px"
+                        >
+                      </div>
+                    </div>
 
-                <div
-                  class="text-xl lg:text-3xl text-whiteColor bg-primaryColor w-10 h-10 lg:w-15 lg:h-15 flex items-center justify-center absolute top-0 left-0 md:-translate-y-1/2 md:-translate-x-1/2 z-20"
-                >
-                  <i class="icofont-quote-left"></i>
-                </div>
-                <span
-                  class="w-0 h-0 border-l-12 border-r-12 border-t-15 border-l-transparent border-r-transparent border-t-whiteColor absolute bottom-[-14px] left-[27px] dark:border-t-whiteColor-dark"
-                ></span>
-              </div>
-
-              <div class="flex items-center gap-5 2xl:gap-20">
-                <div>
-                  <img
-                    src="./assets/images/about/about_5.png"
-                    alt=""
-                    class="w-20 h-20 rounded-full"
-                  >
-                </div>
-                <div>
-                  <h4
-                    class="text-xl lg:text-lg 2xl:text-xl font-semibold text-blackColor dark:text-blackColor-dark"
-                  >
-                    Robind Jon
-                  </h4>
-                  <p
-                    class="text-base lg:text-size-15 2xl:text-base text-lightGrey9 dark:text-lightGrey9-dark"
-                  >
-                    Desginer TechBoot
-                  </p>
+                    <!-- event 3 -->
+                    <div
+                      class="flex flex-col md:flex-row md:gap-30px lg:gap-10 items-center md:items-star bg-whiteColor dark:whiteColor-dark p-15px md:p-5 transition-all duration-300 group hover:text-whiteColor hover:bg-primaryColor dark:bg-whiteColor-dark dark:hover:bg-primaryColor shadow-experience rounded"
+                      data-aos="fade-up"
+                    >
+                      <!-- event thumb -->
+                      <div class="flex-shrink-0">
+                        <img
+                          src="./assets/images/event/event__3.png"
+                          alt=""
+                          class="w-170px"
+                        >
+                      </div>
+                      <!-- event content -->
+                      <div class="py-18px">
+                        <div>
+                          <p
+                            class="text-sm text-blackColor mb-10px group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
+                          >
+                            <i
+                              class="icofont-clock-time text-primaryColor pr-1 group-hover:text-whiteColor dark:hover:text-whiteColor"
+                            ></i>
+                            <span class="pr-2">10.00Am - 11.00 am</span>
+                            <span
+                              class="text-primaryColor group-hover:text-whiteColor dark:group-hover:text-whiteColor"
+                              >Mirnsdo .H </span
+                            ><span>- Event Speaker</span>
+                          </p>
+                        </div>
+                        <h3
+                          class="text-size-15 md:text-lg lg:text-2xl text-contentColor dark: font-semibold pb-18px group-hover:text-whiteColor dark:text-contentColor-dark dark:group-hover:text-whiteColor"
+                        >
+                          <a
+                            href="event-details.html"
+                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
+                            >Forging relationships between multi to national
+                            governments and global.
+                          </a>
+                        </h3>
+                        <p
+                          class="text-base md:text-sm lg:text-base text-blackColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
+                        >
+                          <a
+                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
+                            href="#"
+                            >Read More
+                            <i class="icofont-simple-right"></i>
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                    <!-- event 4 -->
+                    <div
+                      class="flex flex-col md:flex-row md:gap-30px lg:gap-10 items-center md:justify-between bg-whiteColor dark:whiteColor-dark p-15px md:p-5 md:pl-45px transition-all duration-300 group hover:text-whiteColor hover:bg-primaryColor dark:bg-whiteColor-dark dark:hover:bg-primaryColor shadow-experience rounded"
+                      data-aos="fade-up"
+                    >
+                      <div class="py-18px">
+                        <div>
+                          <p
+                            class="text-sm text-blackColor mb-10px group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
+                          >
+                            <i
+                              class="icofont-clock-time text-primaryColor pr-1 group-hover:text-whiteColor dark:hover:text-whiteColor"
+                            ></i>
+                            <span class="pr-2">10.00Am - 11.00 am</span>
+                            <span
+                              class="text-primaryColor group-hover:text-whiteColor dark:group-hover:text-whiteColor"
+                              >Mirnsdo .H </span
+                            ><span>- Event Speaker</span>
+                          </p>
+                        </div>
+                        <h3
+                          class="text-size-15 md:text-lg lg:text-2xl text-contentColor dark: font-semibold pb-18px group-hover:text-whiteColor dark:text-contentColor-dark dark:group-hover:text-whiteColor"
+                        >
+                          <a
+                            href="event-details.html"
+                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
+                            >Forging relationships between multi to national
+                            governments and global.
+                          </a>
+                        </h3>
+                        <p
+                          class="text-base md:text-sm lg:text-base text-blackColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
+                        >
+                          <a
+                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
+                            href="#"
+                            >Read More
+                            <i class="icofont-simple-right"></i>
+                          </a>
+                        </p>
+                      </div>
+                      <!-- event thumb -->
+                      <div
+                        class="flex-shrink-0 flex flex-col items-center md:items-end"
+                      >
+                        <img
+                          src="./assets/images/event/event__4.png"
+                          alt=""
+                          class="w-170px"
+                        >
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
+      
       <!-- News and blog section -->
       <section>
         <div class="container pt-100px pb-70px">
@@ -2599,14 +1654,14 @@
                   <span
                     class="text-sm font-semibold text-primaryColor bg-whitegrey3 px-6 py-5px mb-5 rounded-full inline-block"
                   >
-                    News & Blogs
+                    Post
                   </span>
                 </div>
               </div>
               <h3
                 class="text-3xl md:text-size-35 2xl:text-size-38 3xl:text-size-42 md:leading-45px 2xl:leading-50px 3xl:leading-2xl font-bold text-blackColor text-center dark:text-blackColor-dark"
               >
-                Leatest News & Blog
+                Berita dan Postingan
               </h3>
             </div>
           </div>
@@ -2629,8 +1684,8 @@
                 <div
                   class="text-base md:text-3xl leading-5 md:leading-9 font-semibold text-white px-15px py-5px md:px-6 md:py-2 bg-primaryColor rounded text-center absolute top-5 left-5"
                 >
-                  20 <br >
-                  Oct
+                  20 Oct<br >
+                  2026
                 </div>
               </div>
               <!-- blog content -->
@@ -2671,39 +1726,6 @@
                         Mirnsdo Jons</span
                       >
                     </div>
-                  </div>
-                  <!-- social -->
-                  <div>
-                    <ul class="flex gap-1">
-                      <li>
-                        <a
-                          href="#"
-                          class="text-sm md:text-size-15 w-5 h-5 md:w-[39px] md:h-[39px] flex items-center justify-center border border-borderColor text-darkdeep4 hover:text-primaryColor dark:border-borderColor-dark rounded"
-                          ><i class="icofont-facebook"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          class="text-sm md:text-size-15 w-5 h-5 md:w-[39px] md:h-[39px] flex items-center justify-center border border-borderColor text-darkdeep4 hover:text-primaryColor dark:border-borderColor-dark rounded"
-                          ><i class="icofont-youtube-play"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          class="text-sm md:text-size-15 w-5 h-5 md:w-[39px] md:h-[39px] flex items-center justify-center border border-borderColor text-darkdeep4 hover:text-primaryColor dark:border-borderColor-dark rounded"
-                          ><i class="icofont-instagram"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          class="text-sm md:text-size-15 w-5 h-5 md:w-[39px] md:h-[39px] flex items-center justify-center border border-borderColor text-darkdeep4 hover:text-primaryColor dark:border-borderColor-dark rounded"
-                          ><i class="icofont-twitter"></i
-                        ></a>
-                      </li>
-                    </ul>
                   </div>
                 </div>
               </div>
@@ -2770,47 +1792,18 @@
               </div>
             </div>
           </div>
+           <div class="flex justify-center" data-aos="fade-up">
+            <a
+              href="#"
+              class="text-size-15 px-47px py-15px bg-primaryColor text-whiteColor border border-primaryColor hover:text-primaryColor hover:bg-whiteColor dark:hover:bg-whiteColor-dark dark:hover:text-whiteColor mt-10 md:mt-50px rounded uppercase"
+              >Selengkapnya</a
+            >
+          </div>
         </div>
       </section>
     </main>
     <footer class="bg-darkblack">
-      <div class="container pt-65px pb-5 lg:pb-10">
-        <!-- footer top or subscription -->
-        <section>
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-y-30px md:gap-y-0 items-center pb-45px border-b border-darkcolor"
-          >
-            <div data-aos="fade-up">
-              <h4
-                class="text-4xl md:text-size-25 lg:text-size-40 font-bold text-whiteColor leading-50px md:leading-10 lg:leading-16"
-              >
-                Still You Need Our
-                <span class="text-primaryColor">Support</span> ?
-              </h4>
-              <p class="text-whiteColor text-opacity-65">
-                Don’t wait make a smart & logical quote here. Its pretty easy.
-              </p>
-            </div>
-            <div data-aos="fade-up">
-              <form
-                class="max-w-form-xl md:max-w-form-md lg:max-w-form-lg xl:max-w-form-xl 2xl:max-w-form-2xl bg-deepgray ml-auto rounded relative"
-              >
-                <input
-                  type="email"
-                  placeholder="Enter your email here"
-                  class="text-whiteColor h-62px pl-15px focus:outline-none border border-deepgray focus:border-whitegrey bg-transparent rounded w-full"
-                >
-                <button
-                  type="submit"
-                  class="px-3 md:px-10px lg:px-5 bg-primaryColor hover:bg-deepgray text-xs lg:text-size-15 text-whiteColor border border-primaryColor block rounded absolute right-0 top-0 h-full"
-                >
-                  Subscribe Now
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
-
+      <div class="container pt-15px pb-5 lg:pb-10">
         <!-- footer main -->
         <section>
           <div
@@ -2822,30 +1815,36 @@
               data-aos="fade-up"
             >
               <h4 class="text-size-22 font-bold text-whiteColor mb-3">
-                About us
+                Tentang
               </h4>
               <p
                 class="text-base lg:text-sm 2xl:text-base text-darkgray mb-30px leading-1.8 2xl:leading-1.8"
               >
-                orporate clients and leisure travelers has been relying on
-                Groundlink for dependable safe, and professional chauffeured car
-                end service in major cities across World.
+                Balai Pelatihan Koperasi & Usaha Kecil Prov. Kalsel
+                memiliki fungsi utama sebagai pusat pendidikan dan pelatihan untuk pengembangan 
+                sumber daya manusia (SDM) koperasi dan pelaku usaha kecil di Provinsi Kalimantan Selatan.
               </p>
               <div class="flex items-center">
                 <div>
+                  <a
+                    href="https://maps.app.goo.gl/FUaeDrXhwijyqEcTA" target="_BLANK"
+                    >
                   <i
-                    class="icofont-clock-time text-3xl text-whiteColor h-78px w-78px bg-primaryColor leading-78px mr-22px block text-center"
+                    class="icofont-google-map text-3xl text-whiteColor h-78px w-78px bg-primaryColor leading-78px mr-22px block text-center
+                    hover:text-primaryColor hover:bg-whiteColor inline-block rounded dark:hover:bg-whiteColor-dark dark:hover:text-whiteColor"
                   ></i>
+                  </a>
                 </div>
                 <div>
                   <h6 class="text-lg text-whiteColor font-medium leading-29px">
-                    OPENING HOURES
+                    <a
+                    href="https://maps.app.goo.gl/FUaeDrXhwijyqEcTA" target="_BLANK"
+                    class="text-whiteColor relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
+                    >
+                    Google Maps</a>
                   </h6>
                   <p class="text-sm text-whiteColor text-opacity-60 mb-1">
-                    Mon - Sat(8.00 - 6.00)
-                  </p>
-                  <p class="text-sm text-whiteColor text-opacity-60">
-                    Sunday - Closed
+                    Jl. Ahmad Yani KM. 18.200 Kec. Liang Anggang Kota Banjarbaru
                   </p>
                 </div>
               </div>
@@ -2856,42 +1855,42 @@
               data-aos="fade-up"
             >
               <h4 class="text-size-22 font-bold text-whiteColor mb-3">
-                Usefull Links
+                Profil
               </h4>
               <ul class="flex flex-col gap-y-3">
                 <li>
                   <a
                     href="#"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >About Us</a
+                    >Tentang</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Teachers</a
+                    >Visi dan Misi</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Partner</a
+                    >Maklumat Pelayanan</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Room-Details</a
+                    >Struktur Organisasi</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Gallery</a
+                    >Fasilitas</a
                   >
                 </li>
               </ul>
@@ -2902,42 +1901,28 @@
               data-aos="fade-up"
             >
               <h4 class="text-size-22 font-bold text-whiteColor mb-3">
-                Course
+                Layanan
               </h4>
               <ul class="flex flex-col gap-y-3">
                 <li>
                   <a
                     href="#"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Ui Ux Design</a
+                    >Diklat SDM Koperasi</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Web Development</a
+                    >Diklat SDM UMKM</a
                   >
                 </li>
                 <li>
                   <a
                     href="#"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Business Strategy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Softwere Development</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Business English</a
+                    >Rumah Kemasan</a
                   >
                 </li>
               </ul>
@@ -2947,65 +1932,22 @@
               class="col-start-1 col-span-12 md:col-start-7 lg:col-start-10 md:col-span-6 lg:col-span-3 pl-0 2xl:pl-50px"
               data-aos="fade-up"
             >
-              <h4 class="text-size-22 font-bold text-whiteColor mb-3">
-                Recent Post
-              </h4>
               <ul class="flex flex-col gap-y-5">
                 <li>
                   <a class="flex items-center gap-3 group cursor-pointer">
-                    <div>
-                      <img
-                        src="./assets/images/footer/footer__1.png"
-                        alt=""
-                        class="w-61px h-54px"
-                      >
-                    </div>
-                    <div>
-                      <p class="text-xs text-darkgray mb-7px">02 Apr 2024</p>
-                      <h6
-                        class="text-size-15 text-whiteColor font-bold group-hover:text-primaryColor transition-all duration-300"
-                      >
-                        Best Your Business
-                      </h6>
-                    </div>
-                  </a>
-                </li>
-
-                <li>
-                  <a class="flex items-center gap-3 group cursor-pointer">
-                    <div>
-                      <img
-                        src="./assets/images/footer/footer__2.png"
-                        alt=""
-                        class="w-61px h-54px"
-                      >
-                    </div>
-                    <div>
-                      <p class="text-xs text-darkgray mb-7px">02 Apr 2024</p>
-                      <h6
-                        class="text-size-15 text-whiteColor font-bold group-hover:text-primaryColor transition-all duration-300"
-                      >
-                        Keep Your Business
-                      </h6>
+                    <div class="lg:col-start-1 lg:col-span-3">
+                      <a href="index.html">
+                        <img src="./assets/images/logo/logo_3.png" alt="" >
+                      </a>
                     </div>
                   </a>
                 </li>
                 <li>
                   <a class="flex items-center gap-3 group cursor-pointer">
-                    <div>
-                      <img
-                        src="./assets/images/footer/footer__3.png"
-                        alt=""
-                        class="w-61px h-54px"
-                      >
-                    </div>
-                    <div>
-                      <p class="text-xs text-darkgray mb-7px">02 Apr 2024</p>
-                      <h6
-                        class="text-size-15 text-whiteColor font-bold group-hover:text-primaryColor transition-all duration-300"
-                      >
-                        Nice Your Business
-                      </h6>
+                    <div class="lg:col-start-1 lg:col-span-3">
+                      <a href="index.html">
+                        <img src="./assets/images/logo/logo_4.png" alt="" >
+                      </a>
                     </div>
                   </a>
                 </li>
@@ -3027,8 +1969,8 @@
 
             <div class="lg:col-start-4 lg:col-span-6">
               <p class="text-whiteColor">
-                Copyright © <span class="text-primaryColor">2024 </span> by
-                edurock. All Rights Reserved.
+                Copyright © <span class="text-primaryColor">2025 </span> by
+                Balatkop-uk Provinsi Kalimantan Selatan
               </p>
             </div>
 
@@ -3036,37 +1978,9 @@
               <ul class="flex gap-3 lg:gap-2 2xl:gap-3 lg:justify-end">
                 <li>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/balatkop.provkalsel/" target="_BLANK"
                     class="w-40.19px lg:w-35px 2xl:w-40.19px h-37px lg:h-35px 2xl:h-37px leading-37px lg:leading-35px 2xl:leading-37px text-whiteColor bg-whiteColor bg-opacity-10 hover:bg-primaryColor text-center"
-                    ><i class="icofont-facebook"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="w-40.19px lg:w-35px 2xl:w-40.19px h-37px lg:h-35px 2xl:h-37px leading-37px lg:leading-35px 2xl:leading-37px text-whiteColor bg-whiteColor bg-opacity-10 hover:bg-primaryColor text-center"
-                    ><i class="icofont-twitter"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="w-40.19px lg:w-35px 2xl:w-40.19px h-37px lg:h-35px 2xl:h-37px leading-37px lg:leading-35px 2xl:leading-37px text-whiteColor bg-whiteColor bg-opacity-10 hover:bg-primaryColor text-center"
-                    ><i class="icofont-vimeo"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="w-40.19px lg:w-35px 2xl:w-40.19px h-37px lg:h-35px 2xl:h-37px leading-37px lg:leading-35px 2xl:leading-37px text-whiteColor bg-whiteColor bg-opacity-10 hover:bg-primaryColor text-center"
-                    ><i class="icofont-linkedin"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="w-40.19px lg:w-35px 2xl:w-40.19px h-37px lg:h-35px 2xl:h-37px leading-37px lg:leading-35px 2xl:leading-37px text-whiteColor bg-whiteColor bg-opacity-10 hover:bg-primaryColor text-center"
-                    ><i class="icofont-skype"></i
+                    ><i class="icofont-instagram"></i
                   ></a>
                 </li>
               </ul>
