@@ -359,7 +359,7 @@
                     <a
                       href="#"
                       class="text-size-12 2xl:text-size-15 text-whiteColor bg-primaryColor block border-primaryColor border hover:text-primaryColor hover:bg-white px-15px py-2 rounded-standard dark:hover:bg-whiteColor-dark dark: dark:hover:text-whiteColor"
-                      >Ingin Ikut Diklat ? Join Disini</a
+                      >Ingin Ikut Diklat ? Gabung Disini</a
                     >
                   </li>
                   <li class="block lg:hidden">
@@ -637,37 +637,9 @@
           <div>
             <ul class="flex gap-6 items-center mb-5">
               <li>
-                <a class="facebook" href="#"
-                  ><i
-                    class="icofont icofont-facebook text-fb-color dark:text-whiteColor dark:hover:text-secondaryColor"
-                  ></i
-                ></a>
-              </li>
-              <li>
-                <a class="twitter" href="#"
-                  ><i
-                    class="icofont icofont-twitter text-twiter-color dark:text-whiteColor dark:hover:text-secondaryColor"
-                  ></i
-                ></a>
-              </li>
-              <li>
-                <a class="pinterest" href="#"
-                  ><i
-                    class="icofont icofont-pinterest dark:text-whiteColor dark:hover:text-secondaryColor"
-                  ></i
-                ></a>
-              </li>
-              <li>
                 <a class="instagram" href="#"
                   ><i
                     class="icofont icofont-instagram dark:text-whiteColor dark:hover:text-secondaryColor"
-                  ></i
-                ></a>
-              </li>
-              <li>
-                <a class="google" href="#"
-                  ><i
-                    class="icofont icofont-youtube-play dark:text-whiteColor dark:hover:text-secondaryColor"
                   ></i
                 ></a>
               </li>
@@ -690,17 +662,16 @@
               <h3
                 class="uppercase text-secondaryColor text-size-15 mb-5px md:mb-15px font-inter tracking-5px"
               >
-                EDUCATION SOLUTION
+                SELAMAT DATANG DI
               </h3>
               <h1
                 class="text-3xl text-whiteColor md:text-6xl lg:text-size-50 2xl:text-6xl leading-10 md:leading-18 lg:leading-62px 2xl:leading-18 md:tracking-half lg:tracking-normal 2xl:tracking-half font-bold mb-15px"
               >
-                Cloud-based LMS <br class="hidden md:block" >
-                Trusted by 1000+
+                Balai Pelatihan Koperasi <br class="hidden md:block" >
+                dan Usaha Kecil <br> Prov. Kalsel
               </h1>
               <p class="text-size-15md:text-lg text-white font-medium mb-45px">
-                Lorem Ipsum is simply dummy text of the printing typesetting
-                industry. Lorem Ipsum has been
+                Koperasi Modern UMKM Naik Kelas, Bekerja Bersama Merangkul Semua Provinsi Kalimantan Selatan
               </p>
 
               <div>
@@ -708,13 +679,13 @@
                   href="course.html"
                   class="text-sm md:text-size-15 font-semibold text-darkdeep2 bg-whiteColor border border-whiteColor px-5 md:px-30px py-3 md:py-4 hover:text-whiteColor hover:bg-darkblack rounded inline-block mr-6px md:mr-30px shadow-hero-action dark:bg-whiteColor-dark dark:hover:bg-whiteColor dark:text-whiteColor dark:hover:text-whiteColor-dark dark:border-none"
                 >
-                  View Courses
+                  Gabung Diklat
                 </a>
                 <a
                   href="#"
                   class="text-sm md:text-size-15 font-semibold text-whiteColor py-3 md:py-4 hover:text-secondaryColor inline-block"
                 >
-                  Find out more <i class="icofont-long-arrow-right"></i>
+                  Informasi Lebih Lanjut <i class="icofont-long-arrow-right"></i>
                 </a>
               </div>
             </div>
@@ -756,46 +727,23 @@
         </div>
       </section>
 
-      <!--  brand section -->
-
-       <div data-aos="fade-up">
-        <div
-          class="container2-md flex flex-wrap items-center justify-center bg-white dark:bg-whiteColor-dark rounded-md mx-auto md:-translate-y-1/2 w-full shadow-brand"
-        >
-          <div
-            class="basis-1/2 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px"
-          >
-            <a href="#"
-              ><img src="./assets/images/brand/brand_1.png" alt=""
-            ></a>
-          </div>
-          <div
-            class="basis-1/2 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px"
-          >
+       <!-- brand section -->
+      <div data-aos="fade-up">
+        <div class="container2-md flex flex-wrap items-center justify-center bg-white dark:bg-whiteColor-dark rounded-md mx-auto md:-translate-y-1/2 w-full shadow-brand">
+          <div class="w-1/3 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px">
             <a href="#">
-              <img src="./assets/images/brand/brand_2.png" alt=""
-            ></a>
+              <img src="./assets/images/brand/brand_3.png" alt="">
+            </a>
           </div>
-          <div
-            class="basis-1/2 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px"
-          >
+          <div class="w-1/3 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px">
             <a href="#">
-              <img src="./assets/images/brand/brand_3.png" alt=""
-            ></a>
+              <img src="./assets/images/brand/brand_4.png" alt="">
+            </a>
           </div>
-          <div
-            class="basis-1/2 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px"
-          >
+          <div class="w-1/3 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px">
             <a href="#">
-              <img src="./assets/images/brand/brand_4.png" alt=""
-            ></a>
-          </div>
-          <div
-            class="basis-1/2 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px"
-          >
-            <a href="#">
-              <img src="./assets/images/brand/brand_5.png" alt=""
-            ></a>
+              <img src="./assets/images/brand/brand_5.png" alt="">
+            </a>
           </div>
         </div>
       </div>
@@ -839,12 +787,12 @@
                   <p
                     class="text-[40px] text-primaryColor font-bold uppercase pr-10px leading-1"
                   >
-                    <span data-countup-number="25">25</span>+
+                    <span data-countup-number="12">12</span>
                   </p>
                   <p
                     class="text-blackColor dark:text-blackColor-dark font-bold leading-26px"
                   >
-                    YEARS EXPERIENCE JUST ACHIVED
+                    Desember 2025
                   </p>
                 </div>
               </div>
@@ -854,23 +802,22 @@
               <span
                 class="text-sm font-semibold text-primaryColor bg-whitegrey3 px-6 py-5px mb-5 rounded-full inline-block"
               >
-                About Us
+                Banner
               </span>
               <h3
                 class="text-3xl md:text-size-45 leading-10 md:leading-2xl font-bold text-blackColor dark:text-blackColor-dark pb-25px"
               >
-                Welcome to the
+                Selamat Hari
                 <span
                   class="relative after:w-full after:h-[7px] after:bg-secondaryColor after:absolute after:left-0 after:bottom-3 md:after:bottom-5"
-                  >Online</span
+                  >Natal <br></span
                 >
-                Learning Center
+                Marry Chrismass
               </h3>
               <p
                 class="text-sm md:text-base leading-7 text-contentColor dark:text-contentColor-dark mb-6 pl-3 border-l-2 border-primaryColor"
               >
-                25+Contrary to popular belief, Lorem Ipsum is not simply random
-                text roots in a piece of classical Latin literature from 45 BC
+                “Di bawah cahaya pohon Natal, semoga harapan barumu bersinar terang. Selamat merayakan Natal!”
               </p>
               <ul class="space-y-5">
                 <li class="flex items-center group">
@@ -880,7 +827,7 @@
                   <p
                     class="text-sm md:text-base font-medium text-blackColor dark:text-blackColor-dark"
                   >
-                    Lorem Ipsum is simply dummy
+                    #selamatharinatal2025
                   </p>
                 </li>
                 <li class="flex items-center group">
@@ -890,7 +837,7 @@
                   <p
                     class="text-sm md:text-base font-medium text-blackColor dark:text-blackColor-dark"
                   >
-                    Explore a variety of fresh educational teach
+                    #koperasimodern
                   </p>
                 </li>
                 <li class="flex items-center group">
@@ -900,103 +847,10 @@
                   <p
                     class="text-sm md:text-base font-medium text-blackColor dark:text-blackColor-dark"
                   >
-                    Lorem Ipsum is simply dummy text of
+                    #umkmnaikkelas
                   </p>
                 </li>
               </ul>
-            </div>
-          </div>
-          <!-- about counter -->
-          <div
-            class="counter flex flex-wrap py-[70px] lg:py-20 gap-y-30px lg:gap-y-0"
-          >
-            <div
-              class="basis-full sm:basis-1/2 lg:basis-1/4"
-              data-aos="fade-up"
-            >
-              <div class="flex gap-4">
-                <div>
-                  <img src="./assets/images/counter/counter__1.png" alt="" >
-                </div>
-                <div>
-                  <p
-                    class="text-size-34 leading-[1.1] text-blackColor font-bold font-hind dark:text-blackColor-dark"
-                  >
-                    <span data-countup-number="27"> 27</span><span>+</span>
-                  </p>
-                  <p
-                    class="uppercase text-blackColor font-medium leading-[18px] dark:text-blackColor-dark"
-                  >
-                    Total Acheivment
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="basis-full sm:basis-1/2 lg:basis-1/4"
-              data-aos="fade-up"
-            >
-              <div class="flex gap-4">
-                <div>
-                  <img src="./assets/images/counter/counter__2.png" alt="" >
-                </div>
-                <div>
-                  <p
-                    class="text-size-34 leading-[1.1] text-blackColor font-bold font-hind dark:text-blackColor-dark"
-                  >
-                    <span data-countup-number="145">145</span><span>+</span>
-                  </p>
-                  <p
-                    class="uppercase text-blackColor font-medium leading-[18px] dark:text-blackColor-dark"
-                  >
-                    TOTAL STUDENTS
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="basis-full sm:basis-1/2 lg:basis-1/4"
-              data-aos="fade-up"
-            >
-              <div class="flex gap-4">
-                <div>
-                  <img src="./assets/images/counter/counter__3.png" alt="" >
-                </div>
-                <div>
-                  <p
-                    class="text-size-34 leading-[1.1] text-blackColor font-bold font-hind dark:text-blackColor-dark"
-                  >
-                    <span data-countup-number="10">10</span><span>k</span>
-                  </p>
-                  <p
-                    class="uppercase text-blackColor font-medium leading-[18px] dark:text-blackColor-dark"
-                  >
-                    tOTAL INSTRUCTOR
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="basis-full sm:basis-1/2 lg:basis-1/4"
-              data-aos="fade-up"
-            >
-              <div class="flex gap-4">
-                <div>
-                  <img src="./assets/images/counter/counter__4.png" alt="" >
-                </div>
-                <div>
-                  <p
-                    class="text-size-34 leading-[1.1] text-blackColor font-bold font-hind dark:text-blackColor-dark"
-                  >
-                    <span data-countup-number="214">214</span><span>+</span>
-                  </p>
-                  <p
-                    class="uppercase text-blackColor font-medium leading-[18px] dark:text-blackColor-dark"
-                  >
-                    OVER THE WORLD
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -1022,32 +876,28 @@
                 <span
                   class="text-sm font-semibold text-primaryColor bg-whitegrey3 px-6 py-5px mb-5 rounded-full inline-block"
                 >
-                  Populer Subject
+                  Tentang
                 </span>
                 <h3
                   class="text-3xl md:text-size-35 2xl:text-size-38 3xl:text-size-42 leading-10 md:leading-45px 2xl:leading-50px 3xl:leading-2xl font-bold text-blackColor dark:text-blackColor-dark pb-25px"
                 >
-                  Provide It & Technol Subject For You
+                  Balai Pelatihan Koperasi & Usaha Kecil Prov. Kalsel
                 </h3>
                 <p
                   class="text-sm md:text-base text-contentColor dark:text-contentColor-dark mb-10px 2xl:mb-50px"
                 >
-                  Construction is a general term meaning the art and science to
-                  form systems organizations, and comes from Latin Construction
-                  is
+                  adalah unit pelaksana teknis di bawah Dinas Koperasi dan UKM Provinsi Kalimantan Selatan
                 </p>
                 <p
                   class="text-sm md:text-base leading-7 text-contentColor dark:text-contentColor-dark mb-10 pl-3 border-l-[3px] border-secondaryColor"
                 >
-                  Construction is a general term meaning the art and science to
-                  form systems organizations, and comes from Latin Construction
-                  is a organizations, and comes from Latin construction and Old
+                  yang memiliki fungsi utama sebagai pusat pendidikan dan pelatihan untuk pengembangan sumber daya manusia (SDM) koperasi dan pelaku usaha kecil di Provinsi Kalimantan Selatan.
                 </p>
                 <div>
                   <a
                     class="text-size-15 text-whiteColor bg-secondaryColor px-25px py-10px border border-secondaryColor hover:text-secondaryColor hover:bg-whiteColor inline-block rounded dark:hover:bg-whiteColor-dark dark:hover:text-whiteColor"
                     href="#"
-                    >Explore More <i class="icofont-long-arrow-right"></i>
+                    >Selengkapnya <i class="icofont-long-arrow-right"></i>
                   </a>
                 </div>
               </div>
@@ -1155,24 +1005,17 @@
                         href="#"
                         class="text-2xl lg:text-lg 2xl:text-2xl font-semibold mb-15px md:mb-0 2xl:mb-15px hover:text-secondaryColor font-hind  dark:text-whiteColor dark:hover:text-secondaryColor dark:transition-all dark:duration-300"
                       >
-                        Business Studies
+                        Menyelenggarakan Pelatihan
                       </a>
                       <p
                         class="text-sm lg:text-xs 2xl:text-sm text-contentColor group-hover:text-whiteColor mb-15px lg:mb-2 2xl:mb-15px transition-all duration-300"
                       >
-                        Construction is a general term the art and science to
-                        form
+                        Kegiatan Pelatihan teknis dan manajerial untuk meningkatkan keterampilan SDM Koperasi dan UMKM 
                       </p>
                       <div>
                         <div
                           class="text-sm text-black dark:text-blackColor-darkColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor-dark"
                         >
-                          <a
-                            href="#"
-                            class="text-sm font-medium hover:text-secondaryColor transition-none"
-                            >View Subject
-                            <i class="icofont-long-arrow-right"></i
-                          ></a>
                         </div>
                       </div>
                     </div>
@@ -1265,24 +1108,17 @@
                           href="#"
                           class="text-2xl lg:text-lg 2xl:text-2xl font-semibold mb-15px md:mb-0 2xl:mb-15px hover:text-secondaryColor font-hind  dark:text-whiteColor dark:hover:text-secondaryColor dark:transition-all dark:duration-300"
                         >
-                          Artist & Design
+                          Meningkatkan Kapasitas SDM
                         </a>
                         <p
                           class="text-sm lg:text-xs 2xl:text-sm text-contentColor group-hover:text-whiteColor mb-15px lg:mb-2 2xl:mb-15px transition-all duration-300"
                         >
-                          Construction is a general term the art and science to
-                          form
+                          Mengembangkan kompetensi pelaku Koperasi dan UMKM agar lebih profesional, produktif dan mampu bersaing di pasar hingga era digital
                         </p>
                         <div>
                           <div
                             class="text-sm text-black dark:text-blackColor-darkColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor-dark"
                           >
-                            <a
-                              href="#"
-                              class="text-sm font-medium hover:text-secondaryColor transition-all duration-300"
-                              >View Subject
-                              <i class="icofont-long-arrow-right"></i
-                            ></a>
                           </div>
                         </div>
                       </div>
@@ -1378,24 +1214,17 @@
                         href="#"
                         class="text-2xl lg:text-lg 2xl:text-2xl font-semibold mb-15px md:mb-0 2xl:mb-15px hover:text-secondaryColor font-hind  dark:text-whiteColor dark:hover:text-secondaryColor dark:transition-all dark:duration-300"
                       >
-                        Machine Learning
+                        Fasilitasi Pembinaan dan Pendampingan
                       </a>
                       <p
                         class="text-sm lg:text-xs 2xl:text-sm text-contentColor group-hover:text-whiteColor mb-15px lg:mb-2 2xl:mb-15px transition-all duration-300"
                       >
-                        Construction is a general term the art and science to
-                        form
+                        Berperan dalam membantu pendampingan, konsultasi, dan bimbingan teknis pasca pelatihan SDM Koperasi dan UMKM
                       </p>
                       <div>
                         <div
                           class="text-sm text-black dark:text-blackColor-darkColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor-dark"
                         >
-                          <a
-                            href="#"
-                            class="text-sm font-medium hover:text-secondaryColor transition-none"
-                            >View Subject
-                            <i class="icofont-long-arrow-right"></i
-                          ></a>
                         </div>
                       </div>
                     </div>
@@ -1490,27 +1319,19 @@
                       <!-- card content -->
                       <div>
                         <a
-                          href="#"
                           class="text-2xl lg:text-lg 2xl:text-2xl font-semibold mb-15px md:mb-0 2xl:mb-15px hover:text-secondaryColor font-hind  dark:text-whiteColor dark:hover:text-secondaryColor dark:transition-all dark:duration-300"
                         >
-                          Artist & Design
+                          Mendorong Transformasi Koperasi dan UMKM
                         </a>
                         <p
                           class="text-sm lg:text-xs 2xl:text-sm text-contentColor group-hover:text-whiteColor mb-15px lg:mb-2 2xl:mb-15px transition-all duration-300"
                         >
-                          Construction is a general term the art and science to
-                          form
+                          Bertransformasi menjadi SDM Koperasi dan UMKM yang modern dan berdaya saing, melalui pelatihan digitalisasi, tata kelola modern dan peningkatan sistem manajemen
                         </p>
                         <div>
                           <div
                             class="text-sm text-black dark:text-blackColor-darkColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor-dark"
                           >
-                            <a
-                              href="#"
-                              class="text-sm font-medium hover:text-secondaryColor transition-all duration-300"
-                              >View Subject
-                              <i class="icofont-long-arrow-right"></i
-                            ></a>
                           </div>
                         </div>
                       </div>
@@ -1536,13 +1357,13 @@
                 <span
                   class="text-sm font-semibold text-primaryColor bg-whitegrey3 px-6 py-5px mb-5 rounded-full inline-block"
                 >
-                  Course List
+                  Agenda
                 </span>
                 <h3
                   class="text-3xl md:text-[35px] lg:text-size-42 leading-[45px] 2xl:leading-[45px] md:leading-[50px] font-bold text-blackColor dark:text-blackColor-dark"
                   data-aos="fade-up"
                 >
-                  Perfect Online Course Your Carrer
+                  Jadwal Pelatihan
                 </h3>
               </div>
               <!-- courses right -->
@@ -1556,7 +1377,7 @@
                       data-filter="*"
                       class="is-checked dark:is-checked pr-5 md:pr-10 lg:pr-17px 2xl:pr-10 text-contentColor font-medium hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
                     >
-                      See All
+                      Semua
                     </button>
                   </li>
                   <li>
@@ -1564,7 +1385,7 @@
                       data-filter=".filter1"
                       class="pr-5 md:pr-10 lg:pr-17px 2xl:pr-10 text-contentColor font-medium hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
                     >
-                      Data science
+                      SDM Koperasi
                     </button>
                   </li>
                   <li>
@@ -1572,23 +1393,7 @@
                       data-filter=".filter2"
                       class="pr-5 md:pr-10 lg:pr-17px 2xl:pr-10 text-contentColor font-medium hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
                     >
-                      Engineering
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      data-filter=".filter3"
-                      class="pr-5 md:pr-10 lg:pr-17px 2xl:pr-10 text-contentColor font-medium hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                    >
-                      Featured
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      data-filter=".filter4"
-                      class="text-contentColor font-medium hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                    >
-                      Architecture
+                      SDM Usaha Kecil
                     </button>
                   </li>
                 </ul>
@@ -2312,146 +2117,7 @@
           </div>
         </div>
       </section>
-      <!-- Registration Sectoion-->
-      <section class="bg-register bg-cover bg-center bg-no-repeat lg:mb-150px">
-        <!-- registration overlay -->
-        <div
-          class="overlay bg-blueDark bg-opacity-90 py-20 lg:pt-[90px] lg:pb-0 relative z-0"
-        >
-          <!-- animate icons -->
-          <div>
-            <img
-              class="absolute top-0 left-0 lg:left-[8%] 2xl:top-10 animate-move-hor block z--1"
-              src="./assets/images/register/register__1.png"
-              alt=""
-            >
-            <img
-              class="absolute top-1/2 left-3/4 md:left-2/3 lg:left-1/2 2xl:left-[8%] md:top animate-spin-slow block z--1"
-              src="./assets/images/register/register__2.png"
-              alt=""
-            >
-            <img
-              class="absolute top-20 lg:top-3/4 md:top-14 right-20 md:right-20 lg:right-[90%] animate-move-var block z--1"
-              src="./assets/images/register/register__3.png"
-              alt=""
-            >
-          </div>
-          <div class="container">
-            <!-- about section  -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 pt-30px gap-x-30px">
-              <!-- about left -->
-              <div
-                class="mb-30px lg:mb-0 pb-0 md:pb-30px xl:pb-0 lg:col-start-1 lg:col-span-7"
-                data-aos="fade-up"
-              >
-                <div class="relative">
-                  <span
-                    class="text-sm font-semibold text-primaryColor bg-whitegrey3 px-6 py-5px mb-5 rounded-full inline-block"
-                  >
-                    Registration
-                  </span>
-                  <h3
-                    class="text-3xl md:text-[35px] 2xl:text-size-42 leading-[45px] 2xl:leading-2xl font-bold text-whiteColor pb-25px"
-                  >
-                    Register Your
-                    <span
-                      class="relative after:w-full after:h-[7px] after:bg-secondaryColor after:absolute after:left-0 after:bottom-2 md:after:bottom-4 z-0 after:z-[-1]"
-                      >Account</span
-                    >
-                    Get free access to
-                    <span class="text-yellow1">60000 </span> online course
-                  </h3>
-                  <div class="flex gap-x-5 items-center">
-                    <div>
-                      <button
-                        data-url="https://www.youtube.com/watch?v=vHdclsdkp28"
-                        class="lvideo relative w-15 h-15 md:h-20 md:w-20 lg:w-15 lg:h-15 2xl:h-70px 2xl:w-70px 3xl:h-20 3xl:w-20 bg-secondaryColor rounded-full flex items-center justify-center"
-                      >
-                        <span
-                          class="animate-buble absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[180px] h-[180px] border-secondaryColor rounded-full"
-                        ></span
-                        ><span
-                          class="animate-buble2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[180px] h-[180px] border-secondaryColor rounded-full"
-                        ></span>
-                        <img src="./assets/images/icon/video.png" alt="" >
-                      </button>
-                    </div>
-
-                    <div>
-                      <p
-                        class="text-size-15 md:text-[22px] lg:text-lg 2xl:text-[22px] leading-6 md:leading-9 lg:leading-8 2xl:leading-9 font-semibold text-white"
-                      >
-                        Learn Something new & Build Your Career From Anywhere In
-                        The World
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- sbject right -->
-              <div
-                class="overflow-visible lg:col-start-8 lg:col-span-5 relative z-1 lg:-mb-150px"
-              >
-                <form
-                  class="p-35px pt-10 bg-lightGrey10 dark:bg-lightGrey10-dark rounded shadow-experience"
-                  data-aos="fade-up"
-                >
-                  <h3
-                    class="text-xl text-blackColor dark:text-blackColor-dark font-semibold mb-5 font-inter"
-                  >
-                    Fill Your Registration
-                  </h3>
-
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    class="w-full px-15px py-3 bg-lightGrey8 text-base mb-25px focus:outline-none"
-                  >
-
-                  <div class="grid grid-cols-1 xl:grid-cols-2 xl:gap-x-30px">
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      class="w-full px-15px py-3 bg-lightGrey8 text-base mb-25px focus:outline-none"
-                    >
-
-                    <input
-                      type="text"
-                      placeholder="Phone"
-                      class="w-full px-15px py-3 bg-lightGrey8 text-base mb-25px focus:outline-none"
-                    >
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Address"
-                    class="w-full px-15px py-3 bg-lightGrey8 text-base mb-25px focus:outline-none"
-                  >
-
-                  <textarea
-
-                    placeholder="Comment"
-                    class="w-full px-15px pb-3 pt-5 bg-lightGrey8 text-base mb-25px h-[155px] placeholder:text-blackColor"
-
-                    cols="30"
-                    rows="10"
-                  ></textarea>
-                  <div>
-                    <button
-                      type="submit"
-                      class="text-size-15 text-whiteColor bg-primaryColor px-25px py-10px border border-primaryColor hover:text-primaryColor hover:bg-whiteColor inline-block rounded group dark:hover:text-whiteColor dark:hover:bg-whiteColor-dark"
-                    >
-                      Sign Up
-                      <i
-                        class="icofont-long-arrow-right group-hover:text-primaryColor"
-                      ></i>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <br>
       <!-- pricing plan section -->
       <section>
         <div class="container pt-90px pb-100px">
