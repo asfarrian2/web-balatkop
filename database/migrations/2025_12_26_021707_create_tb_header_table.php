@@ -44,8 +44,8 @@ return new class extends Migration
             ],
             [
                 'id_header' => 'HDR-04',
-                'nama' => 'Tombol Header',
-                'keterangan' => 'Ingin Ikut Diklat ? Gabung Disini',
+                'nama' => 'Title Website',
+                'keterangan' => 'Balatkop-uk Prov. Kalsel',
                 'link' => ''
             ],
             [
@@ -71,6 +71,12 @@ return new class extends Migration
                 'nama' => 'Instagram',
                 'keterangan' => '@balatkop.kalselprov',
                 'link' => 'https://www.instagram.com/balatkop.provkalsel/'
+            ],
+            [
+                'id_header' => 'HDR-09',
+                'nama' => 'Tombol Header',
+                'keterangan' => 'Ingin Ikut Diklat ? Gabung Disini',
+                'link' => ''
             ],
         ]);
 

@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>Balatkop-uk Prov. Kalsel</title>
+    @foreach ($headers as $header )
+      @if ($header->id_header == 'HDR-04')
+        <title>{{ $header->keterangan}}</title>  
+      @endif
+    @endforeach
 	  <meta name="keywords" content="Balatkop-uk Prov. Kalsel" />
 	  <meta name="author" content="Balai Pelatihan Koperasi dan Usaha Kecil Provinsi Kalimantan Selatan" />
 	  <meta name="robots" content="" />
@@ -11,7 +15,7 @@
 	  <meta name="description" content="Balatkop-UK Provinsi Kalimantan Selatan" />
 	  <meta property="og:title" content="Portal Resmi Balai Pelatihan Koperasi dan Usaha Kecil Provinsi Kalimantan Selatan" />
 	  <meta property="og:description" content="Koperasi Modern, UMKM  Naik Kelas" />
-      <meta property="og:image" content="{{ asset ('assets/images/logo/logo_1.png') }}" />
+    <meta property="og:image" content="{{ asset ('assets/images/logo/logo_1.png') }}" />
 	  <meta name="format-detection" content="telephone=no">
       @foreach($headers as $header)
         @if($header->id_header == 'HDR-02')
@@ -387,11 +391,15 @@
               <div class="lg:col-start-10 lg:col-span-3">
                 <ul class="relative nav-list flex justify-end items-center">
                   <li class="hidden lg:block">
+                    @foreach ($headers as $header )
+                      @if ($header->id_header == 'HDR-09')
                     <a
-                      href="#"
+                      href="{{ $header->link }}"
                       class="text-size-12 2xl:text-size-15 text-whiteColor bg-primaryColor block border-primaryColor border hover:text-primaryColor hover:bg-white px-15px py-2 rounded-standard dark:hover:bg-whiteColor-dark dark: dark:hover:text-whiteColor"
-                      >Ingin Ikut Diklat ? Gabung Disini</a
+                      >{{ $header->keterangan}}</a
                     >
+                    @endif
+                    @endforeach
                   </li>
                   <li class="block lg:hidden">
                     <button
