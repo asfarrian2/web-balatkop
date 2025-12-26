@@ -30,7 +30,7 @@
             <div class="card mb-0">
               <div class="card-body">
                 <a href="../main/index.html" class="text-nowrap logo-img text-center d-block mb-2 w-100">
-                  <img src="./admins/images/logos/logo_1.png" height="40px" class="dark-logo" alt="Logo-Dark" />
+                  <img src="./admins/images/logos/logo_adm.png" height="40px" class="dark-logo" alt="Logo-Dark" />
                 </a>
                 <div class="position-relative text-center my-4">
                   <p class="mb-0 fs-4 px-3 d-inline-block bg-body text-dark z-index-5 position-relative">Silahkan Masuk

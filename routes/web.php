@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Permission;
@@ -24,6 +25,8 @@ Route::get('/11475-adm', [AuthController::class, 'view']);
 Route::post('/11475-adm/autentikasi', [AuthController::class, 'autentikasi']);
 Route::get('/11475-adm/logout', [AuthController::class, 'logout']);
 
+//*-----Dashboard-----*
+Route::get('/11475-adm/dashboard', [DashboardController::class, 'view']);
 
 //---*VISITOR*--- 
 //---Beranda---
