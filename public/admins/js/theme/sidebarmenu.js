@@ -11,33 +11,8 @@ if ((at = "vertical")) {
       : document.location.href;
 
   var current_link = document.getElementById("get-url");
-  if (currentNewURL.includes("/main/index.html")) {
-    current_link.setAttribute("href", "../main/index.html");
-  } else if (currentNewURL.includes("/index.html")) {
-    current_link.setAttribute("href", "./index.html");
-  } else {
-    current_link.setAttribute("href", "./");
-  }
+
   // end
-
-
-  function findMatchingElement() {
-    var currentUrl = window.location.href;
-    var anchors = document.querySelectorAll("#sidebarnav a");
-    for (var i = 0; i < anchors.length; i++) {
-      if (anchors[i].href === currentUrl) {
-        return anchors[i];
-      }
-    }
-
-    return null; // Return null if no matching element is found
-  }
-  var elements = findMatchingElement();
-
-  // Do something with the matching element
-  if (elements) {
-    elements.classList.add("active");
-  }
 
   document
     .querySelectorAll("ul#sidebarnav ul li a.active")

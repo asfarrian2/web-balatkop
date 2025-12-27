@@ -16,7 +16,7 @@ use App\Models\Header;
 class BerandaController extends Controller
 {
     //Visitor Beranda
-    public function Vview(){
+    public function view(){
         
         $headers = Header::all();
         
