@@ -113,6 +113,14 @@
               </a>
             </li>
             <li class="sidebar-item">
+              <a class="sidebar-link {{ Route::currentRouteName() == 'beranda' ? 'active' : '' }}" href="{{ Route('beranda')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-home"></i>
+                </span>
+                <span class="hide-menu">Beranda</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
               <a class="sidebar-link" href="./main/app-calendar.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-sidebar"></i>

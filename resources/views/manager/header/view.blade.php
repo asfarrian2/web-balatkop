@@ -57,7 +57,7 @@
                 <div class="p-2 d-block mt-3">
                   <img src="{{ asset ('assets/images/header/'.$file->keterangan) }}" width="75" style="width: 75px; height: 75px; object-fit: cover;" class="rounded-circle img-fluid" />
                   <h5 class="card-title mt-3">{{ $file->nama }}</h5>
-                  <a href="javascript:void(0)" class="btn btn-primary  d-block w-100">Edit</a>
+                  <a data-id="{{ Crypt::encrypt($file->id_header) }}" htype="button" data-bs-toggle="modal" data-bs-target="#editupload" data-bs-whatever="@getbootstrap" class="upload btn btn-primary  d-block w-100">Edit</a>
                 </div>
               </div>
             </div>
@@ -71,12 +71,12 @@
                   @foreach ($header as $title )
                   @if ($title->nama == 'Title Website')
                   <div class="form-group">
-                    <label for="recipient-name" class="mb-2">Keterangan :</label>
+                    <label for="recipient-name" class="mb-2">Caption :</label>
                     <div class="input-group mb-3">
                     <input type="text" value="{{ $title->keterangan }}" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" readonly />
-                      <button class="btn bg-primary text-light " type="button">
+                      <a data-id="{{ Crypt::encrypt($title->id_header) }}" class="edit btn bg-primary text-light" type="button" data-bs-toggle="modal" data-bs-target="#edittext" data-bs-whatever="@getbootstrap">
                       <i class="ti ti-pencil"></i>
-                      </button>
+                      </a>
                     </div>
                   </div>
                   @endif
@@ -99,9 +99,9 @@
                     <label for="recipient-name" class="mb-2">{{ $contact->nama }} :</label>
                     <div class="input-group mb-3">
                     <input type="text" value="{{ $contact->keterangan }}" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" readonly />
-                      <button class="btn bg-primary text-light " type="button">
+                      <a data-id="{{ Crypt::encrypt($contact->id_header) }}" class="edit btn bg-primary text-light" type="button" data-bs-toggle="modal" data-bs-target="#edittext" data-bs-whatever="@getbootstrap">
                       <i class="ti ti-pencil"></i>
-                      </button>
+                      </a>
                     </div>
                   </div>
                   @endif
@@ -118,12 +118,12 @@
                   @foreach ($header as $button )
                   @if ($button->jenis == 'Button')
                   <div class="form-group">
-                    <label for="recipient-name" class="mb-2">Keterangan :</label>
+                    <label for="recipient-name" class="mb-2">Caption :</label>
                     <div class="input-group mb-3">
                     <input type="text" value="{{ $button->keterangan }}" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" readonly />
-                      <button class="btn bg-primary text-light " type="button">
+                      <a data-id="{{ Crypt::encrypt($button->id_header) }}" class="edit btn bg-primary text-light" type="button" data-bs-toggle="modal" data-bs-target="#edittext" data-bs-whatever="@getbootstrap">
                       <i class="ti ti-pencil"></i>
-                      </button>
+                      </a>
                     </div>
                   </div>
                   @endif
@@ -131,6 +131,62 @@
                 </div>
               </div>
               <!-- end -->
+              {{-- Modal Edit --}}
+                <div class="modal fade" id="edittext" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header d-flex align-items-center">
+                        <h4 class="modal-title" id="exampleModalLabel1">
+                          Edit Data
+                        </h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <form action="{{ Route('u.header') }}" method="POST" id="formStore">
+                      @csrf
+                      <div class="modal-body" id="loadedttext">
+                        {{-- Isi Data Edit --}}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="btn bg-primary-subtle text-primary">
+                          Simpan
+                        </button>
+                        <button type="button" class="btn bg-danger-subtle text-danger" data-bs-dismiss="modal">
+                          Batal
+                        </button>
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                {{-- End Edit --}}
+                {{-- Modal Upload --}}
+                <div class="modal fade" id="editupload" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header d-flex align-items-center">
+                        <h4 class="modal-title" id="exampleModalLabel1">
+                          Edit Data
+                        </h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <form action="{{ Route('u.header') }}" method="POST" id="formStore" enctype="multipart/form-data">
+                      @csrf
+                      <div class="modal-body" id="loadupload">
+                        {{-- Isi Data Upload --}}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="btn bg-primary-subtle text-primary">
+                          Simpan
+                        </button>
+                        <button type="button" class="btn bg-danger-subtle text-danger" data-bs-dismiss="modal">
+                          Batal
+                        </button>
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                {{-- End Upload --}}
             </div>
           </div>
         </div>
@@ -146,45 +202,47 @@
 <!-- Button Edit -->
 <script>
 $('.edit').click(function(){
-    var id_jabatan = $(this).attr('data-id');
+    var id_header = $(this).attr('data-id');
     $.ajax({
              type: 'POST',
-             url: '/11475-adm/jabatan/edit',
+             url: '/11475-adm/header/edit',
              cache: false,
              data: {
                  _token: "{{ csrf_token() }}",
-                 id_jabatan: id_jabatan
+                 id_header: id_header
              },
              success: function(respond) {
-                 $("#loadedit").html(respond);
+                 $("#loadedttext").html(respond);
              }
          });
-     $("#editdata").modal("show");
+     $("#edittext").modal("show");
 
 });
 var span = document.getElementsByClassName("close")[0];
 </script>
 <!-- END Button Edit -->
 
-<!-- Button Hapus -->
+<!-- Button Upload -->
 <script>
-$('.hapus').click(function(){
-    var id_jabatan = $(this).attr('data-id');
-Swal.fire({
-  title: "Apakah Anda Yakin Data Ini Ingin Di Hapus ?",
-  text: "Jika Ya Maka Data Akan Terhapus Permanen",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Ya, Hapus Saja!"
-  }).then((result) => {
-  if (result.isConfirmed) {
-    window.location = "/11475-adm/jabatan/hapus/"+id_jabatan
-    }
-  });
+$('.upload').click(function(){
+    var id_header = $(this).attr('data-id');
+    $.ajax({
+             type: 'POST',
+             url: '/11475-adm/header/edit',
+             cache: false,
+             data: {
+                 _token: "{{ csrf_token() }}",
+                 id_header: id_header
+             },
+             success: function(respond) {
+                 $("#loadupload").html(respond);
+             }
+         });
+     $("#editupload").modal("show");
+
 });
+var span = document.getElementsByClassName("close")[0];
 </script>
-<!-- END Button Hapus -->
+<!-- END Button Upload -->
   
 @endpush

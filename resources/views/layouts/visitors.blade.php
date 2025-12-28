@@ -15,14 +15,14 @@
 	  <meta name="description" content="Balatkop-UK Provinsi Kalimantan Selatan" />
 	  <meta property="og:title" content="Portal Resmi Balai Pelatihan Koperasi dan Usaha Kecil Provinsi Kalimantan Selatan" />
 	  <meta property="og:description" content="Koperasi Modern, UMKM  Naik Kelas" />
-    <meta property="og:image" content="{{ asset ('assets/images/logo/logo_1.png') }}" />
+    <meta property="og:image" content="{{ asset ('assets/images/header/HDR-01.png') }}" />
 	  <meta name="format-detection" content="telephone=no">
       @foreach($headers as $header)
         @if($header->id_header == 'HDR-02')
         <link
             rel="shortcut icon"
             type="image/x-icon"
-            href="{{ asset('assets/images/'.$header->keterangan ) }}" 
+            href="{{ asset('assets/images/header/'.$header->keterangan ) }}" 
         >
         @endif
        @endforeach
@@ -44,7 +44,7 @@
         class="w-90px h-90px border-5px border-t-blue border-r-blue border-b-blue-light border-l-blue-light rounded-full animate-spin-infinit"
       ></div>
       <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-        <img src="./assets/images/pre.png" alt="Preloader" class="h-10 w-10 block" >
+        <img src="{{ asset('assets/images/header/HDR-03.png') }}" alt="Preloader" class="h-10 w-10 block" >
       </div>
     </div>
     <!-- theme fixed shadow -->
@@ -179,7 +179,7 @@
                  @if($header->id_header == 'HDR-01')
                 <a href="{{ $header->link }}" class="block">
                     <img
-                    src="{{ asset('assets/images/logo/'.$header->keterangan) }}"
+                    src="{{ asset('assets/images/header/'.$header->keterangan) }}"
                     alt="Logo"
                     class="w-logo-sm lg:w-auto py-2">
                 </a>

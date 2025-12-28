@@ -66,7 +66,11 @@ Route::get('/11475-adm/header', [HeaderController::class, 'view'])->name('header
 Route::post('/11475-adm/header/edit', [HeaderController::class, 'edit']);
 Route::post('/11475-adm/header/update', [HeaderController::class, 'update'])->name('u.header');
 
-Route::get('/11475-adm/tentang', [SeksiController::class, 'view'])->name('tentang');
+//*-----Beranda-----*
+Route::get('/11475-adm/beranda', [BerandaController::class, 'data'])->name('beranda');
+Route::post('/11475-adm/beranda/edit', [BerandaController::class, 'edit']);
+Route::post('/11475-adm/beranda/update', [BerandaController::class, 'update'])->name('u.beranda');
+
 
 //---*VISITOR*--- 
 //---Beranda---

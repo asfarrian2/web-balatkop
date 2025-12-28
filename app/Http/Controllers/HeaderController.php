@@ -29,7 +29,11 @@ class HeaderController extends Controller
 
         $header = Header::where('id_header', $id_header)->first();
 
-        return view('manager.header.edit', compact('header'));
+        if($header->status == 'text') {
+            return view('manager.header.edit', compact('header'));
+        }else{
+            return view('manager.header.upload', compact('header'));
+        }
         
     }
 
@@ -37,19 +41,30 @@ class HeaderController extends Controller
 
         $id_header   = $request->id;
         $id_header   = Crypt::decrypt($id_header);
-        $nama        = $request->nama;
-        $kelas       = $request->kelas;
+        $keterangan  = $request->keterangan;
+        $link        = $request->link;
 
-        $data       = [
-            'header'     => $nama,
-            'kelas'       => $kelas
-        ];
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $extension = $image->getClientOriginalExtension();
+            $imageName = $id_header . '.' . $extension;
+            $image->move(public_path('assets/images/header'), $imageName);
+            $data = [
+                'keterangan' => $imageName,
+                'link' => $link,
+            ];
+        } else {
+            $data = [
+                'keterangan' => $keterangan,
+                'link' => $link,
+            ];
+        }
 
         $update = Header::where('id_header', $id_header)->update($data);
         if ($update) {
             return Redirect::back()->with(['success' => 'Data Berhasil Diubah']);
         } else {
-            return Redirect::back()->with(['warning' => 'Data Gagal Diubah']);
+            return Redirect::back()->with(['warning' => 'Data Tidak Berhasil Diubah']);
         }
         
     }

@@ -12,9 +12,21 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Header;
+use App\Models\Beranda;
 
 class BerandaController extends Controller
 {
+
+    //--*-------Admin Beranda--*-------//
+    public function data(){
+        
+        $bp = Beranda::where('jenis', 'Banner Primary')->get();
+        
+        return view('manager.beranda.view', compact('bp'));
+
+    }
+
+
     //Visitor Beranda
     public function view(){
         
