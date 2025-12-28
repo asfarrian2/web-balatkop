@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('nama', 90);
             $table->text('keterangan');
             $table->text('link')->nullable();
+            $table->text('jenis');
+            $table->text('status');
             $table->timestamps();
         });
 
@@ -28,55 +30,73 @@ return new class extends Migration
                 'id_header' => 'HDR-01',
                 'nama' => 'Logo Website',
                 'keterangan' => 'logo_1.png',
-                'link' => '/'
+                'link' => '/',
+                'jenis' => 'Identitas',
+                'status' => 'file'
             ],
             [
                 'id_header' => 'HDR-02',
                 'nama' => 'Logo Shorcut Website',
                 'keterangan' => 'favicon.png',
-                'link' => ''
+                'link' => '',
+                'jenis' => 'Identitas',
+                'status' => 'file'
             ],
             [
                 'id_header' => 'HDR-03',
                 'nama' => 'Logo Landing Website',
                 'keterangan' => 'pre.png',
-                'link' => ''
+                'link' => '',
+                'jenis' => 'Identitas',
+                'status' => 'file'
             ],
             [
                 'id_header' => 'HDR-04',
                 'nama' => 'Title Website',
                 'keterangan' => 'Balatkop-uk Prov. Kalsel',
-                'link' => ''
+                'link' => '',
+                'jenis' => 'Identitas',
+                'status' => 'text'
             ],
             [
                 'id_header' => 'HDR-05',
                 'nama' => 'Telepon',
                 'keterangan' => '(0511) 4707559',
-                'link' => ''
+                'link' => '',
+                'jenis' => 'Contact',
+                'status' => 'text'
             ],
             [
                 'id_header' => 'HDR-06',
                 'nama' => 'Email',
                 'keterangan' => 'web.balatkopuk@gmail.com',
-                'link' => ''
+                'link' => '',
+                'jenis' => 'Contact',
+                'status' => 'text'
             ],
             [
                 'id_header' => 'HDR-07',
                 'nama' => 'Alamat',
                 'keterangan' => 'Jl. Ahmad Yani KM. 18.200 Kec. Liang Anggang Kota Banjarbaru',
-                'link' => 'https://maps.app.goo.gl/FUaeDrXhwijyqEcTA'
+                'link' => 'https://maps.app.goo.gl/FUaeDrXhwijyqEcTA',
+                'jenis' => 'Contact',
+                'status' => 'text'
             ],
             [
                 'id_header' => 'HDR-08',
                 'nama' => 'Instagram',
                 'keterangan' => '@balatkop.kalselprov',
-                'link' => 'https://www.instagram.com/balatkop.provkalsel/'
+                'link' => 'https://www.instagram.com/balatkop.provkalsel/',
+                'jenis' => 'Contact',
+                'status' => 'text'
             ],
             [
                 'id_header' => 'HDR-09',
                 'nama' => 'Tombol Header',
                 'keterangan' => 'Ingin Ikut Diklat ? Gabung Disini',
-                'link' => ''
+                'link' => '',
+                'jenis' => 'Lainnya',
+                'status' => 'text'
             ],
         ]);
 

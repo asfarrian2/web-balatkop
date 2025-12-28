@@ -122,7 +122,7 @@
           <div class="flex justify-between items-center">
             <div>
               @foreach($headers as $header)
-                @if($header->id_header == 'HDR-05')
+                @if($header->id_header == 'HDR-07')
                  <p>Telepon : {{$header->keterangan}}
                 @endif
               @endforeach
@@ -137,7 +137,7 @@
             <div class="flex gap-37px items-center">
               <div>
                 @foreach($headers as $header)
-                @if($header->id_header == 'HDR-07')
+                @if($header->id_header == 'HDR-05')
                  <p>
                   <i
                     class="icofont-location-pin text-primaryColor text-size-15 mr-5px"

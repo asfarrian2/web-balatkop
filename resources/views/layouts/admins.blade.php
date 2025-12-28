@@ -79,6 +79,22 @@
                 <span class="hide-menu">Subbag / Seksi</span>
               </a>
             </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link {{ Route::currentRouteName() == 'jabatan' ? 'active' : '' }}" href="{{ route('jabatan') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-id-badge"></i>
+                </span>
+                <span class="hide-menu">Jabatan</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link {{ Route::currentRouteName() == 'kategori' ? 'active' : '' }}" href="{{ route('kategori') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-category"></i>
+                </span>
+                <span class="hide-menu">Kategori</span>
+              </a>
+            </li>
 
             <!-- ---------------------------------- -->
 
@@ -89,7 +105,7 @@
               <span class="hide-menu">Master Page</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="" aria-expanded="false">
+              <a class="sidebar-link {{ Route::currentRouteName() == 'header' ? 'active' : '' }}" href="{{ route('header') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-navbar"></i>
                 </span>

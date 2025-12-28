@@ -104,9 +104,9 @@ class SeksiController extends Controller
         $update = Seksi::where('id_seksi',$id_seksi)->update($data);
 
         if ($update) {
-            return Redirect::back()->with(['success' => 'Data Berhasil Dihapus']);
+            return Redirect::back()->with(['success' => 'Status Data Berhasil Diubah']);
         } else {
-            return Redirect::back()->with(['warning' => 'Data Gagal Dihapus']);
+            return Redirect::back()->with(['warning' => 'Status Data Gagal Diubah']);
         }
     }
 
