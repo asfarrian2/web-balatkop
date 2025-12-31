@@ -30,7 +30,9 @@ class BerandaController extends Controller
 
         $card = Beranda::where('jenis', 'card')->get();
 
-        return view('manager.beranda.view', compact('bp', 'bs', 'br', 'tentang', 'card'));
+        $agenda = Beranda::where('jenis', 'Agenda')->get();
+
+        return view('manager.beranda.view', compact('bp', 'bs', 'br', 'tentang', 'card', 'agenda'));
 
     }
 
@@ -90,7 +92,9 @@ class BerandaController extends Controller
 
         $headers = Header::all();
 
-        return view('website.beranda.view', compact('headers'));
+        $beranda = Beranda::all();
+
+        return view('website.beranda.view', compact('headers', 'beranda'));
 
     }
 

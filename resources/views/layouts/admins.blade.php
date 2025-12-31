@@ -121,7 +121,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./main/app-calendar.html" aria-expanded="false">
+              <a class="sidebar-link {{ Route::currentRouteName() == 'footer' ? 'active' : '' }}" href="{{ Route('footer')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-sidebar"></i>
                 </span>

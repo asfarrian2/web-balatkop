@@ -245,20 +245,32 @@
                       @endif
                       @endforeach
                     </div>
-                    <div class="tab-pane p-3" id="navpill-333" role="tabpanel">
-                      <div class="row">
+                    <div class="tab-pane p-3" id="agenda" role="tabpanel">
+                      @foreach ($agenda as $ag )
+                      @if ($ag->status == 'File')
+                      <div class="row mb-2">
                         <div class="col-md-4">
-                          <img src="../assets/images/blog/blog-img3.jpg" alt="modernize-img" class="img-fluid" />
+                          <img src="{{ asset('/assets/images/beranda/'.$ag->keterangan_1) }}" alt="brand-card" class="img-fluid" />
                         </div>
                         <div class="col-md-8">
-                          <p>
-                            Raw denim you probably haven't heard of them jean
-                            shorts Austin. Nesciunt tofu stumptown aliqua,
-                            retro synth master cleanse. Mustache cliche
-                            tempor, williamsburg carles vegan helvetica.
-                          </p>
+                            <h5 class="card-title mt-3">{{ $ag->nama }}</h5>
+                            <a data-id="{{ Crypt::encrypt($ag->id_beranda) }}" type="button" data-bs-toggle="modal" data-bs-target="#editupload" data-bs-whatever="@getbootstrap" class="upload btn btn-primary d-block w-50">Edit</a>
                         </div>
                       </div>
+                      @else
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="recipient-name" class="mb-2">{{ $ag->nama }}, Caption :</label>
+                          <div class="input-group mb-3">
+                          <input type="text" value="{{ $ag->keterangan_1 }}" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" readonly />
+                            <a data-id="{{ Crypt::encrypt($ag->id_beranda) }}" class="edit btn bg-primary text-light" type="button" data-bs-toggle="modal" data-bs-target="#edittext" data-bs-whatever="@getbootstrap">
+                            <i class="ti ti-pencil"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      @endif
+                      @endforeach
                     </div>
                   </div>
                 </div>

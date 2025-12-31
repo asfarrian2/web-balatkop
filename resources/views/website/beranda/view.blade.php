@@ -15,30 +15,29 @@
               <h3
                 class="uppercase text-secondaryColor text-size-15 mb-5px md:mb-15px font-inter tracking-5px"
               >
-                SELAMAT DATANG DI PORTAL
+              {{ $beranda->where('nama', 'Sambutan Dinas/UPTD')->first()->keterangan_1 }}
               </h3>
               <h1
                 class="text-3xl text-whiteColor md:text-6xl lg:text-size-50 2xl:text-6xl leading-10 md:leading-18 lg:leading-62px 2xl:leading-18 md:tracking-half lg:tracking-normal 2xl:tracking-half font-bold mb-15px"
               >
-                Balai Pelatihan Koperasi <br class="hidden md:block" >
-                dan Usaha Kecil <br> Prov. Kalsel
+                {{ $beranda->where('nama', 'Nama Dinas/UPTD')->first()->keterangan_1 }}
               </h1>
               <p class="text-size-15md:text-lg text-white font-medium mb-45px">
-                Koperasi Modern UMKM Naik Kelas
+                {{ $beranda->where('nama', 'Motto Dinas/UPTD')->first()->keterangan_1 }}
               </p>
 
               <div>
                 <a
-                  href="course.html"
+                  href="{{ $beranda->where('nama', 'Tombol Primary')->first()->link }}"
                   class="text-sm md:text-size-15 font-semibold text-darkdeep2 bg-whiteColor border border-whiteColor px-5 md:px-30px py-3 md:py-4 hover:text-whiteColor hover:bg-darkblack rounded inline-block mr-6px md:mr-30px shadow-hero-action dark:bg-whiteColor-dark dark:hover:bg-whiteColor dark:text-whiteColor dark:hover:text-whiteColor-dark dark:border-none"
                 >
-                  Gabung Diklat
+                  {{ $beranda->where('nama', 'Tombol Primary')->first()->keterangan_1 }}
                 </a>
                 <a
-                  href="#"
+                  href="{{ $beranda->where('nama', 'Tombol Secondary')->first()->link }}"
                   class="text-sm md:text-size-15 font-semibold text-whiteColor py-3 md:py-4 hover:text-secondaryColor inline-block"
                 >
-                  Informasi Lebih Lanjut <i class="icofont-long-arrow-right"></i>
+                  {{ $beranda->where('nama', 'Tombol Secondary')->first()->keterangan_1 }} <i class="icofont-long-arrow-right"></i>
                 </a>
               </div>
             </div>
@@ -51,7 +50,7 @@
                   alt=""
                 ><img
                   class="absolute left-0 top-0 lg:top-4 right-0 mx-auto"
-                  src="./assets/images/about/about_1.png"
+                  src="{{ asset('assets/images/beranda/'.$beranda->where('nama', 'Gambar')->first()->keterangan_1) }}"
                   alt=""
                 >
               </div>
@@ -85,17 +84,17 @@
         <div class="container2-md flex flex-wrap items-center justify-center bg-white dark:bg-whiteColor-dark rounded-md mx-auto md:-translate-y-1/2 w-full shadow-brand">
           <div class="w-1/3 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px">
             <a href="#">
-              <img src="./assets/images/brand/brand_1.png" alt="">
+              <img src="{{ asset('assets/images/beranda/'.$beranda->where('nama', 'Kemitraan 1')->first()->keterangan_1) }}" alt="Kemitraan">
             </a>
           </div>
           <div class="w-1/3 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px">
             <a href="#">
-              <img src="./assets/images/brand/brand_2.png" alt="">
+              <img src="{{ asset('assets/images/beranda/'.$beranda->where('nama', 'Kemitraan 2')->first()->keterangan_1) }}" alt="Kemitraan">
             </a>
           </div>
           <div class="w-1/3 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px">
             <a href="#">
-              <img src="./assets/images/brand/brand_3.png" alt="">
+              <img src="{{ asset('assets/images/beranda/'.$beranda->where('nama', 'Kemitraan 3')->first()->keterangan_1) }}" alt="Kemitraan">
             </a>
           </div>
         </div>
@@ -113,12 +112,12 @@
               <div class="tilt">
                 <img
                   class="md:ml-[70px]"
-                  src="./assets/images/about/about_2.png"
+                  src="{{ asset('assets/images/beranda/'.$beranda->where('nama', 'Gambar Utama')->first()->keterangan_1) }}"
                   alt=""
                 >
                 <img
                   class="absolute right-0 sm:right-[-17px] md:right-36 lg:right-4 bottom-[91px] md:bottom-0"
-                  src="./assets/images/about/about_3.png"
+                  src="{{ asset('assets/images/beranda/'.$beranda->where('nama', 'Gambar Kedua')->first()->keterangan_1) }}"
                   alt=""
                 >
                 <img
@@ -140,12 +139,12 @@
                   <p
                     class="text-[40px] text-primaryColor font-bold uppercase pr-10px leading-1"
                   >
-                    <span data-countup-number="12">12</span>
+                    <span data-countup-number="{{ $beranda->where('nama', 'Tanggal')->first()->keterangan_1 }}">{{ $beranda->where('nama', 'Tanggal')->first()->keterangan_1 }}</span>
                   </p>
                   <p
                     class="text-blackColor dark:text-blackColor-dark font-bold leading-26px"
                   >
-                    Desember 2025
+                    {{ $beranda->where('nama', 'Tanggal')->first()->keterangan_2 }}
                   </p>
                 </div>
               </div>
@@ -160,17 +159,12 @@
               <h3
                 class="text-3xl md:text-size-45 leading-10 md:leading-2xl font-bold text-blackColor dark:text-blackColor-dark pb-25px"
               >
-                Selamat Hari
-                <span
-                  class="relative after:w-full after:h-[7px] after:bg-secondaryColor after:absolute after:left-0 after:bottom-3 md:after:bottom-5"
-                  >Natal <br></span
-                >
-                Marry Chrismass
+                {{ $beranda->where('nama', 'Kalimat Peringatan')->first()->keterangan_1 }}
               </h3>
               <p
                 class="text-sm md:text-base leading-7 text-contentColor dark:text-contentColor-dark mb-6 pl-3 border-l-2 border-primaryColor"
               >
-                “Di bawah cahaya pohon Natal, semoga harapan barumu bersinar terang. Selamat merayakan Natal!”
+                {{ $beranda->where('nama', 'Deskripsi Peringatan')->first()->keterangan_1 }}
               </p>
               <ul class="space-y-5">
                 <li class="flex items-center group">
@@ -180,7 +174,7 @@
                   <p
                     class="text-sm md:text-base font-medium text-blackColor dark:text-blackColor-dark"
                   >
-                    #selamatharinatal2025
+                    {{ $beranda->where('nama', 'Hastag 1')->first()->keterangan_1 }}
                   </p>
                 </li>
                 <li class="flex items-center group">
@@ -190,7 +184,7 @@
                   <p
                     class="text-sm md:text-base font-medium text-blackColor dark:text-blackColor-dark"
                   >
-                    #koperasimodern
+                    {{ $beranda->where('nama', 'Hastag 2')->first()->keterangan_1 }}
                   </p>
                 </li>
                 <li class="flex items-center group">
@@ -200,7 +194,7 @@
                   <p
                     class="text-sm md:text-base font-medium text-blackColor dark:text-blackColor-dark"
                   >
-                    #umkmnaikkelas
+                    {{ $beranda->where('nama', 'Hastag 3')->first()->keterangan_1 }}
                   </p>
                 </li>
               </ul>
@@ -234,17 +228,17 @@
                 <h3
                   class="text-3xl md:text-size-35 2xl:text-size-38 3xl:text-size-42 leading-10 md:leading-45px 2xl:leading-50px 3xl:leading-2xl font-bold text-blackColor dark:text-blackColor-dark pb-25px"
                 >
-                  Balai Pelatihan Koperasi & Usaha Kecil Prov. Kalsel
+                  {{ $beranda->where('nama', 'Kalimat Tajuk')->first()->keterangan_1 }}
                 </h3>
                 <p
-                  class="text-sm md:text-base text-contentColor dark:text-contentColor-dark mb-10px 2xl:mb-50px"
+                  class="text-sm md:text-base text-contentColor dark:text-contentColor-dark mb-10px 2xl:mb-20px"
                 >
-                  adalah unit pelaksana teknis di bawah Dinas Koperasi dan UKM Provinsi Kalimantan Selatan
+                  {{ $beranda->where('nama', 'Deskripsi 1')->first()->keterangan_1 }}
                 </p>
                 <p
                   class="text-sm md:text-base leading-7 text-contentColor dark:text-contentColor-dark mb-10 pl-3 border-l-[3px] border-secondaryColor"
                 >
-                  yang memiliki fungsi utama sebagai pusat pendidikan dan pelatihan untuk pengembangan sumber daya manusia (SDM) koperasi dan pelaku usaha kecil di Provinsi Kalimantan Selatan.
+                  {{ $beranda->where('nama', 'Deskripsi 2')->first()->keterangan_1 }}
                 </p>
                 <div>
                   <a
@@ -355,15 +349,14 @@
                     <!-- card content -->
                     <div>
                       <a
-                        href="#"
                         class="text-2xl lg:text-lg 2xl:text-2xl font-semibold mb-15px md:mb-0 2xl:mb-15px hover:text-secondaryColor font-hind  dark:text-whiteColor dark:hover:text-secondaryColor dark:transition-all dark:duration-300"
                       >
-                        Menyelenggarakan Pelatihan
+                        {{ $beranda->where('nama', 'Card 1')->first()->keterangan_1 }}
                       </a>
                       <p
                         class="text-sm lg:text-xs 2xl:text-sm text-contentColor group-hover:text-whiteColor mb-15px lg:mb-2 2xl:mb-15px transition-all duration-300"
                       >
-                        Kegiatan Pelatihan teknis dan manajerial untuk meningkatkan keterampilan SDM Koperasi dan UMKM 
+                        {{ $beranda->where('nama', 'Card 1')->first()->keterangan_2 }}
                       </p>
                       <div>
                         <div
@@ -458,15 +451,14 @@
                       <!-- card content -->
                       <div>
                         <a
-                          href="#"
                           class="text-2xl lg:text-lg 2xl:text-2xl font-semibold mb-15px md:mb-0 2xl:mb-15px hover:text-secondaryColor font-hind  dark:text-whiteColor dark:hover:text-secondaryColor dark:transition-all dark:duration-300"
                         >
-                          Meningkatkan Kapasitas SDM
+                          {{ $beranda->where('nama', 'Card 2')->first()->keterangan_1 }}
                         </a>
                         <p
                           class="text-sm lg:text-xs 2xl:text-sm text-contentColor group-hover:text-whiteColor mb-15px lg:mb-2 2xl:mb-15px transition-all duration-300"
                         >
-                          Mengembangkan kompetensi pelaku Koperasi dan UMKM agar lebih profesional, produktif dan mampu bersaing di pasar hingga era digital
+                          {{ $beranda->where('nama', 'Card 2')->first()->keterangan_2 }}
                         </p>
                         <div>
                           <div
@@ -564,15 +556,14 @@
                     <!-- card content -->
                     <div>
                       <a
-                        href="#"
                         class="text-2xl lg:text-lg 2xl:text-2xl font-semibold mb-15px md:mb-0 2xl:mb-15px hover:text-secondaryColor font-hind  dark:text-whiteColor dark:hover:text-secondaryColor dark:transition-all dark:duration-300"
                       >
-                        Fasilitasi Pembinaan dan Pendampingan
+                        {{ $beranda->where('nama', 'Card 3')->first()->keterangan_1 }}
                       </a>
                       <p
                         class="text-sm lg:text-xs 2xl:text-sm text-contentColor group-hover:text-whiteColor mb-15px lg:mb-2 2xl:mb-15px transition-all duration-300"
                       >
-                        Berperan dalam membantu pendampingan, konsultasi, dan bimbingan teknis pasca pelatihan SDM Koperasi dan UMKM
+                        {{ $beranda->where('nama', 'Card 3')->first()->keterangan_2 }}
                       </p>
                       <div>
                         <div
@@ -674,12 +665,12 @@
                         <a
                           class="text-2xl lg:text-lg 2xl:text-2xl font-semibold mb-15px md:mb-0 2xl:mb-15px hover:text-secondaryColor font-hind  dark:text-whiteColor dark:hover:text-secondaryColor dark:transition-all dark:duration-300"
                         >
-                          Mendorong Transformasi Koperasi dan UMKM
+                          {{ $beranda->where('nama', 'Card 4')->first()->keterangan_1 }}
                         </a>
                         <p
                           class="text-sm lg:text-xs 2xl:text-sm text-contentColor group-hover:text-whiteColor mb-15px lg:mb-2 2xl:mb-15px transition-all duration-300"
                         >
-                          Bertransformasi menjadi SDM Koperasi dan UMKM yang modern dan berdaya saing, melalui pelatihan digitalisasi, tata kelola modern dan peningkatan sistem manajemen
+                          {{ $beranda->where('nama', 'Card 4')->first()->keterangan_1 }}
                         </p>
                         <div>
                           <div
@@ -767,8 +758,7 @@
                 <p
                   class="text-base text-contentColor dark:text-contentColor-dark relative before:w-1px before:h-full before:bg-darkdeep7 before:absolute before:left-[-30px]"
                 >
-                  Pendidikan dan Pelatihan ini diselenggarakan sebagai upaya peningkatan kompetensi sumber daya manusia 
-                  Koperasi dan UMKM secara terencana, terarah, dan berkelanjutan.
+                  {{ $beranda->where('nama', 'Kalimat Agenda')->first()->keterangan_1 }}
                 </p>
               </div>
             </div>

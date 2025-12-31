@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KategoriController;
@@ -70,6 +71,11 @@ Route::post('/11475-adm/header/update', [HeaderController::class, 'update'])->na
 Route::get('/11475-adm/beranda', [BerandaController::class, 'data'])->name('beranda');
 Route::post('/11475-adm/beranda/edit', [BerandaController::class, 'edit']);
 Route::post('/11475-adm/beranda/update', [BerandaController::class, 'update'])->name('u.beranda');
+
+//*-----Footer-----*
+Route::get('/11475-adm/footer', [FooterController::class, 'view'])->name('footer');
+Route::post('/11475-adm/footer/edit', [FooterController::class, 'edit']);
+Route::post('/11475-adm/footer/update', [FooterController::class, 'update'])->name('u.footer');
 
 
 //---*VISITOR*---
