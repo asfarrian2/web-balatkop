@@ -72,6 +72,6 @@ Route::post('/11475-adm/beranda/edit', [BerandaController::class, 'edit']);
 Route::post('/11475-adm/beranda/update', [BerandaController::class, 'update'])->name('u.beranda');
 
 
-//---*VISITOR*--- 
+//---*VISITOR*---
 //---Beranda---
 Route::get('/', [BerandaController::class, 'view']);

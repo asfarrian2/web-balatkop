@@ -61,7 +61,7 @@
                 </div>
               </div>
             </div>
-            @endif  
+            @endif
             @endforeach
             <div class="col-lg-6">
               <!-- start Warning Border with Icons -->
@@ -244,5 +244,5 @@ $('.upload').click(function(){
 var span = document.getElementsByClassName("close")[0];
 </script>
 <!-- END Button Upload -->
-  
+
 @endpush
