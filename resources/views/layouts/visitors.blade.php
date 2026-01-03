@@ -222,7 +222,7 @@
                           </li>
                           <li>
                             <a
-                              href="./pages/ecommerce/product-details.html"
+                              href="/visidanmisi"
                               class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
                               >Visi dan Misi
                             </a>
@@ -479,7 +479,7 @@
                         </div>
                         <div class="flex items-center justify-between">
                           <a
-                            href="#"
+                            href="/visidanmisi"
                             class="leading-1 text-darkdeep1 text-sm pl-15px pt-3 pb-7px font-medium hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
                             >Visi dan Misi</a
                           >
@@ -712,14 +712,12 @@
               <p
                 class="text-base lg:text-sm 2xl:text-base text-darkgray mb-30px leading-1.8 2xl:leading-1.8"
               >
-                Balai Pelatihan Koperasi & Usaha Kecil Prov. Kalsel
-                memiliki fungsi utama sebagai pusat pendidikan dan pelatihan untuk pengembangan 
-                sumber daya manusia (SDM) koperasi dan pelaku usaha kecil di Provinsi Kalimantan Selatan.
+                {{ $footer->where('nama', 'Deskripsi')->first()->keterangan }}
               </p>
               <div class="flex items-center">
                 <div>
                   <a
-                    href="https://maps.app.goo.gl/FUaeDrXhwijyqEcTA" target="_BLANK"
+                    href="{{ $header->where('nama', 'Alamat')->first()->link }}" target="_BLANK"
                     >
                   <i
                     class="icofont-google-map text-3xl text-whiteColor h-78px w-78px bg-primaryColor leading-78px mr-22px block text-center
@@ -730,13 +728,13 @@
                 <div>
                   <h6 class="text-lg text-whiteColor font-medium leading-29px">
                     <a
-                    href="https://maps.app.goo.gl/FUaeDrXhwijyqEcTA" target="_BLANK"
+                    href="{{ $header->where('nama', 'Alamat')->first()->link }}" target="_BLANK"
                     class="text-whiteColor relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
                     >
                     Google Maps</a>
                   </h6>
                   <p class="text-sm text-whiteColor text-opacity-60 mb-1">
-                    Jl. Ahmad Yani KM. 18.200 Kec. Liang Anggang Kota Banjarbaru
+                    {{ $header->where('nama', 'Alamat')->first()->keterangan }}
                   </p>
                 </div>
               </div>
@@ -759,7 +757,7 @@
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/visidanmisi"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
                     >Visi dan Misi</a
                   >
@@ -825,24 +823,19 @@
               data-aos="fade-up"
             >
               <ul class="flex flex-col gap-y-5">
+                @foreach ($footer as $logo )
+                @if ($logo->jenis == 'Motto')
                 <li>
                   <a class="flex items-center gap-3 group cursor-pointer">
                     <div class="lg:col-start-1 lg:col-span-3">
-                      <a href="index.html">
-                        <img src="./assets/images/logo/logo_3.png" alt="" >
+                      <a>
+                        <img src="{{ asset('assets/images/footer/'.$logo->keterangan) }}" alt="Motto" >
                       </a>
                     </div>
                   </a>
                 </li>
-                <li>
-                  <a class="flex items-center gap-3 group cursor-pointer">
-                    <div class="lg:col-start-1 lg:col-span-3">
-                      <a href="index.html">
-                        <img src="./assets/images/logo/logo_4.png" alt="" >
-                      </a>
-                    </div>
-                  </a>
-                </li>
+                @endif
+                @endforeach
               </ul>
             </div>
           </div>
@@ -854,15 +847,15 @@
             class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-30px pt-10 items-center"
           >
             <div class="lg:col-start-1 lg:col-span-3">
-              <a href="index.html">
-                <img src="./assets/images/logo/logo_2.png" alt="" >
+              <a href="{{ $footer->where('nama', 'Logo Website')->first()->link }}">
+                <img src="{{ asset('assets/images/footer/'.$footer->where('nama', 'Logo Website')->first()->keterangan) }}" alt="" >
               </a>
             </div>
 
             <div class="lg:col-start-4 lg:col-span-6">
               <p class="text-whiteColor">
-                Copyright © <span class="text-primaryColor">2025 </span> by
-                Balatkop-uk Prov. Kalsel
+                Copyright © <span class="text-primaryColor">{{ $footer->where('nama', 'Tahun Pembuatan')->first()->keterangan}} </span> by
+                {{ $footer->where('nama', 'Nama Pembuat')->first()->keterangan}}
               </p>
             </div>
 

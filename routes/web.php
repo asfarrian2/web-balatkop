@@ -8,6 +8,7 @@ use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\SeksiController;
+use App\Http\Controllers\VisimisiController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Permission;
@@ -77,7 +78,15 @@ Route::get('/11475-adm/footer', [FooterController::class, 'view'])->name('footer
 Route::post('/11475-adm/footer/edit', [FooterController::class, 'edit']);
 Route::post('/11475-adm/footer/update', [FooterController::class, 'update'])->name('u.footer');
 
+//*-----Visi dan Misi-----*
+Route::get('/11475-adm/profil/visidanmisi', [VisimisiController::class, 'data'])->name('visidanmisi');
+Route::post('/11475-adm/profil/visidanmisi/edit', [VisimisiController::class, 'edit']);
+Route::post('/11475-adm/profil/visidanmisi/update', [VisimisiController::class, 'update'])->name('u.visidanmisi');
+
 
 //---*VISITOR*---
 //---Beranda---
 Route::get('/', [BerandaController::class, 'view']);
+
+//---Visi Misi---
+Route::get('/visidanmisi', [VisimisiController::class, 'view']);

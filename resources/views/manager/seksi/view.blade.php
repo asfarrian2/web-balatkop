@@ -87,7 +87,7 @@
                   </div>
                   {{-- End Modal Tambah --}}
                 </div>
-                 <div class="table-responsive">
+                <div class="table-responsive">
                   <table id="zero_config" class="table table-striped table-bordered text-nowrap align-middle">
                     <thead>
                       <!-- start row -->
