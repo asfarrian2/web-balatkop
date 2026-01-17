@@ -161,7 +161,7 @@
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a href="./main/blog-detail.html" class="sidebar-link">
+                  <a href="{{ Route('storganisasi') }}" class="sidebar-link {{ Route::currentRouteName() == 'storganisasi' ? 'active' : '' }}">
                     <div class="round-16 d-flex align-items-center justify-content-center">
                       <i class="ti ti-circle"></i>
                     </div>
@@ -169,7 +169,7 @@
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a href="./main/blog-detail.html" class="sidebar-link">
+                  <a href="{{ Route('pegawai') }}" class="sidebar-link {{ Route::currentRouteName() == 'pegawai' ? 'active' : '' }}">
                     <div class="round-16 d-flex align-items-center justify-content-center">
                       <i class="ti ti-circle"></i>
                     </div>

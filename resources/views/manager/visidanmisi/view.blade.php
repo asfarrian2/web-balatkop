@@ -57,7 +57,7 @@
                 <div class="p-2 d-block mt-3">
                   <img src="{{ asset ('assets/images/visimisi/'.$file->deskripsi) }}" width="75" style="width: 75px; height: 75px; object-fit: cover;" class="rounded-circle img-fluid" />
                   <h5 class="card-title mt-3">{{ $file->nama }}</h5>
-                  <a data-id="{{ Crypt::encrypt($file->id_visimisi) }}" htype="button" data-bs-toggle="modal" data-bs-target="#editupload" data-bs-whatever="@getbootstrap" class="upload btn btn-primary  d-block w-100">Edit</a>
+                  <a data-id="{{ Crypt::encrypt($file->id_visimisi) }}" type="button" data-bs-toggle="modal" data-bs-target="#editupload" data-bs-whatever="@getbootstrap" class="upload btn btn-primary  d-block w-100">Edit</a>
                 </div>
               </div>
             </div>
@@ -88,11 +88,45 @@
           </div>
             <div class="row">
             {{-- Form Text --}}
-            <div class="col-lg-12">
+            <div class="datatables">
               <!-- start Warning Border with Icons -->
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Misi</h4>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="card-title">Misi</h4>
+                    <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambah-modal" data-bs-whatever="@getbootstrap">+ Tambah Data</a>
+                    {{-- Modal Tambah --}}
+                  <div class="modal fade" id="tambah-modal" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header d-flex align-items-center">
+                          <h4 class="modal-title" id="exampleModalLabel1">
+                            Tambah Data
+                          </h4>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="{{ Route('a.misi')}}" method="POST">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="mb-3">
+                              <label for="recipient-name" class="">Misi :</label>
+                              <input type="text" name="misi" class="form-control" id="recipient-name1" required/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn bg-primary-subtle text-primary">
+                            Simpan
+                          </button>
+                          <button type="button" class="btn bg-danger-subtle text-danger" data-bs-dismiss="modal">
+                            Batal
+                          </button>
+                        </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  {{-- End Modal Tambah --}}
+                  </div>
                   <div class="table-responsive">
                   <table id="zero_config" class="table table-striped table-bordered text-nowrap align-middle">
                     <thead>
@@ -145,7 +179,7 @@
                       </h4>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ Route('u.footer') }}" method="POST" id="formStore">
+                    <form action="{{ Route('u.visidanmisi') }}" method="POST" id="formStore">
                     @csrf
                     <div class="modal-body" id="loadedttext">
                       {{-- Isi Data Edit --}}
@@ -173,7 +207,7 @@
                       </h4>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ Route('u.footer') }}" method="POST" id="formStore" enctype="multipart/form-data">
+                    <form action="{{ Route('u.visidanmisi') }}" method="POST" id="formStore" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body" id="loadupload">
                       {{-- Isi Data Upload --}}
@@ -206,14 +240,14 @@
 <!-- Button Edit -->
 <script>
 $('.edit').click(function(){
-    var id_footer = $(this).attr('data-id');
+    var id_visimisi = $(this).attr('data-id');
     $.ajax({
              type: 'POST',
-             url: '/11475-adm/footer/edit',
+             url: '/11475-adm/profil/visidanmisi/edit',
              cache: false,
              data: {
                  _token: "{{ csrf_token() }}",
-                 id_footer: id_footer
+                 id_visimisi: id_visimisi
              },
              success: function(respond) {
                  $("#loadedttext").html(respond);
@@ -229,14 +263,14 @@ var span = document.getElementsByClassName("close")[0];
 <!-- Button Upload -->
 <script>
 $('.upload').click(function(){
-    var id_footer = $(this).attr('data-id');
+    var id_visimisi = $(this).attr('data-id');
     $.ajax({
              type: 'POST',
-             url: '/11475-adm/footer/edit',
+             url: '/11475-adm/profil/visidanmisi/edit',
              cache: false,
              data: {
                  _token: "{{ csrf_token() }}",
-                 id_footer: id_footer
+                 id_visimisi: id_visimisi
              },
              success: function(respond) {
                  $("#loadupload").html(respond);
@@ -248,5 +282,26 @@ $('.upload').click(function(){
 var span = document.getElementsByClassName("close")[0];
 </script>
 <!-- END Button Upload -->
+
+<!-- Button Hapus -->
+<script>
+$('.hapus').click(function(){
+    var id_visimisi = $(this).attr('data-id');
+Swal.fire({
+  title: "Apakah Anda Yakin Data Ini Ingin Di Hapus ?",
+  text: "Jika Ya Maka Data Akan Terhapus Permanen",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Ya, Hapus Saja!"
+  }).then((result) => {
+  if (result.isConfirmed) {
+    window.location = "/11475-adm/profil/visidanmisi/hapus/"+id_visimisi
+    }
+  });
+});
+</script>
+<!-- END Button Hapus -->
 
 @endpush

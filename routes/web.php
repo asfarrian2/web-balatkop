@@ -7,8 +7,11 @@ use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\SeksiController;
+use App\Http\Controllers\StorganisasiController;
 use App\Http\Controllers\VisimisiController;
+use App\Models\Visimisi;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Permission;
@@ -80,8 +83,22 @@ Route::post('/11475-adm/footer/update', [FooterController::class, 'update'])->na
 
 //*-----Visi dan Misi-----*
 Route::get('/11475-adm/profil/visidanmisi', [VisimisiController::class, 'data'])->name('visidanmisi');
+Route::post('/11475-adm/profil/visidanmisi/store', [VisimisiController::class, 'store'])->name('a.misi');
 Route::post('/11475-adm/profil/visidanmisi/edit', [VisimisiController::class, 'edit']);
 Route::post('/11475-adm/profil/visidanmisi/update', [VisimisiController::class, 'update'])->name('u.visidanmisi');
+Route::get('/11475-adm/profil/visidanmisi/hapus/{id_visimisi}', [VisimisiController::class, 'hapus']);
+
+//*-----Struktur Organisasi-----*
+Route::get('/11475-adm/profil/storganisasi', [StorganisasiController::class, 'data'])->name('storganisasi');
+Route::post('/11475-adm/profil/storganisasi/edit', [StorganisasiController::class, 'edit']);
+Route::post('/11475-adm/profil/storganisasi/update', [StorganisasiController::class, 'update'])->name('u.storganisasi');
+
+//*-----Pegawai-----*
+Route::get('/11475-adm/profil/pegawai', [PegawaiController::class, 'data'])->name('pegawai');
+Route::post('/11475-adm/profil/pegawai/store', [PegawaiController::class, 'store'])->name('a.pegawai');
+Route::post('/11475-adm/profil/pegawai/edit', [PegawaiController::class, 'edit']);
+Route::post('/11475-adm/profil/pegawai/update', [PegawaiController::class, 'update'])->name('u.pegawai');
+Route::get('/11475-adm/profil/pegawai/hapus/{id_pegawai}', [PegawaiController::class, 'hapus']);
 
 
 //---*VISITOR*---
@@ -90,3 +107,6 @@ Route::get('/', [BerandaController::class, 'view']);
 
 //---Visi Misi---
 Route::get('/visidanmisi', [VisimisiController::class, 'view']);
+
+//---Struktur Organisasi---
+Route::get('/strukturorganisasi', [StorganisasiController::class, 'view']);
