@@ -191,7 +191,7 @@
                 <ul class="nav-list flex justify-center">
                   <li class="nav-item group">
                     <a
-                      href="#"
+                      href="/"
                       class="px-5 lg:px-10px 2xl:px-15px 3xl:px-5 py-10 lg:py-5 2xl:py-30px 3xl:py-10 leading-sm 2xl:leading-lg text-base lg:text-sm 2xl:text-base font-semibold block group-hover:text-primaryColor dark:text-whiteColor"
                     >
                       Beranda
@@ -214,7 +214,7 @@
                         <ul>
                           <li>
                             <a
-                              href="./pages/ecommerce/product-details.html"
+                              href="/tentang"
                               class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
                               >Tentang
                             </a>
@@ -469,7 +469,7 @@
                         <!-- accordion header -->
                         <div class="flex items-center justify-between">
                           <a
-                            href="#"
+                            href="/tentang"
                             class="leading-1 text-darkdeep1 text-sm pl-15px pt-3 pb-7px font-medium hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
                             >Tentang</a
                           >
@@ -747,7 +747,7 @@
               <ul class="flex flex-col gap-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="/tentang"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
                     >Tentang</a
                   >

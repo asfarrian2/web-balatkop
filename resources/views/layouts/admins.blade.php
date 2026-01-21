@@ -137,7 +137,7 @@
               </a>
               <ul aria-expanded="false" class="collapse first-level">
                 <li class="sidebar-item">
-                  <a href="./main/blog-posts.html" class="sidebar-link">
+                  <a href="{{ Route('tentang') }}" class="sidebar-link {{ Route::currentRouteName() == 'tentang' ? 'active' : '' }}">
                     <div class="round-16 d-flex align-items-center justify-content-center">
                       <i class="ti ti-circle"></i>
                     </div>

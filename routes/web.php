@@ -10,6 +10,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\SeksiController;
 use App\Http\Controllers\StorganisasiController;
+use App\Http\Controllers\TentangController;
 use App\Http\Controllers\VisimisiController;
 use App\Models\Visimisi;
 use Illuminate\Support\Facades\Route;
@@ -98,12 +99,21 @@ Route::get('/11475-adm/profil/pegawai', [PegawaiController::class, 'data'])->nam
 Route::post('/11475-adm/profil/pegawai/store', [PegawaiController::class, 'store'])->name('a.pegawai');
 Route::post('/11475-adm/profil/pegawai/edit', [PegawaiController::class, 'edit']);
 Route::post('/11475-adm/profil/pegawai/update', [PegawaiController::class, 'update'])->name('u.pegawai');
+Route::get('/11475-adm/profil/pegawai/status/{id_pegawai}', [PegawaiController::class, 'status']);
 Route::get('/11475-adm/profil/pegawai/hapus/{id_pegawai}', [PegawaiController::class, 'hapus']);
 
+
+//*-----Tentang-----*
+Route::get('/11475-adm/profil/tentang', [TentangController::class, 'data'])->name('tentang');
+Route::post('/11475-adm/profil/tentang/edit', [TentangController::class, 'edit']);
+Route::post('/11475-adm/profil/tentang/update', [TentangController::class, 'update'])->name('u.tentang');
 
 //---*VISITOR*---
 //---Beranda---
 Route::get('/', [BerandaController::class, 'view']);
+
+//---Tentang---
+Route::get('/tentang', [TentangController::class, 'view']);
 
 //---Visi Misi---
 Route::get('/visidanmisi', [VisimisiController::class, 'view']);

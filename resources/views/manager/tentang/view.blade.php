@@ -30,13 +30,13 @@
             <div class="card-body px-4 py-3">
               <div class="row align-items-center">
                 <div class="col-9">
-                  <h4 class="fw-semibold mb-8">Struktur Organisasi</h4>
+                  <h4 class="fw-semibold mb-8">Tentang</h4>
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
                         <a class="text-muted text-decoration-none" href="{{ Route('dashboard')}}">Dashboard</a>
                       </li>
-                      <li class="breadcrumb-item" aria-current="page">Struktur Organisasi</li>
+                      <li class="breadcrumb-item" aria-current="page">Tentang</li>
                     </ol>
                   </nav>
                 </div>
@@ -50,14 +50,14 @@
           </div>
           <div class="row">
             {{-- Form FIle --}}
-            @foreach ($sto as $file )
+            @foreach ($tentang as $file )
             @if ($file->status == 'file')
             <div class="col-md-4 col-lg-4">
               <div class="card text-center bg-white alert-dismissible fade show alert p-0 card-hover rounded-4" role="alert">
                 <div class="p-2 d-block mt-3">
-                  <img src="{{ asset ('assets/images/storganisasi/'.$file->keterangan) }}" width="75" style="width: 75px; height: 75px; object-fit: cover;" class="rounded-circle img-fluid" />
+                  <img src="{{ asset ('assets/images/tentang/'.$file->keterangan) }}" width="75" style="width: 75px; height: 75px; object-fit: cover;" class="rounded-circle img-fluid" />
                   <h5 class="card-title mt-3">{{ $file->nama }}</h5>
-                  <a data-id="{{ Crypt::encrypt($file->id_sto) }}" htype="button" data-bs-toggle="modal" data-bs-target="#editupload" data-bs-whatever="@getbootstrap" class="upload btn btn-primary  d-block w-100">Edit</a>
+                  <a data-id="{{ Crypt::encrypt($file->id_tentang) }}" htype="button" data-bs-toggle="modal" data-bs-target="#editupload" data-bs-whatever="@getbootstrap" class="upload btn btn-primary  d-block w-100">Edit</a>
                 </div>
               </div>
             </div>
@@ -67,13 +67,13 @@
               <!-- start Warning Border with Icons -->
               <div class="card">
                 <div class="card-body">
-                  @foreach ($sto as $title )
-                  @if ($title->nama == 'Penjelasan')
+                  @foreach ($tentang as $title )
+                  @if ($title->status == 'text')
                   <div class="form-group">
                     <label for="recipient-name" class="mb-2">Caption :</label>
                     <div class="input-group mb-3">
                     <input type="text" value="{{ $title->keterangan }}" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" readonly />
-                      <a data-id="{{ Crypt::encrypt($title->id_sto) }}" class="edit btn bg-primary text-light" type="button" data-bs-toggle="modal" data-bs-target="#edittext" data-bs-whatever="@getbootstrap">
+                      <a data-id="{{ Crypt::encrypt($title->id_tentang) }}" class="edit btn bg-primary text-light" type="button" data-bs-toggle="modal" data-bs-target="#edittext" data-bs-whatever="@getbootstrap">
                       <i class="ti ti-pencil"></i>
                       </a>
                     </div>
@@ -96,7 +96,7 @@
                   </h4>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ Route('u.storganisasi') }}" method="POST" id="formStore">
+                <form action="{{ Route('u.tentang') }}" method="POST" id="formStore">
                 @csrf
                 <div class="modal-body" id="loadedttext">
                   {{-- Isi Data Edit --}}
@@ -124,7 +124,7 @@
                   </h4>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ Route('u.storganisasi') }}" method="POST" id="formStore" enctype="multipart/form-data">
+                <form action="{{ Route('u.tentang') }}" method="POST" id="formStore" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body" id="loadupload">
                   {{-- Isi Data Upload --}}
@@ -157,14 +157,14 @@
 <!-- Button Edit -->
 <script>
 $('.edit').click(function(){
-    var id_sto = $(this).attr('data-id');
+    var id_tentang = $(this).attr('data-id');
     $.ajax({
              type: 'POST',
-             url: '/11475-adm/profil/storganisasi/edit',
+             url: '/11475-adm/profil/tentang/edit',
              cache: false,
              data: {
                  _token: "{{ csrf_token() }}",
-                 id_sto: id_sto
+                 id_tentang: id_tentang
              },
              success: function(respond) {
                  $("#loadedttext").html(respond);
@@ -180,14 +180,14 @@ var span = document.getElementsByClassName("close")[0];
 <!-- Button Upload -->
 <script>
 $('.upload').click(function(){
-    var id_sto = $(this).attr('data-id');
+    var id_tentang = $(this).attr('data-id');
     $.ajax({
              type: 'POST',
-             url: '/11475-adm/profil/storganisasi/edit',
+             url: '/11475-adm/profil/tentang/edit',
              cache: false,
              data: {
                  _token: "{{ csrf_token() }}",
-                 id_sto: id_sto
+                 id_tentang: id_tentang
              },
              success: function(respond) {
                  $("#loadupload").html(respond);

@@ -8,15 +8,15 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Redis;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\tentangrage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Header;
 use App\Models\Beranda;
 use App\Models\Footer;
-use App\Models\Storganisasi;
+use App\Models\Tentang;
 
-class StorganisasiController extends Controller
+class TentangController extends Controller
 {
 
     public function view(){
@@ -25,44 +25,44 @@ class StorganisasiController extends Controller
 
         $footer   = Footer::all();
 
-        $sto      = Storganisasi::all();
+        $tentang  = Tentang::all();
 
-        return view('website.storganisasi.view', compact('headers', 'footer', 'sto'));
+        return view('website.tentang.view', compact('headers', 'footer', 'tentang'));
     }
     
     public function data(){
 
-        $sto = Storganisasi::all();
+        $tentang = Tentang::all();
 
-        return view('manager.storganisasi.view', compact('sto'));
+        return view('manager.tentang.view', compact('tentang'));
     }
 
     public function edit(Request $request){
 
-        $id_sto = $request->id_sto;
-        $id_sto = Crypt::decrypt($id_sto);
+        $id_tentang = $request->id_tentang;
+        $id_tentang = Crypt::decrypt($id_tentang);
 
-        $sto = Storganisasi::where('id_sto', $id_sto)->first();
+        $tentang = Tentang::where('id_tentang', $id_tentang)->first();
 
-        if($sto->status == 'text') {
-            return view('manager.storganisasi.edit', compact('sto'));
+        if($tentang->status == 'text') {
+            return view('manager.tentang.edit', compact('tentang'));
         }else{
-            return view('manager.storganisasi.upload', compact('sto'));
+            return view('manager.tentang.upload', compact('tentang'));
         }
         
     }
 
     public function update(Request $request){
 
-        $id_sto     = $request->id;
-        $id_sto     = Crypt::decrypt($id_sto);
-        $keterangan = $request->input('keterangan');
+        $id_tentang     = $request->id;
+        $id_tentang     = Crypt::decrypt($id_tentang);
+        $keterangan     = $request->input('keterangan');
 
         if ($request->hasFile('image')) {
             $image     = $request->file('image');
             $extension = $image->getClientOriginalExtension();
-            $imageName = Storganisasi::where('id_sto', $id_sto)->value('nama') . '.' . $extension;
-            $image->move(public_path('assets/images/storganisasi'), $imageName);
+            $imageName = Tentang::where('id_tentang', $id_tentang)->value('nama') . '.' . $extension;
+            $image->move(public_path('assets/images/Tentang'), $imageName);
             $data = [
                 'keterangan' => $imageName
             ];
@@ -72,7 +72,7 @@ class StorganisasiController extends Controller
             ];
         }
 
-        $update = Storganisasi::where('id_sto', $id_sto)->update($data);
+        $update = Tentang::where('id_tentang', $id_tentang)->update($data);
         if ($update) {
             return Redirect::back()->with(['success' => 'Data Berhasil Diubah']);
         } else {
@@ -82,3 +82,4 @@ class StorganisasiController extends Controller
     }
     
 }
+

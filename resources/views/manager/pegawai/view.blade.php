@@ -65,7 +65,7 @@
                           </h4>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="{{ Route('a.pegawai')}}" method="POST">
+                        <form action="{{ Route('a.pegawai')}}" method="POST" id="formStore" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">
@@ -77,7 +77,7 @@
                               <input type="text" name="nip" class="form-control" id="recipient-name1" required/>
                             </div>
                             <div class="mb-3">
-                              <label for="recipient-name" class="">golongan :</label>
+                              <label for="recipient-name" class="">Golongan :</label>
                               <input type="text" name="golongan" class="form-control" id="recipient-name1" required/>
                             </div>
                             <div class="mb-3">
@@ -85,7 +85,7 @@
                               <select name="jabatan" class="form-select" required>
                                 <option value="">- Pilih Jabatan -</option>
                                  @foreach ($jabatan as $d)
-                                <option value="{{ $d->id_jabatan }}">{{ $d->jabatan }}</option>
+                                <option value="{{ Crypt::encrypt($d->id_jabatan) }}">{{ $d->jabatan }}</option>
                                  @endforeach
                               </select>
                             </div>
@@ -94,9 +94,13 @@
                               <select name="seksi" class="form-select" required>
                                 <option value="">- Pilih Seksi -</option>
                                  @foreach ($seksi as $d)
-                                <option value="{{ $d->id_seksi }}">{{ $d->seksi }}</option>
+                                <option value="{{ Crypt::encrypt($d->id_seksi) }}">{{ $d->seksi }}</option>
                                  @endforeach
                               </select>
+                            </div>
+                            <div class="mb-3">
+                              <label for="recipient-name" class="">Foto :</label>
+                              <input type="file" accept="image/png" name="image" class="form-control" id="recipient-name1" required/>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -119,10 +123,9 @@
                       <!-- start row -->
                       <tr>
                         <th class="text-center">No.</th>
-                        <th class="text-center">Nama</th>
-                        <th class="text-center">NIP</th>
-                        <th class="text-center">Golongan</th>
+                        <th class="text-center">Nama / Pangkat Gol / <br> NIP</th>
                         <th class="text-center">Jabatan</th>
+                        <th class="text-center">Seksi</th>
                         <th class="text-center">Status</th>
                         <th class="text-center">Aksi</th>
                       </tr>
@@ -133,15 +136,33 @@
                       <!-- start row -->
                       <tr>
                         <td style="text-align:center;">{{ $loop->iteration }}</td>
-                        <td><h6 class="mb-0"> {{ $d->nama}}</h6></td>
-                        <td> {{ $d->nip}}</td>
-                        <td> {{ $d->golongan}}</td>
-                          <td>
+                        <td>
+                          <table style="border-collapse:collapse; border:none; border-color:transparent;">
+                            <tr>
+                            <td rowspan="3" style="width: 60px"><div class="d-flex align-items-center gap-6">
+                              <img src="{{ asset('assets/images/pegawai/'.$d->foto) }} " width="45" height="45" class="rounded-circle" /></div>
+                            </td>
+                            <td><b class="mb-0"> {{ $d->nama}}</b></td>
+                            </tr>
+                            <tr><td>{{ $d->golongan}}</td></tr>
+                            <tr><td>NIP. {{ $d->nip}}</td></tr>  
+                          </table>
+                        </td>
+                        <td>
                           @php
                             $kata = explode(' ', $d->jabatan->jabatan);
                             $hasil = implode('<br>', array_map(function($chunk) {
                               return implode(' ', $chunk);
-                            }, array_chunk($kata, 4)));
+                            }, array_chunk($kata, 3)));
+                          @endphp
+                          {!! $hasil !!}
+                        </td>
+                        <td>
+                          @php
+                            $kata = explode(' ', $d->seksi->seksi);
+                            $hasil = implode('<br>', array_map(function($chunk) {
+                              return implode(' ', $chunk);
+                            }, array_chunk($kata, 3)));
                           @endphp
                           {!! $hasil !!}
                         </td>
@@ -160,9 +181,11 @@
                               <i class="fs-5 ti ti-toggle-right"></i>
                           </a>
                           @endif
+                          <br>
                           <a title="Edit" data-id="{{ Crypt::encrypt($d->id_pegawai) }}" class="edit btn mb-1 bg-primary-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#editdata" data-bs-whatever="@getbootstrap">
                               <i class="fs-5 ti ti-pencil"></i>
                           </a>
+                          <br>
                           <a title="Hapus" data-id="{{ Crypt::encrypt($d->id_pegawai) }}" class="hapus btn mb-1 bg-danger-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
                               <i class="fs-5 ti ti-trash"></i>
                           </a>
@@ -175,10 +198,9 @@
                       <!-- start row -->
                       <tr>
                         <th class="text-center">No.</th>
-                        <th class="text-center">Nama</th>
-                        <th class="text-center">NIP</th>
-                        <th class="text-center">Golongan</th>
+                        <th class="text-center">Nama / Pangkat Gol / <br> NIP</th>
                         <th class="text-center">Jabatan</th>
+                        <th class="text-center">Seksi</th>
                         <th class="text-center">Status</th>
                         <th class="text-center">Aksi</th>
                       </tr>
@@ -195,7 +217,7 @@
                           </h4>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="{{ Route('u.pegawai') }}" method="POST" id="formStore">
+                        <form action="{{ Route('u.pegawai') }}" method="POST" id="formStore" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body" id="loadedit">
 
@@ -231,65 +253,61 @@
 
 <!-- Button Edit -->
 <script>
-$('.edit').click(function(){
-    var id_pegawai = $(this).attr('data-id');
-    $.ajax({
-             type: 'POST',
-             url: '/11475-adm/pegawai/edit',
-             cache: false,
-             data: {
-                 _token: "{{ csrf_token() }}",
-                 id_pegawai: id_pegawai
-             },
-             success: function(respond) {
-                 $("#loadedit").html(respond);
-             }
-         });
-     $("#editdata").modal("show");
+$('#zero_config').DataTable({
+  destroy: true,
+  // konfigurasi DataTables
+  initComplete: function() {
+    $('#zero_config tbody').on('click', '.edit', function(){
+      var id_pegawai = $(this).attr('data-id');
+      $.ajax({
+        type: 'POST',
+        url: '/11475-adm/profil/pegawai/edit',
+        cache: false,
+        data: {
+          _token: "{{ csrf_token() }}",
+          id_pegawai: id_pegawai
+        },
+        success: function(respond) {
+          $("#loadedit").html(respond);
+        }
+      });
+      $("#editdata").modal("show");
+    });
 
-});
-var span = document.getElementsByClassName("close")[0];
-</script>
-<!-- END Button Edit -->
+    $('#zero_config tbody').on('click', '.status', function(){
+      var id_pegawai = $(this).attr('data-id');
+      Swal.fire({
+        title: "Apakah Anda Yakin Ingin Mengubah Status Data Ini ?",
+        text: "Jika Ya Maka Status Data Akan Diubah",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ya, Ubah Status!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location = "/11475-adm/profil/pegawai/status/"+id_pegawai
+        }
+      });
+    });
 
-<!-- Button Status -->
-<script>
-$('.status').click(function(){
-    var id_pegawai = $(this).attr('data-id');
-Swal.fire({
-  title: "Apakah Anda Yakin Ingin Mengubah Status Data Ini ?",
-  text: "Jika Ya Maka Status Data Akan Diubah",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Ya, Ubah Status!"
-  }).then((result) => {
-  if (result.isConfirmed) {
-    window.location = "/11475-adm/pegawai/status/"+id_pegawai
-    }
-  });
-});
-</script>
-<!-- END Button Status -->
-
-<!-- Button Hapus -->
-<script>
-$('.hapus').click(function(){
-    var id_pegawai = $(this).attr('data-id');
-Swal.fire({
-  title: "Apakah Anda Yakin Data Ini Ingin Di Hapus ?",
-  text: "Jika Ya Maka Data Akan Terhapus Permanen",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Ya, Hapus Saja!"
-  }).then((result) => {
-  if (result.isConfirmed) {
-    window.location = "/11475-adm/pegawai/hapus/"+id_pegawai
-    }
-  });
+    $('#zero_config tbody').on('click', '.hapus', function(){
+      var id_pegawai = $(this).attr('data-id');
+      Swal.fire({
+        title: "Apakah Anda Yakin Data Ini Ingin Di Hapus ?",
+        text: "Jika Ya Maka Data Akan Terhapus Permanen",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ya, Hapus Saja!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location = "/11475-adm/profil/pegawai/hapus/"+id_pegawai
+        }
+      });
+    });
+  }
 });
 </script>
 <!-- END Button Hapus -->

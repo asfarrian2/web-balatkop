@@ -3,5 +3,5 @@
     
     <div class="mb-3">
         <label for="recipient-name" class="mb-2">Caption :</label>
-        <textarea name="keterangan" class="form-control" id="recipient-name1" required>{{ $sto->keterangan }}</textarea>
+        <textarea name="keterangan" rows="5" class="form-control" id="recipient-name1" required>{{ $sto->keterangan }}</textarea>
     </div>

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Pegawai extends Model
 {
     protected $table= 'tb_pegawai';
-    protected $fillable = ['id_pegawai', 'nama', 'nip', 'golongan', 'id_jabatan', 'id_seksi', 'status'];
+    protected $fillable = ['id_pegawai', 'nama', 'nip', 'golongan', 'id_jabatan', 'id_seksi', 'foto', 'status'];
 
         /**
      * Relasi dengan model Jabatan
