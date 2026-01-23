@@ -14,91 +14,98 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Header;
 use App\Models\Beranda;
 use App\Models\Footer;
-use App\Models\Pegawai;
-use App\Models\Jabatan;
-use App\Models\Seksi;
+use App\Models\Agenda;
+use App\Models\Kategori;
 
-class PegawaiController extends Controller
+
+class AgendaController extends Controller
 {
 
-    public function view($id_seksi){
+    public function view($id_kategori){
 
-        $headers = Header::all();
+        $headers    = Header::all();
 
-        $footer  = Footer::all();
+        $footer     = Footer::all();
 
-        $id_seksi= Crypt::decrypt($id_seksi);
+        $id_kategori= Crypt::decrypt($id_kategori);
 
-        $sub     = Seksi::where('id_seksi', $id_seksi)->first();
+        $kat        = Kategori::where('id_kategori', $id_kategori)->first();
 
-        $pegawai = Pegawai::where('status', '1')->where('id_seksi', $id_seksi)->get();
+        $agenda     = agenda::where('status', '1')->where('id_kategori', $id_kategori)->get();
 
-        return view('website.pegawai.view', compact('headers', 'footer', 'pegawai', 'sub'));
+        return view('website.agenda.view', compact('headers', 'footer', 'agenda', 'sub'));
     }
 
 
     public function data(){
 
-        $pegawai = Pegawai::all();
-        $jabatan = Jabatan::all();
-        $seksi   = Seksi::all();
+        $agenda = agenda::all();
+        $kategori   = Kategori::all();
 
-        return view('manager.pegawai.view', compact('pegawai', 'jabatan', 'seksi'));
+        return view('manager.agenda.view', compact('agenda', 'kategori'));
+    }
+
+        public function detail(){
+
+        $agenda = agenda::all();
+        $kategori   = Kategori::all();
+
+        return view('manager.agenda.detail', compact('agenda', 'kategori'));
     }
 
     public function store(Request $request){
 
-        $id_pegawai = Pegawai::latest('id_pegawai')->first();
+        $id_agenda = agenda::latest('id_agenda')->first();
 
         $kodeobjek ="asn-";
 
-        if($id_pegawai == null){
+        if($id_agenda == null){
             $nomorurut = "001";
         }else{
-            $nomorurut = substr($id_pegawai->id_pegawai, 4, 3) + 1;
+            $nomorurut = substr($id_agenda->id_agenda, 4, 3) + 1;
             $nomorurut = str_pad($nomorurut, 3, "0", STR_PAD_LEFT);
         }
         $id=$kodeobjek.$nomorurut;
 
-        $pegawai = $request->pegawai;
+        $agenda = $request->agenda;
         $nip     = $request->nip;
         $golongan= $request->golongan;
         $jabatan = $request->jabatan;
-        $seksi   = $request->seksi;
+        $kategori   = $request->Kategori;
         if ($request->hasFile('image')) {
 
         $jabatan = Crypt::decrypt($jabatan);
-        $seksi   = Crypt::decrypt($seksi);
+        $kategori   = Crypt::decrypt($kategori);
 
 
         $image = $request->file('image');
             $extension = $image->getClientOriginalExtension();
-            $imageName = $nomorurut.'-'.$pegawai . '.' . $extension;
-            $image->move(public_path('assets/images/pegawai'), $imageName);
+            $imageName = $nomorurut.'-'.$agenda . '.' . $extension;
+            $image->move(public_path('assets/images/agenda'), $imageName);
 
         $data = [
-            'id_pegawai'  => $id,
-            'nama'        => $pegawai,
+            'id_agenda'  => $id,
+            'nama'        => $agenda,
             'nip'         => $nip,
             'golongan'    => $golongan,
             'id_jabatan'  => $jabatan,
-            'id_seksi'    => $seksi,
+            'id_kategori'    => $kategori,
             'foto'        => $imageName,
             'status'      => '1'
         ];
          } else {
             $data = [
-                'id_pegawai'  => $id,
-                'nama'        => $pegawai,
+                'id_agenda'  => $id,
+                'nama'        => $agenda,
                 'nip'         => $nip,
                 'golongan'    => $golongan,
                 'id_jabatan'  => $jabatan,
-                'id_seksi'    => $seksi,
+                'id_kategori'    => $kategori,
                 'status'      => '1'
             ];
         }
 
-        $simpan = Pegawai::create($data);
+        $simpan = agenda::create($data);
         if ($simpan) {
             return Redirect::back()->with(['success' => 'Data Berhasil Disimpan.']);
         } else {
@@ -108,59 +115,58 @@ class PegawaiController extends Controller
 
     public function edit(Request $request){
 
-        $id_pegawai = $request->id_pegawai;
-        $id_pegawai = Crypt::decrypt($id_pegawai);
+        $id_agenda = $request->id_agenda;
+        $id_agenda = Crypt::decrypt($id_agenda);
 
-        $pegawai    = Pegawai::where('id_pegawai', $id_pegawai)->first();
-        $jabatan    = Jabatan::all();
-        $seksi      = Seksi::all();
+        $agenda    = agenda::where('id_agenda', $id_agenda)->first();
+        $kategori      = Kategori::all();
 
-        return view('manager.pegawai.edit', compact('pegawai', 'jabatan', 'seksi'));
+        return view('manager.agenda.edit', compact('agenda', 'jabatan', 'Kategori'));
         
     }
 
     public function update(Request $request){
 
-        $id_pegawai   = $request->id;
-        $id_pegawai   = Crypt::decrypt($id_pegawai);
-        $namafoto     = Pegawai::where('id_pegawai', $id_pegawai)->value('foto');
+        $id_agenda   = $request->id;
+        $id_agenda   = Crypt::decrypt($id_agenda);
+        $namafoto     = agenda::where('id_agenda', $id_agenda)->value('foto');
 
-        $pegawai = $request->pegawai;
+        $agenda = $request->agenda;
         $nip     = $request->nip;
         $golongan= $request->golongan;
         $jabatan = $request->jabatan;
-        $seksi   = $request->seksi;
+        $kategori   = $request->Kategori;
         if ($request->hasFile('image')) {
 
         $jabatan = Crypt::decrypt($jabatan);
-        $seksi   = Crypt::decrypt($seksi);
+        $kategori   = Crypt::decrypt($kategori);
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension();
             $imageName = $namafoto;
-            $image->move(public_path('assets/images/pegawai'), $imageName);
+            $image->move(public_path('assets/images/agenda'), $imageName);
             $data = [
-                'nama'        => $pegawai,
+                'nama'        => $agenda,
                 'nip'         => $nip,
                 'golongan'    => $golongan,
                 'id_jabatan'  => $jabatan,
-                'id_seksi'    => $seksi,
+                'id_kategori'    => $kategori,
                 'foto'        => $imageName,
                 'status'      => '1'
             ];
         } else {
             $jabatan = Crypt::decrypt($jabatan);
-            $seksi   = Crypt::decrypt($seksi);
+            $kategori   = Crypt::decrypt($kategori);
             $data = [
-                'nama'        => $pegawai,
+                'nama'        => $agenda,
                 'nip'         => $nip,
                 'golongan'    => $golongan,
                 'id_jabatan'  => $jabatan,
-                'id_seksi'    => $seksi,
+                'id_kategori'    => $kategori,
                 'status'      => '1'
             ];
         }
 
-        $update = Pegawai::where('id_pegawai', $id_pegawai)->update($data);
+        $update = agenda::where('id_agenda', $id_agenda)->update($data);
         if ($update) {
             return Redirect::back()->with(['success' => 'Data Berhasil Diubah']);
         } else {
@@ -169,12 +175,12 @@ class PegawaiController extends Controller
         
     }
 
-    public function status($id_pegawai){
+    public function status($id_agenda){
 
-        $id_pegawai   = Crypt::decrypt($id_pegawai);
-        $pegawai      = Pegawai::where('id_pegawai', $id_pegawai)->first();
+        $id_agenda   = Crypt::decrypt($id_agenda);
+        $agenda      = agenda::where('id_agenda', $id_agenda)->first();
 
-        $status       = $pegawai->status;
+        $status       = $agenda->status;
 
         if($status == 0){
             $data = [
@@ -186,7 +192,7 @@ class PegawaiController extends Controller
             ];
         }
 
-        $update = Pegawai::where('id_pegawai',$id_pegawai)->update($data);
+        $update = agenda::where('id_agenda',$id_agenda)->update($data);
 
         if ($update) {
             return Redirect::back()->with(['success' => 'Status Data Berhasil Diubah']);
@@ -195,11 +201,11 @@ class PegawaiController extends Controller
         }
     }
 
-    public function hapus($id_pegawai){
+    public function hapus($id_agenda){
 
-        $id_pegawai = Crypt::decrypt($id_pegawai);
+        $id_agenda = Crypt::decrypt($id_agenda);
 
-        $delete = Pegawai::where('id_pegawai',$id_pegawai)->delete();
+        $delete = agenda::where('id_agenda',$id_agenda)->delete();
 
         if ($delete) {
             return Redirect::back()->with(['success' => 'Data Berhasil Dihapus']);
@@ -210,3 +216,4 @@ class PegawaiController extends Controller
 
 
 }
+

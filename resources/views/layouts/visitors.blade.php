@@ -27,10 +27,10 @@
         @endif
        @endforeach
     <!-- link stylesheet -->
-    <link rel="stylesheet" href="./assets/css/icofont.min.css" >
-    <link rel="stylesheet" href="./assets/css/video-modal.css" >
-    <link rel="stylesheet" href="./assets/css/aos.css" >
-    <link rel="stylesheet" href="./assets/css/style.css" >
+    <link rel="stylesheet" href="{{ asset('assets/css/icofont.min.css') }}" >
+    <link rel="stylesheet" href="{{ asset('assets/css/video-modal.css') }}" >
+    <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}" >
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" >
   </head>
   <body
     class="relative font-inter font-normal text-base leading-[1.8] bg-bodyBg dark:bg-bodyBg-dark"
@@ -242,7 +242,7 @@
                           </li>
                           <li class="relative group/nested">
                             <a
-                              href="./pages/dashboards/instructor-dashboard.html"
+                              href=""
                               class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg flex justify-between items-center dark:bg-whiteColor-dark dark:text-contentColor-dark dark:hover:bg-whitegrey1-dark dark:hover:text-primaryColor"
                               >Pegawai <i class="icofont-rounded-right"></i>
                             </a>
@@ -252,41 +252,15 @@
                               <div class="shadow-dropdown max-w-dropdown2 w-2000 py-14px rounded-standard bg-white dark:bg-whiteColor-dark"
                               >
                                 <ul>
+                                  @foreach($seksi as $s)
                                   <li>
                                     <a
-                                      href="./pages/dashboards/instructor-dashboard.html"
+                                      href="/pegawai/{{ Crypt::encrypt($s->id_seksi)}}"
                                       class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                                      >Kepala Balai
+                                      >{{$s->seksi}}
                                     </a>
                                   </li>
-                                  <li>
-                                    <a
-                                      href="./pages/dashboards/instructor-message.html"
-                                      class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                                      >Kelompok Jabatan Fungsional
-                                      </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="./pages/dashboards/instructor-profile.html"
-                                      class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                                      >Sub Bagian Tata Usaha
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="./pages/dashboards/instructor-message.html"
-                                      class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                                      >Seksi Diklat SDM Koperasi
-                                      </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="./pages/dashboards/instructor-wishlist.html"
-                                      class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                                      >Seksi Diklat SDM Usaha Kecil
-                                    </a>
-                                  </li>
+                                  @endforeach
                                 </ul>
                               </div>
                             </div>
@@ -500,7 +474,7 @@
                         <!-- accordion header -->
                         <div class="flex items-center justify-between">
                           <a
-                            href="#"
+                            href=""
                             class="leading-1 text-darkdeep1 text-sm pl-15px pt-3 pb-7px font-medium hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
                             >Pegawai</a
                           >
@@ -522,35 +496,35 @@
                             <ul>
                               <li>
                                 <a
-                                  href="error.html"
+                                  href="/pegawai/se-01"
                                   class="leading-1 text-darkdeep1 text-sm pl-30px pt-3 pb-7px font-light hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
                                   >Kepala Balai</a
                                 >
                               </li>
                               <li>
                                 <a
-                                  href="error.html"
+                                  href="/pegawai"
                                   class="leading-1 text-darkdeep1 text-sm pl-30px pt-3 pb-7px font-light hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
                                   >Kelompok Jabatan Fungsional</a
                                 >
                               </li>
                               <li>
                                 <a
-                                  href="error.html"
+                                  href="/pegawai"
                                   class="leading-1 text-darkdeep1 text-sm pl-30px pt-3 pb-7px font-light hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
                                   >Sub Bagian Tata Usaha</a
                                 >
                               </li>
                               <li>
                                 <a
-                                  href="error-dark.html"
+                                  href="/pegawai"
                                   class="leading-1 text-darkdeep1 text-sm pl-30px pt-3 pb-7px font-light hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
                                   >Seksi Diklat SDM Koperasi</a
                                 >
                               </li>
                               <li>
                                 <a
-                                  href="event-details.html"
+                                  href="/pegawai"
                                   class="leading-1 text-darkdeep1 text-sm pl-30px pt-3 pb-7px font-light hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
                                   >Seksi Diklat SDM Usaha Kecil</a
                                 >
@@ -871,28 +845,28 @@
         </div>
       </div>
     </footer>
-    <script src="./assets/js/swiper-bundle.min.js"></script>
-    <script src="./assets/js/isotope.pkgd.min.js"></script>
-    <script src="./assets/js/accordion.js"></script>
-    <script src="./assets/js/chart.js"></script>
-    <script src="./assets/js/count.js"></script>
-    <script src="./assets/js/countdown.js"></script>
-    <script src="./assets/js/counterup.js"></script>
-    <script src="./assets/js/dropdown.js"></script>
-    <script src="./assets/js/filter.js"></script>
-    <script src="./assets/js/mobileMenu.js"></script>
-    <script src="./assets/js/modal.js"></script>
-    <script src="./assets/js/popup.js"></script>
-    <script src="./assets/js/preloader.js"></script>
-    <script src="./assets/js/scrollUp.js"></script>
-    <script src="./assets/js/slider.js"></script>
-    <script src="./assets/js/smoothScroll.js"></script>
-    <script src="./assets/js/stickyHeader.js"></script>
-    <script src="./assets/js/tabs.js"></script>
-    <script src="./assets/js/theme.js"></script>
-    <script src="./assets/js/videoModal.js"></script>
-    <script  src="./assets/js/vanilla-tilt.js"></script>
-    <script  src="./assets/js/aos.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/js/accordion.js') }}"></script>
+    <script src="{{ asset('assets/js/chart.js') }}"></script>
+    <script src="{{ asset('assets/js/count.js') }}"></script>
+    <script src="{{ asset('assets/js/countdown.js') }}"></script>
+    <script src="{{ asset('assets/js/counterup.js') }}"></script>
+    <script src="{{ asset('assets/js/dropdown.js') }}"></script>
+    <script src="{{ asset('assets/js/filter.js') }}"></script>
+    <script src="{{ asset('assets/js/mobileMenu.js') }}"></script>
+    <script src="{{ asset('assets/js/modal.js') }}"></script>
+    <script src="{{ asset('assets/js/popup.js') }}"></script>
+    <script src="{{ asset('assets/js/preloader.js') }}"></script>
+    <script src="{{ asset('assets/js/scrollUp.js') }}"></script>
+    <script src="{{ asset('assets/js/slider.js') }}"></script>
+    <script src="{{ asset('assets/js/smoothScroll.js') }}"></script>
+    <script src="{{ asset('assets/js/stickyHeader.js') }}"></script>
+    <script src="{{ asset('assets/js/tabs.js') }}"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
+    <script src="{{ asset('assets/js/videoModal.js') }}"></script>
+    <script src="{{ asset('assets/js/vanilla-tilt.js') }}"></script>
+    <script src="{{ asset('assets/js/aos.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
   </body>
 </html>

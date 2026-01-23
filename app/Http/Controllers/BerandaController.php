@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Header;
 use App\Models\Beranda;
+use App\Models\Agenda;
 use App\Models\Footer;
 
 class BerandaController extends Controller
@@ -95,9 +96,11 @@ class BerandaController extends Controller
 
         $beranda = Beranda::all();
 
+        $agenda  = Agenda::all();
+
         $footer  = Footer::all();
 
-        return view('website.beranda.view', compact('headers', 'beranda', 'footer'));
+        return view('website.beranda.view', compact('headers', 'beranda', 'agenda', 'footer'));
 
     }
 

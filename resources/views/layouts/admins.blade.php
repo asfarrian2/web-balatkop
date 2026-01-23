@@ -224,7 +224,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./main/app-calendar.html" aria-expanded="false">
+                  <a href="{{ Route('agenda') }}" class="sidebar-link {{ Route::currentRouteName() == 'agenda' ? 'active' : '' }}">
                 <span>
                   <i class="ti ti-calendar"></i>
                 </span>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\DashboardController;
@@ -102,11 +103,21 @@ Route::post('/11475-adm/profil/pegawai/update', [PegawaiController::class, 'upda
 Route::get('/11475-adm/profil/pegawai/status/{id_pegawai}', [PegawaiController::class, 'status']);
 Route::get('/11475-adm/profil/pegawai/hapus/{id_pegawai}', [PegawaiController::class, 'hapus']);
 
-
 //*-----Tentang-----*
 Route::get('/11475-adm/profil/tentang', [TentangController::class, 'data'])->name('tentang');
 Route::post('/11475-adm/profil/tentang/edit', [TentangController::class, 'edit']);
 Route::post('/11475-adm/profil/tentang/update', [TentangController::class, 'update'])->name('u.tentang');
+
+//*-----Agenda-----*
+Route::get('/11475-adm/agenda', [AgendaController::class, 'data'])->name('agenda');
+Route::get('/11475-adm/agenda/detail', [AgendaController::class, 'detail']);
+Route::post('/11475-adm/agenda/store', [AgendaController::class, 'store'])->name('a.agenda');
+Route::post('/11475-adm/agenda/edit', [AgendaController::class, 'edit']);
+Route::post('/11475-adm/agenda/update', [AgendaController::class, 'update'])->name('u.agenda');
+Route::get('/11475-adm/agenda/status/{id_agenda}', [AgendaController::class, 'status']);
+Route::get('/11475-adm/agenda/hapus/{id_agenda}', [AgendaController::class, 'hapus']);
+
+
 
 //---*VISITOR*---
 //---Beranda---
@@ -120,3 +131,7 @@ Route::get('/visidanmisi', [VisimisiController::class, 'view']);
 
 //---Struktur Organisasi---
 Route::get('/strukturorganisasi', [StorganisasiController::class, 'view']);
+
+//---Pegawai---
+Route::get('/pegawai/{id_seksi}', [PegawaiController::class, 'view']);
+

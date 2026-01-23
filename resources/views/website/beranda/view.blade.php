@@ -770,6 +770,9 @@
                   class="block opacity-100 transition-opacity duration-150 ease-linear"
                 >
                   <div class="flex flex-col gap-y-6">
+                    @foreach ($agenda as $ag )
+                      
+                    
                     <!-- event 1 -->
                     <div
                       class="flex flex-col md:flex-row md:gap-30px lg:gap-10 items-center md:items-star bg-whiteColor dark:whiteColor-dark p-15px md:p-5 transition-all duration-300 group hover:text-whiteColor hover:bg-primaryColor dark:bg-whiteColor-dark dark:hover:bg-primaryColor shadow-experience rounded"
@@ -790,13 +793,16 @@
                             class="text-sm text-blackColor mb-10px group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
                           >
                             <i
-                              class="icofont-clock-time text-primaryColor pr-1 group-hover:text-whiteColor dark:hover:text-whiteColor"
+                              class="icofont-calendar text-primaryColor pr-1 group-hover:text-whiteColor dark:hover:text-whiteColor"
                             ></i>
-                            <span class="pr-2">10.00Am - 11.00 am</span>
+                            @php
+                                \Carbon\Carbon::setLocale('id');
+                            @endphp
+                            <span class="pr-2">{{ \Carbon\Carbon::parse($ag->tgl_awal)->translatedFormat('d M') }} - {{ \Carbon\Carbon::parse($ag->tgl_akhir)->translatedFormat('d M Y') }}</span>
                             <span
                               class="text-primaryColor group-hover:text-whiteColor dark:group-hover:text-whiteColor"
-                              >Mirnsdo .H </span
-                            ><span>- Event Speaker</span>
+                              >{{ $ag->kategori->kategori}} </span
+                            >
                           </p>
                         </div>
                         <h3
@@ -805,8 +811,7 @@
                           <a
                             href="event-details.html"
                             class="hover:text-secondaryColor dark:hover:text-secondaryColor"
-                            >Forging relationships between multi to national
-                            governments and global.
+                            >{{ $ag->judul }}
                           </a>
                         </h3>
                         <p
@@ -815,169 +820,13 @@
                           <a
                             class="hover:text-secondaryColor dark:hover:text-secondaryColor"
                             href="#"
-                            >Read More
+                            >Selengkapnya
                             <i class="icofont-simple-right"></i>
                           </a>
                         </p>
                       </div>
                     </div>
-
-                    <!-- event 2 -->
-                    <div
-                      class="flex flex-col md:flex-row md:gap-30px lg:gap-10 items-center md:justify-between bg-whiteColor dark:whiteColor-dark p-15px md:p-5 md:pl-45px transition-all duration-300 group hover:text-whiteColor hover:bg-primaryColor dark:bg-whiteColor-dark dark:hover:bg-primaryColor shadow-experience rounded"
-                      data-aos="fade-up"
-                    >
-                      <div class="py-18px">
-                        <div>
-                          <p
-                            class="text-sm text-blackColor mb-10px group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
-                          >
-                            <i
-                              class="icofont-clock-time text-primaryColor pr-1 group-hover:text-whiteColor dark:hover:text-whiteColor"
-                            ></i>
-                            <span class="pr-2">10.00Am - 11.00 am</span>
-                            <span
-                              class="text-primaryColor group-hover:text-whiteColor dark:group-hover:text-whiteColor"
-                              >Mirnsdo .H </span
-                            ><span>- Event Speaker</span>
-                          </p>
-                        </div>
-                        <h3
-                          class="text-size-15 md:text-lg lg:text-2xl text-contentColor dark: font-semibold pb-18px group-hover:text-whiteColor dark:text-contentColor-dark dark:group-hover:text-whiteColor"
-                        >
-                          <a
-                            href="event-details.html"
-                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
-                            >Forging relationships between multi to national
-                            governments and global.
-                          </a>
-                        </h3>
-                        <p
-                          class="text-base md:text-sm lg:text-base text-blackColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
-                        >
-                          <a
-                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
-                            href="#"
-                            >Read More
-                            <i class="icofont-simple-right"></i>
-                          </a>
-                        </p>
-                      </div>
-                      <!-- event thumb -->
-                      <div
-                        class="flex-shrink-0 flex flex-col items-center md:items-end"
-                      >
-                        <img
-                          src="./assets/images/event/event__2.png"
-                          alt=""
-                          class="w-170px"
-                        >
-                      </div>
-                    </div>
-
-                    <!-- event 3 -->
-                    <div
-                      class="flex flex-col md:flex-row md:gap-30px lg:gap-10 items-center md:items-star bg-whiteColor dark:whiteColor-dark p-15px md:p-5 transition-all duration-300 group hover:text-whiteColor hover:bg-primaryColor dark:bg-whiteColor-dark dark:hover:bg-primaryColor shadow-experience rounded"
-                      data-aos="fade-up"
-                    >
-                      <!-- event thumb -->
-                      <div class="flex-shrink-0">
-                        <img
-                          src="./assets/images/event/event__3.png"
-                          alt=""
-                          class="w-170px"
-                        >
-                      </div>
-                      <!-- event content -->
-                      <div class="py-18px">
-                        <div>
-                          <p
-                            class="text-sm text-blackColor mb-10px group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
-                          >
-                            <i
-                              class="icofont-clock-time text-primaryColor pr-1 group-hover:text-whiteColor dark:hover:text-whiteColor"
-                            ></i>
-                            <span class="pr-2">10.00Am - 11.00 am</span>
-                            <span
-                              class="text-primaryColor group-hover:text-whiteColor dark:group-hover:text-whiteColor"
-                              >Mirnsdo .H </span
-                            ><span>- Event Speaker</span>
-                          </p>
-                        </div>
-                        <h3
-                          class="text-size-15 md:text-lg lg:text-2xl text-contentColor dark: font-semibold pb-18px group-hover:text-whiteColor dark:text-contentColor-dark dark:group-hover:text-whiteColor"
-                        >
-                          <a
-                            href="event-details.html"
-                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
-                            >Forging relationships between multi to national
-                            governments and global.
-                          </a>
-                        </h3>
-                        <p
-                          class="text-base md:text-sm lg:text-base text-blackColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
-                        >
-                          <a
-                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
-                            href="#"
-                            >Read More
-                            <i class="icofont-simple-right"></i>
-                          </a>
-                        </p>
-                      </div>
-                    </div>
-                    <!-- event 4 -->
-                    <div
-                      class="flex flex-col md:flex-row md:gap-30px lg:gap-10 items-center md:justify-between bg-whiteColor dark:whiteColor-dark p-15px md:p-5 md:pl-45px transition-all duration-300 group hover:text-whiteColor hover:bg-primaryColor dark:bg-whiteColor-dark dark:hover:bg-primaryColor shadow-experience rounded"
-                      data-aos="fade-up"
-                    >
-                      <div class="py-18px">
-                        <div>
-                          <p
-                            class="text-sm text-blackColor mb-10px group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
-                          >
-                            <i
-                              class="icofont-clock-time text-primaryColor pr-1 group-hover:text-whiteColor dark:hover:text-whiteColor"
-                            ></i>
-                            <span class="pr-2">10.00Am - 11.00 am</span>
-                            <span
-                              class="text-primaryColor group-hover:text-whiteColor dark:group-hover:text-whiteColor"
-                              >Mirnsdo .H </span
-                            ><span>- Event Speaker</span>
-                          </p>
-                        </div>
-                        <h3
-                          class="text-size-15 md:text-lg lg:text-2xl text-contentColor dark: font-semibold pb-18px group-hover:text-whiteColor dark:text-contentColor-dark dark:group-hover:text-whiteColor"
-                        >
-                          <a
-                            href="event-details.html"
-                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
-                            >Forging relationships between multi to national
-                            governments and global.
-                          </a>
-                        </h3>
-                        <p
-                          class="text-base md:text-sm lg:text-base text-blackColor group-hover:text-whiteColor dark:text-blackColor-dark dark:group-hover:text-whiteColor"
-                        >
-                          <a
-                            class="hover:text-secondaryColor dark:hover:text-secondaryColor"
-                            href="#"
-                            >Read More
-                            <i class="icofont-simple-right"></i>
-                          </a>
-                        </p>
-                      </div>
-                      <!-- event thumb -->
-                      <div
-                        class="flex-shrink-0 flex flex-col items-center md:items-end"
-                      >
-                        <img
-                          src="./assets/images/event/event__4.png"
-                          alt=""
-                          class="w-170px"
-                        >
-                      </div>
-                    </div>
+                    @endforeach
                   </div>
                 </div>
               </div>
