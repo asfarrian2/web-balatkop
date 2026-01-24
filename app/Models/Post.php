@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Agenda extends Model
+class Post extends Model
 {
-    protected $table='tb_agenda';
-    protected $fillable = ['id_agenda', 'judul', 'tgl_awal', 'tgl_akhir', 'deskripsi', 'foto', 'tempat', 'alamat', 'id_kategori', 'link', 'status'];
+    protected $table='tb_post';
+    protected $fillable = ['id_post', 'judul', 'konten', 'slug', 'thumbail', 'penulis', 'views_count', 'id_kategori'];
 
-    /**
+     /**
      * Relasi dengan model Kategori
      *
      * @return BelongsTo
@@ -21,5 +21,5 @@ class Agenda extends Model
         return $this->belongsTo(Kategori::class, 'id_kategori', 'id_kategori');
     }
 
+}
 
-    }

@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{{asset ('admins/libs/sweetalert2/dist/sweetalert2.min.css') }}" />
   <!-- Owl Carousel  -->
   <link rel="stylesheet" href="{{asset ('admins/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}" />
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -216,7 +217,7 @@
               <span class="hide-menu">Page</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./main/app-calendar.html" aria-expanded="false">
+                  <a href="{{ Route('post') }}" class="sidebar-link {{ Route::currentRouteName() == 'post' ? 'active' : '' }}">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
@@ -468,6 +469,8 @@
   <script src="{{asset ('admins/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
   <script src="{{asset ('admins/libs/sweetalert2/dist/sweetalert2.min.js') }}"></script>
   <script src="{{asset ('admins/js/forms/sweet-alert.init.js') }}"></script>
+  <script src="{{asset ('admins/libs/magnific-popup/dist/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{asset ('admins/js/plugins/meg.init.js') }}"></script>
   
   @stack('myscript')
   

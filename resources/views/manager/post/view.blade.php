@@ -30,13 +30,13 @@
             <div class="card-body px-4 py-3">
               <div class="row align-items-center">
                 <div class="col-9">
-                  <h4 class="fw-semibold mb-8">Agenda</h4>
+                  <h4 class="fw-semibold mb-8">Postingan</h4>
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
                         <a class="text-muted text-decoration-none" href="{{ Route('dashboard')}}">Dashboard</a>
                       </li>
-                      <li class="breadcrumb-item" aria-current="page">Agenda</li>
+                      <li class="breadcrumb-item" aria-current="page">Postingan</li>
                     </ol>
                   </nav>
                 </div>
@@ -66,31 +66,15 @@
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                        <form action="{{ Route('a.agenda')}}" method="POST" id="formStore" enctype="multipart/form-data">
+                        <form action="{{ Route('a.post')}}" method="POST" id="formStore" enctype="multipart/form-data">
                         @csrf
                             <div class="mb-3">
                               <label for="recipient-name" class="">Judul :</label>
                               <input type="text" name="judul" class="form-control" id="recipient-name1" required/>
                             </div>
                             <div class="mb-3">
-                              <label for="recipient-name" class="">Deskripsi :</label>
-                              <textarea name="deskripsi" rows="8" class="form-control" id="recipient-name1" required></textarea>
-                            </div>
-                            <div class="mb-3">
-                              <label for="recipient-name" class="">Tanggal Mulai :</label>
-                              <input type="date" name="tgl_awal" class="form-control" id="recipient-name1" required/>
-                            </div>
-                            <div class="mb-3">
-                              <label for="recipient-name" class="">Tanggal Akhir :</label>
-                              <input type="date" name="tgl_akhir" class="form-control" id="recipient-name1" required/>
-                            </div>
-                            <div class="mb-3">
-                              <label for="recipient-name" class="">Tempat :</label>
-                              <input type="text" name="tempat" class="form-control" id="recipient-name1" required/>
-                            </div>
-                            <div class="mb-3">
-                              <label for="recipient-name" class="">Alamat :</label>
-                              <input type="text" name="alamat" class="form-control" id="recipient-name1" required/>
+                              <label for="recipient-name" class="">Penulis :</label>
+                              <input type="text" name="penulis" class="form-control" id="recipient-name1" required/>
                             </div>
                             <div class="mb-3">
                               <label for="recipient-name" class="">Kategori :</label>
@@ -127,7 +111,8 @@
                       <tr>
                         <th class="text-center">No.</th>
                         <th class="text-center" style="width: 10px">Judul</th>
-                        <th class="text-center">Tanggal <br> Pelaksanaan</th>
+                        <th class="text-center">Tanggal</th>
+                        <th class="text-center">Penulis</th>
                         <th class="text-center">Kategori</th>
                         <th class="text-center">Status</th>
                         <th class="text-center">Aksi</th>
@@ -135,7 +120,7 @@
                       <!-- end row -->
                     </thead>
                     <tbody>
-                       @foreach ($agenda as $d)
+                       @foreach ($post as $d)
                       <!-- start row -->
                       <tr>
                         <td style="text-align:center;">{{ $loop->iteration }}</td>
@@ -148,27 +133,28 @@
                           @endphp
                           {!! $hasil !!}
                         </td>
-                        <td style="text-align: center">{{ date('d-m-Y', strtotime($d->tgl_awal)) }} <br>s.d. {{ date('d-m-Y', strtotime($d->tgl_akhir)) }}</td>
+                        <td style="text-align: center">{{ date('d-m-Y', strtotime($d->created_at)) }}</td>
+                        <td style="text-align: center">{{ $d->penulis }}</td>
                         <td style="text-align: center">{{ $d->kategori->kategori }}</td>
                         @if ($d->status == 1)
-                        <td style="text-align:center;"><span class="mb-1 badge text-bg-success">Aktif</span></td>
+                        <td style="text-align:center;"><span class="mb-1 badge text-bg-success">Terposting</span></td>
                         @else
-                        <td style="text-align:center;"><span class="mb-1 badge text-bg-danger">Nonaktif</span></td>
+                        <td style="text-align:center;"><span class="mb-1 badge text-bg-danger">Draft</span></td>
                         @endif
                         <td style="text-align:center;">
-                          <a title="Detail" href="/11475-adm/agenda/{{ Crypt::encrypt($d->id_agenda) }}" class="btn mb-1 bg-secondary-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
-                              <i class="fs-5 ti ti-eye"></i>
+                          <a title="Edit" href="/11475-adm/post/edit/{{ Crypt::encrypt($d->id_post) }}" class="btn mb-1 bg-primary-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
+                              <i class="fs-5 ti ti-edit"></i>
                           </a>
                           @if ($d->status == 1)
-                          <a title="Nonaktifkan" data-id="{{ Crypt::encrypt($d->id_agenda) }}" class="status btn mb-1 bg-success-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
+                          <a title="Nonaktifkan" data-id="{{ Crypt::encrypt($d->id_post) }}" class="status btn mb-1 bg-success-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
                               <i class="fs-5 ti ti-toggle-left"></i>
                           </a>
                           @else
-                          <a title="Aktifkan" data-id="{{ Crypt::encrypt($d->id_agenda) }}" class="status btn mb-1 bg-warning-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
+                          <a title="Aktifkan" data-id="{{ Crypt::encrypt($d->id_post) }}" class="status btn mb-1 bg-warning-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
                               <i class="fs-5 ti ti-toggle-right"></i>
                           </a>
                           @endif
-                          <a title="Hapus" data-id="{{ Crypt::encrypt($d->id_agenda) }}" class="hapus btn mb-1 bg-danger-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
+                          <a title="Hapus" data-id="{{ Crypt::encrypt($d->id_post) }}" class="hapus btn mb-1 bg-danger-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
                               <i class="fs-5 ti ti-trash"></i>
                           </a>
                         </td>
@@ -180,8 +166,9 @@
                       <!-- start row -->
                       <tr>
                         <th class="text-center">No.</th>
-                        <th class="text-center">Judul</th>
-                        <th class="text-center">Tanggal <br> Pelaksanaan</th>
+                        <th class="text-center" style="width: 10px">Judul</th>
+                        <th class="text-center">Tanggal</th>
+                        <th class="text-center">Penulis</th>
                         <th class="text-center">Kategori</th>
                         <th class="text-center">Status</th>
                         <th class="text-center">Aksi</th>
@@ -199,7 +186,7 @@
                           </h4>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="{{ Route('u.agenda') }}" method="POST" id="formStore" enctype="multipart/form-data">
+                        <form action="{{ Route('u.post') }}" method="POST" id="formStore" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body" id="loadedit">
 
@@ -240,14 +227,14 @@ $('#zero_config').DataTable({
   // konfigurasi DataTables
   initComplete: function() {
     $('#zero_config tbody').on('click', '.edit', function(){
-      var id_agenda = $(this).attr('data-id');
+      var id_post = $(this).attr('data-id');
       $.ajax({
         type: 'POST',
-        url: '/11475-adm/agenda/edit',
+        url: '/11475-adm/post/edit',
         cache: false,
         data: {
           _token: "{{ csrf_token() }}",
-          id_agenda: id_agenda
+          id_post: id_post
         },
         success: function(respond) {
           $("#loadedit").html(respond);
@@ -257,7 +244,7 @@ $('#zero_config').DataTable({
     });
 
     $('#zero_config tbody').on('click', '.status', function(){
-      var id_agenda = $(this).attr('data-id');
+      var id_post = $(this).attr('data-id');
       Swal.fire({
         title: "Apakah Anda Yakin Ingin Mengubah Status Data Ini ?",
         text: "Jika Ya Maka Status Data Akan Diubah",
@@ -268,13 +255,13 @@ $('#zero_config').DataTable({
         confirmButtonText: "Ya, Ubah Status!"
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location = "/11475-adm/agenda/status/"+id_agenda
+          window.location = "/11475-adm/post/status/"+id_post
         }
       });
     });
 
     $('#zero_config tbody').on('click', '.hapus', function(){
-      var id_agenda = $(this).attr('data-id');
+      var id_post = $(this).attr('data-id');
       Swal.fire({
         title: "Apakah Anda Yakin Data Ini Ingin Di Hapus ?",
         text: "Jika Ya Maka Data Akan Terhapus Permanen",
@@ -285,7 +272,7 @@ $('#zero_config').DataTable({
         confirmButtonText: "Ya, Hapus Saja!"
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location = "/11475-adm/agenda/hapus/"+id_agenda
+          window.location = "/11475-adm/post/hapus/"+id_post
         }
       });
     });

@@ -39,15 +39,17 @@ class AgendaController extends Controller
 
     public function data(){
 
-        $agenda = agenda::all();
+        $agenda     = Agenda::all();
         $kategori   = Kategori::all();
 
         return view('manager.agenda.view', compact('agenda', 'kategori'));
     }
 
-        public function detail(){
+    public function detail($id_agenda){
+        
+        $id_agenda = Crypt::decrypt($id_agenda);
 
-        $agenda = agenda::all();
+        $agenda     = Agenda::where('id_agenda', $id_agenda)->first();
         $kategori   = Kategori::all();
 
         return view('manager.agenda.detail', compact('agenda', 'kategori'));
@@ -55,53 +57,60 @@ class AgendaController extends Controller
 
     public function store(Request $request){
 
-        $id_agenda = agenda::latest('id_agenda')->first();
+        $agenda        = $request->judul;
+        $deskripsi     = $request->deskripsi;
+        $tgl_awal      = $request->tgl_awal;
+        $tgl_akhir     = $request->tgl_akhir;
+        $tempat        = $request->tempat;
+        $alamat        = $request->alamat;
+        $kategori      = $request->kategori;
 
-        $kodeobjek ="asn-";
+        $tahun = date('Y', strtotime($tgl_awal));
+        $id_agenda = Agenda::whereYear('tgl_awal', $tahun)->latest('id_agenda')->first();
+
+        $kodeobjek ="g".$tahun."-";
 
         if($id_agenda == null){
             $nomorurut = "001";
         }else{
-            $nomorurut = substr($id_agenda->id_agenda, 4, 3) + 1;
+            $nomorurut = substr($id_agenda->id_agenda, 6, 3) + 1;
             $nomorurut = str_pad($nomorurut, 3, "0", STR_PAD_LEFT);
         }
         $id=$kodeobjek.$nomorurut;
 
-        $agenda = $request->agenda;
-        $nip     = $request->nip;
-        $golongan= $request->golongan;
-        $jabatan = $request->jabatan;
-        $kategori   = $request->Kategori;
         if ($request->hasFile('image')) {
 
-        $jabatan = Crypt::decrypt($jabatan);
         $kategori   = Crypt::decrypt($kategori);
 
 
         $image = $request->file('image');
             $extension = $image->getClientOriginalExtension();
-            $imageName = $nomorurut.'-'.$agenda . '.' . $extension;
+            $imageName = $nomorurut.'-jadiklat' . '.' . $extension;
             $image->move(public_path('assets/images/agenda'), $imageName);
 
         $data = [
-            'id_agenda'  => $id,
-            'nama'        => $agenda,
-            'nip'         => $nip,
-            'golongan'    => $golongan,
-            'id_jabatan'  => $jabatan,
-            'id_kategori'    => $kategori,
-            'foto'        => $imageName,
-            'status'      => '1'
+            'id_agenda'    => $id,
+            'judul'        => $agenda,
+            'deskripsi'    => $deskripsi,
+            'tgl_awal'     => $tgl_awal,
+            'tgl_akhir'    => $tgl_akhir,
+            'tempat'       => $tempat,
+            'alamat'       => $alamat,
+            'id_kategori'  => $kategori,
+            'foto'         => $imageName,
+            'status'       => '1'
         ];
          } else {
             $data = [
-                'id_agenda'  => $id,
-                'nama'        => $agenda,
-                'nip'         => $nip,
-                'golongan'    => $golongan,
-                'id_jabatan'  => $jabatan,
-                'id_kategori'    => $kategori,
-                'status'      => '1'
+                'id_agenda'    => $id,
+                'judul'        => $agenda,
+                'deskripsi'    => $deskripsi,
+                'tgl_awal'     => $tgl_awal,
+                'tgl_akhir'    => $tgl_akhir,
+                'tempat'       => $tempat,
+                'alamat'       => $alamat,
+                'id_kategori'  => $kategori,
+                'status'       => '1'
             ];
         }
 
@@ -118,10 +127,10 @@ class AgendaController extends Controller
         $id_agenda = $request->id_agenda;
         $id_agenda = Crypt::decrypt($id_agenda);
 
-        $agenda    = agenda::where('id_agenda', $id_agenda)->first();
-        $kategori      = Kategori::all();
+        $agenda    = Agenda::where('id_agenda', $id_agenda)->first();
+        $kategori  = Kategori::all();
 
-        return view('manager.agenda.edit', compact('agenda', 'jabatan', 'Kategori'));
+        return view('manager.agenda.edit', compact('agenda', 'kategori'));
         
     }
 
@@ -129,40 +138,31 @@ class AgendaController extends Controller
 
         $id_agenda   = $request->id;
         $id_agenda   = Crypt::decrypt($id_agenda);
-        $namafoto     = agenda::where('id_agenda', $id_agenda)->value('foto');
+        $namafoto    = agenda::where('id_agenda', $id_agenda)->value('foto');
 
-        $agenda = $request->agenda;
-        $nip     = $request->nip;
-        $golongan= $request->golongan;
-        $jabatan = $request->jabatan;
-        $kategori   = $request->Kategori;
+        $agenda        = $request->judul;
+        $deskripsi     = $request->deskripsi;
+        $tgl_awal      = $request->tgl_awal;
+        $tgl_akhir     = $request->tgl_akhir;
+        $kategori      = $request->kategori;
+
         if ($request->hasFile('image')) {
 
-        $jabatan = Crypt::decrypt($jabatan);
-        $kategori   = Crypt::decrypt($kategori);
             $image = $request->file('image');
             $extension = $image->getClientOriginalExtension();
             $imageName = $namafoto;
             $image->move(public_path('assets/images/agenda'), $imageName);
             $data = [
-                'nama'        => $agenda,
-                'nip'         => $nip,
-                'golongan'    => $golongan,
-                'id_jabatan'  => $jabatan,
-                'id_kategori'    => $kategori,
-                'foto'        => $imageName,
-                'status'      => '1'
+                'foto'         => $imageName
             ];
         } else {
-            $jabatan = Crypt::decrypt($jabatan);
             $kategori   = Crypt::decrypt($kategori);
             $data = [
-                'nama'        => $agenda,
-                'nip'         => $nip,
-                'golongan'    => $golongan,
-                'id_jabatan'  => $jabatan,
-                'id_kategori'    => $kategori,
-                'status'      => '1'
+                'judul'        => $agenda,
+                'deskripsi'    => $deskripsi,
+                'tgl_awal'     => $tgl_awal,
+                'tgl_akhir'    => $tgl_akhir,
+                'id_kategori'  => $kategori
             ];
         }
 

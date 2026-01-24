@@ -9,6 +9,7 @@ use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\SeksiController;
 use App\Http\Controllers\StorganisasiController;
 use App\Http\Controllers\TentangController;
@@ -110,13 +111,23 @@ Route::post('/11475-adm/profil/tentang/update', [TentangController::class, 'upda
 
 //*-----Agenda-----*
 Route::get('/11475-adm/agenda', [AgendaController::class, 'data'])->name('agenda');
-Route::get('/11475-adm/agenda/detail', [AgendaController::class, 'detail']);
+Route::get('/11475-adm/agenda/{id_agenda}', [AgendaController::class, 'detail']);
 Route::post('/11475-adm/agenda/store', [AgendaController::class, 'store'])->name('a.agenda');
 Route::post('/11475-adm/agenda/edit', [AgendaController::class, 'edit']);
 Route::post('/11475-adm/agenda/update', [AgendaController::class, 'update'])->name('u.agenda');
 Route::get('/11475-adm/agenda/status/{id_agenda}', [AgendaController::class, 'status']);
 Route::get('/11475-adm/agenda/hapus/{id_agenda}', [AgendaController::class, 'hapus']);
 
+//*-----Post-----*
+Route::get('/11475-adm/post', [PostController::class, 'data'])->name('post');
+Route::get('/11475-adm/post/tambah', [PostController::class, 'tambah']);
+Route::get('/11475-adm/post/{id_post}', [PostController::class, 'detail']);
+Route::post('/11475-adm/post/store', [PostController::class, 'store'])->name('a.post');
+Route::get('/11475-adm/post/edit/{id_post}', [PostController::class, 'edit']);
+Route::post('/11475-adm/post/update', [PostController::class, 'update'])->name('u.post');
+Route::post('/11475-adm/post/konten', [PostController::class, 'konten'])->name('u.konten');
+Route::get('/11475-adm/post/status/{id_post}', [PostController::class, 'status']);
+Route::get('/11475-adm/post/hapus/{id_post}', [PostController::class, 'hapus']);
 
 
 //---*VISITOR*---

@@ -781,7 +781,7 @@
                       <!-- event thumb -->
                       <div class="flex-shrink-0">
                         <img
-                          src="./assets/images/event/event__1.png"
+                          src="{{ asset('assets/images/agenda/'.$ag->foto) }}"
                           alt=""
                           class="w-170px"
                         >
