@@ -20,7 +20,7 @@ use App\Models\Kategori;
 use App\Models\Galeri;
 use App\Models\Hastag;
 
-class PostController extends Controller
+class TipsController extends Controller
 {
 
     public function view($id_kategori){
@@ -39,10 +39,10 @@ class PostController extends Controller
 
     public function data(){
 
-        $post       = Post::orderBy('id_post', 'desc')->where('jenis', '1')->get();
+        $post       = Post::orderBy('id_post', 'desc')->where('jenis', '2')->get();
         $kategori   = Kategori::all();
 
-        return view('manager.post.view', compact('post', 'kategori'));
+        return view('manager.tips.view', compact('post', 'kategori'));
     }
 
     public function detail($id_post){

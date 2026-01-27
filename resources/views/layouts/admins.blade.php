@@ -21,6 +21,7 @@
   <!-- Owl Carousel  -->
   <link rel="stylesheet" href="{{asset ('admins/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}" />
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset ('admins/libs/magnific-popup/dist/magnific-popup.css') }}">
 </head>
 
 <body>

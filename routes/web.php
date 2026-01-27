@@ -13,6 +13,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SeksiController;
 use App\Http\Controllers\StorganisasiController;
 use App\Http\Controllers\TentangController;
+use App\Http\Controllers\TipsController;
 use App\Http\Controllers\VisimisiController;
 use App\Models\Visimisi;
 use Illuminate\Support\Facades\Route;
@@ -128,8 +129,30 @@ Route::post('/11475-adm/post/update', [PostController::class, 'update'])->name('
 Route::post('/11475-adm/post/konten', [PostController::class, 'konten'])->name('u.konten');
 Route::get('/11475-adm/post/status/{id_post}', [PostController::class, 'status']);
 Route::get('/11475-adm/post/hapus/{id_post}', [PostController::class, 'hapus']);
+Route::post('/11475-adm/post/galeri/store', [PostController::class, 'add_galeri'])->name('a.galeri');
+Route::post('/11475-adm/post/galeri/update', [PostController::class, 'update_galeri'])->name('u.galeri');
+Route::get('/11475-adm/post/galeri/hapus/{id_galeri}', [PostController::class, 'delete_galeri']);
+Route::post('/11475-adm/post/hastag/store', [PostController::class, 'add_hastag'])->name('p.hastag');
+Route::get('/11475-adm/post/hastag/hapus/{id_hastag}', [PostController::class, 'delete_hastag']);
+
+//*-----Post-----*
+Route::get('/11475-adm/infotips', [TipsController::class, 'data'])->name('tips');
+Route::get('/11475-adm/infotips/tambah', [TipsController::class, 'tambah']);
+Route::get('/11475-adm/infotips/{id_post}', [TipsController::class, 'detail']);
+Route::post('/11475-adm/infotips/store', [TipsController::class, 'store'])->name('a.tips');
+Route::get('/11475-adm/infotips/edit/{id_post}', [TipsController::class, 'edit']);
+Route::post('/11475-adm/infotips/update', [TipsController::class, 'update'])->name('u.tips');
+Route::post('/11475-adm/infotips/konten', [TipsController::class, 'konten'])->name('u.konten');
+Route::get('/11475-adm/infotips/status/{id_post}', [TipsController::class, 'status']);
+Route::get('/11475-adm/infotips/hapus/{id_post}', [TipsController::class, 'hapus']);
+Route::post('/11475-adm/infotips/galeri/store', [TipsController::class, 'add_galeri'])->name('ta.galeri');
+Route::post('/11475-adm/infotips/galeri/update', [TipsController::class, 'update_galeri'])->name('tu.galeri');
+Route::get('/11475-adm/infotips/galeri/hapus/{id_galeri}', [TipsController::class, 'delete_galeri']);
+Route::post('/11475-adm/infotips/hastag/store', [TipsController::class, 'add_hastag'])->name('t.hastag');
+Route::get('/11475-adm/infotips/hastag/hapus/{id_hastag}', [TipsController::class, 'delete_hastag']);
 
 
+//
 //---*VISITOR*---
 //---Beranda---
 Route::get('/', [BerandaController::class, 'view']);

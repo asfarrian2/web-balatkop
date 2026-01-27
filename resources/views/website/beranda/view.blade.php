@@ -835,156 +835,156 @@
         </div>
       </section>
       
-      <!-- News and blog section -->
+      <!-- news and blogs section -->
       <section>
-        <div class="container pt-100px pb-70px">
+        <div class="container py-10 md:py-50px lg:py-60px 2xl:py-100px">
           <!-- heading -->
-          <div class="mb-5 md:mb-10" data-aos="fade-up">
-            <div class="relative">
-              <div>
-                <div class="text-center">
-                  <span
-                    class="text-sm font-semibold text-primaryColor bg-whitegrey3 px-6 py-5px mb-5 rounded-full inline-block"
-                  >
-                    Post
-                  </span>
-                </div>
-              </div>
-              <h3
-                class="text-3xl md:text-size-35 2xl:text-size-38 3xl:text-size-42 md:leading-45px 2xl:leading-50px 3xl:leading-2xl font-bold text-blackColor text-center dark:text-blackColor-dark"
-              >
-                Berita dan Postingan
-              </h3>
-            </div>
+
+          <div data-aos="fade-up" class="text-center mb-15px">
+            <span
+              class="text-size-15 font-semibold text-secondaryColor inline-block uppercase mb-[13px]"
+            >
+              ARTIKEL
+            </span>
+            <h3
+              class="text-3xl md:text-size-35 lg:text-size-45 leading-10 md:leading-2xl font-bold text-blackColor dark:text-blackColor-dark"
+            >
+              Berita dan Tips
+            </h3>
           </div>
-
-          <!-- blogs -->
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-30px">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-30px">
             <!-- blog 1 -->
             <div
-              class="lg:col-start-1 lg:col-span-8 group shadow-blog"
               data-aos="fade-up"
+              class="shadow-dropdown-secodary bg-transparent"
             >
-              <!-- blog thumbnail -->
-              <div class="overflow-hidden relative">
+              <div class="relative group p-10px">
                 <img
-                  src="./assets/images/blog/blog_1.png"
+                  src="./assets/images/blog/blog_5.png"
                   alt=""
-                  class="w-full group-hover:scale-110 transition-all duration-300"
+                  class="w-full"
                 >
-                <div
-                  class="text-base md:text-3xl leading-5 md:leading-9 font-semibold text-white px-15px py-5px md:px-6 md:py-2 bg-primaryColor rounded text-center absolute top-5 left-5"
-                >
-                  20 Oct<br >
-                  2026
+                <!-- social icons -->
+                <div class="absolute left-[30px] bottom-[30px]">
+                  <a
+                    href="#"
+                    class="px-12 py-10px text-size-15 leading-1 text-whiteColor bg-blackColor border border-blackColor hover:text-blackColor hover:bg-whiteColor rounded-full dark:text-whiteColor-dark dark:bg-blackColor-dark dark:hover:text-blackColor-dark dark:hover:bg-whiteColor-dark dark:border-blackColor-dark"
+                    >Story</a
+                  >
                 </div>
               </div>
-              <!-- blog content -->
-              <div class="p-5 md:p-35px md:pt-10">
-                <h3
-                  class="text-2xl md:text-4xl leading-30px md:leading-45px font-bold text-blackColor hover:text-primaryColor pb-25px dark:text-blackColor-dark dark:hover:text-primaryColor"
-                >
-                  <a href="blog-details.html"
-                    >It is a long established fact that a reader will be
-                    Standard Part</a
-                  >
-                </h3>
+              <div
+                class="pt-30px pr-5 pb-10 pl-30px md:py-5 md:px-10 lg:pt-30px lg:pr-10px lg:pb-10 lg:pl-5 2xl:pt-30px 2xl:pr-5 2xl:pb-10 2xl:pl-30px"
+              >
                 <p
-                  class="text-base text-contentColor dark:text-contentColor-dark mb-30px"
+                  class="text-base text-primaryColor uppercase font-bold mb-15px"
                 >
-                  A wonderful serenity has taken possssion of my entire souing
-                  like these sweet morning spring whch enjoy with my whole heart
-                  I am alone, and feel the charm of existenceths spot whch was
-                  create For the bliss of souls like mineing am so happy my dear
-                  frend so absori bed in the exquste sens of mere. A wonderful
-                  serenity has taken posseson of my entire soung like these
-                  sweet mornngs spring whch enjoy …
+                  20 APRIL 2024
                 </p>
-                <div class="flex justify-between items-center">
-                  <div class="flex items-center gap-3">
-                    <div>
-                      <img
-                        src="./assets/images/blog/blog_2.png"
-                        alt=""
-                        class="w-11 h-11 rounded-full"
-                      >
-                    </div>
-                    <div
-                      class="text-sm md:text-lg text-darkdeep5 dark:text-darkdeep5-dark"
-                    >
-                      By:
-                      <span class="text-blackColor dark:text-blackColor-dark">
-                        Mirnsdo Jons</span
-                      >
-                    </div>
-                  </div>
-                </div>
+                <h5>
+                  <a
+                    href="#"
+                    class="text-2xl md:text-xl 2xl:text-2xl leading-8 md:leading-7 2xl:leading-8 font-bold text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor mb-15px"
+                  >
+                    Facebook design is dedicated to what's new in design
+                  </a>
+                </h5>
+                <a
+                  href="#"
+                  class="text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
+                  >Read More <i class="icofont-long-arrow-right"></i
+                ></a>
               </div>
             </div>
-            <!-- blog 2 & 3 -->
-            <div class="lg:col-start-9 lg:col-span-4">
-              <div class="flex flex-col gap-y-30px">
-                <!-- blog 2 -->
-                <div class="group shadow-blog" data-aos="fade-up">
-                  <!-- blog thumbnail -->
-                  <div class="overflow-hidden relative">
-                    <img
-                      src="./assets/images/blog/blog_3.png"
-                      alt=""
-                      class="w-full group-hover:scale-110 transition-all duration-300"
-                    >
-                    <div
-                      class="text-base md:text-2xl leading-5 md:leading-30px font-semibold text-white px-15px py-5px md:px-22px md:py-7px bg-primaryColor rounded text-center absolute top-5 left-5"
-                    >
-                      20 <br >
-                      Oct
-                    </div>
-                  </div>
-                  <!-- blog content -->
-                  <div class="px-5 py-25px">
-                    <h3
-                      class="text-2xl md:text-size-28 leading-30px md:leading-35px font-bold text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                    >
-                      <a href="blog-details.html"
-                        >It is a long established fact that a reader will be
-                        Standard Part</a
-                      >
-                    </h3>
-                  </div>
+            <!-- blog 2 -->
+            <div
+              data-aos="fade-up"
+              class="shadow-dropdown-secodary bg-transparent"
+            >
+              <div class="relative group p-10px">
+                <img
+                  src="./assets/images/blog/blog_24.png"
+                  alt=""
+                  class="w-full"
+                >
+                <!-- social icons -->
+                <div class="absolute left-[30px] bottom-[30px]">
+                  <a
+                    href="#"
+                    class="px-12 py-10px text-size-15 leading-1 text-whiteColor bg-blackColor border border-blackColor hover:text-blackColor hover:bg-whiteColor rounded-full dark:text-whiteColor-dark dark:bg-blackColor-dark dark:hover:text-blackColor-dark dark:hover:bg-whiteColor-dark dark:border-blackColor-dark"
+                    >Story</a
+                  >
                 </div>
-                <!-- blog 3 -->
-                <div class="group shadow-blog" data-aos="fade-up">
-                  <!-- blog thumbnail -->
-                  <div class="overflow-hidden relative">
-                    <img
-                      src="./assets/images/blog/blog_4.png"
-                      alt=""
-                      class="w-full group-hover:scale-110 transition-all duration-300"
-                    >
-                    <div
-                      class="text-base md:text-2xl leading-5 md:leading-30px font-semibold text-white px-15px py-5px md:px-22px md:py-7px bg-primaryColor rounded text-center absolute top-5 left-5"
-                    >
-                      20 <br >
-                      Oct
-                    </div>
-                  </div>
-                  <!-- blog content -->
-                  <div class="px-5 py-25px">
-                    <h3
-                      class="text-2xl md:text-size-28 leading-30px md:leading-35px font-bold text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                    >
-                      <a href="blog-details.html"
-                        >It is a long established fact that a reader will be
-                        Standard Part</a
-                      >
-                    </h3>
-                  </div>
+              </div>
+              <div
+                class="pt-30px pr-5 pb-10 pl-30px md:py-5 md:px-10 lg:pt-30px lg:pr-10px lg:pb-10 lg:pl-5 2xl:pt-30px 2xl:pr-5 2xl:pb-10 2xl:pl-30px"
+              >
+                <p
+                  class="text-base text-primaryColor uppercase font-bold mb-15px"
+                >
+                  20 APRIL 2024
+                </p>
+                <h5>
+                  <a
+                    href="#"
+                    class="text-2xl md:text-xl 2xl:text-2xl leading-8 md:leading-7 2xl:leading-8 font-bold text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor mb-15px"
+                  >
+                    Facebook design is dedicated to what's new in design
+                  </a>
+                </h5>
+                <a
+                  href="#"
+                  class="text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
+                  >Read More <i class="icofont-long-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+            <!-- blog 3 -->
+            <div
+              data-aos="fade-up"
+              class="shadow-dropdown-secodary bg-transparent"
+            >
+              <div class="relative group p-10px">
+                <img
+                  src="./assets/images/blog/blog_25.png"
+                  alt=""
+                  class="w-full"
+                >
+                <!-- social icons -->
+                <div class="absolute left-[30px] bottom-[30px]">
+                  <a
+                    href="#"
+                    class="px-12 py-10px text-size-15 leading-1 text-whiteColor bg-blackColor border border-blackColor hover:text-blackColor hover:bg-whiteColor rounded-full dark:text-whiteColor-dark dark:bg-blackColor-dark dark:hover:text-blackColor-dark dark:hover:bg-whiteColor-dark dark:border-blackColor-dark"
+                    >Story</a
+                  >
                 </div>
+              </div>
+              <div
+                class="pt-30px pr-5 pb-10 pl-30px md:py-5 md:px-10 lg:pt-30px lg:pr-10px lg:pb-10 lg:pl-5 2xl:pt-30px 2xl:pr-5 2xl:pb-10 2xl:pl-30px"
+              >
+                <p
+                  class="text-base text-primaryColor uppercase font-bold mb-15px"
+                >
+                  20 APRIL 2024
+                </p>
+                <h5>
+                  <a
+                    href="#"
+                    class="text-2xl md:text-xl 2xl:text-2xl leading-8 md:leading-7 2xl:leading-8 font-bold text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor mb-15px"
+                  >
+                    Facebook design is dedicated to what's new in design
+                  </a>
+                </h5>
+                <a
+                  href="#"
+                  class="text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
+                  >Read More <i class="icofont-long-arrow-right"></i
+                ></a>
               </div>
             </div>
           </div>
-           <div class="flex justify-center" data-aos="fade-up">
+
+          <div class="flex justify-center" data-aos="fade-up">
             <a
               href="#"
               class="text-size-15 px-47px py-15px bg-primaryColor text-whiteColor border border-primaryColor hover:text-primaryColor hover:bg-whiteColor dark:hover:bg-whiteColor-dark dark:hover:text-whiteColor mt-10 md:mt-50px rounded uppercase"
