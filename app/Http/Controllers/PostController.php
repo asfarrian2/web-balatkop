@@ -164,6 +164,8 @@ class PostController extends Controller
         $post        = $request->judul;
         $penulis     = $request->penulis;
         $kategori    = $request->kategori;
+        $tanggal     = Post::where('id_post', $id_post)->value('created_at')->toDateString();;
+        $slug        = Str::slug($post.'-'.$tanggal);
 
         if ($request->hasFile('image')) {
 
@@ -178,6 +180,7 @@ class PostController extends Controller
             $data = [
                 'judul'        => $post,
                 'penulis'      => $penulis,
+                'slug'         => $slug,
                 'id_kategori'  => $kategori
             ];
         }

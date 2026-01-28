@@ -30,13 +30,13 @@
             <div class="card-body px-4 py-3">
               <div class="row align-items-center">
                 <div class="col-9">
-                  <h4 class="fw-semibold mb-8">Postingan</h4>
+                  <h4 class="fw-semibold mb-8">Info Tips</h4>
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
                         <a class="text-muted text-decoration-none" href="{{ Route('dashboard')}}">Dashboard</a>
                       </li>
-                      <li class="breadcrumb-item" aria-current="page">Postingan</li>
+                      <li class="breadcrumb-item" aria-current="page">Info Tips</li>
                     </ol>
                   </nav>
                 </div>
@@ -66,7 +66,7 @@
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                        <form action="{{ Route('a.post')}}" method="POST" id="formStore" enctype="multipart/form-data">
+                        <form action="{{ Route('a.tips')}}" method="POST" id="formStore" enctype="multipart/form-data">
                         @csrf
                             <div class="mb-3">
                               <label for="recipient-name" class="">Judul :</label>
@@ -143,7 +143,7 @@
                         <td style="text-align:center;"><span class="mb-1 badge text-bg-danger">Draft</span></td>
                         @endif
                         <td style="text-align:center;">
-                          <a title="Edit" href="/11475-adm/post/edit/{{ Crypt::encrypt($d->id_post) }}" class="btn mb-1 bg-primary-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
+                          <a title="Edit" href="/11475-adm/infotips/edit/{{ Crypt::encrypt($d->id_post) }}" class="btn mb-1 bg-primary-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
                               <i class="fs-5 ti ti-edit"></i>
                           </a>
                           <br>
@@ -179,36 +179,6 @@
                       <!-- end row -->
                     </tfoot>
                   </table>
-                  {{-- Modal Edit --}}
-                  <div class="modal fade" id="editdata" tabindex="-1" aria-labelledby="exampleModalLabel1">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header d-flex align-items-center">
-                          <h4 class="modal-title" id="exampleModalLabel1">
-                            Edit Data
-                          </h4>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <form action="{{ Route('u.post') }}" method="POST" id="formStore" enctype="multipart/form-data">
-                        @csrf
-                        <div class="modal-body" id="loadedit">
-
-                          {{-- Isi Data Edit --}}
-
-                        </div>
-                        <div class="modal-footer">
-                          <button type="submit" class="btn bg-primary-subtle text-primary">
-                            Simpan
-                          </button>
-                          <button type="button" class="btn bg-danger-subtle text-danger" data-bs-dismiss="modal">
-                            Batal
-                          </button>
-                        </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                  {{-- End Edit --}}
                 </div>
               </div>
             </div>
@@ -233,7 +203,7 @@ $('#zero_config').DataTable({
       var id_post = $(this).attr('data-id');
       $.ajax({
         type: 'POST',
-        url: '/11475-adm/post/edit',
+        url: '/11475-adm/infotips/edit',
         cache: false,
         data: {
           _token: "{{ csrf_token() }}",
@@ -258,7 +228,7 @@ $('#zero_config').DataTable({
         confirmButtonText: "Ya, Ubah Status!"
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location = "/11475-adm/post/status/"+id_post
+          window.location = "/11475-adm/infotips/status/"+id_post
         }
       });
     });
@@ -275,7 +245,7 @@ $('#zero_config').DataTable({
         confirmButtonText: "Ya, Hapus Saja!"
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location = "/11475-adm/post/hapus/"+id_post
+          window.location = "/11475-adm/infotips/hapus/"+id_post
         }
       });
     });

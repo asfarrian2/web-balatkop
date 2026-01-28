@@ -30,14 +30,14 @@
             <div class="card-body px-4 py-3">
               <div class="row align-items-center">
                 <div class="col-9">
-                  <h4 class="fw-semibold mb-8">Postingan</h4>
+                  <h4 class="fw-semibold mb-8">Info Tips</h4>
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
                         <a class="text-muted text-decoration-none" href="{{ Route('dashboard')}}">Dashboard</a>
                       </li>
                       <li class="breadcrumb-item">
-                        <a class="text-muted text-decoration-none" href="{{ Route('post')}}">Postingan</a>
+                        <a class="text-muted text-decoration-none" href="{{ Route('tips')}}">Info Tips</a>
                       </li>
                       <li class="breadcrumb-item" aria-current="page">Edit</li>
                     </ol>
@@ -60,7 +60,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title mb-3">Head</h4>
-                  <form action="{{ Route('u.post') }}" method="POST" id="formPoset" enctype="multipart/form-data">
+                  <form action="{{ Route('u.tips') }}" method="POST" id="formPoset" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                       <div class="col-md-12">
@@ -206,7 +206,7 @@
                <div class="card-body">
                  <div class="card-body d-flex justify-content-between align-items-center">
                  <h4 class="card-title">Galeri</h4>
-                  <form id="save-galeri" action="{{ route('a.galeri') }}" method="POST" enctype="multipart/form-data">
+                  <form id="save-galeri" action="{{ route('ta.galeri') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <a type="button" class="btn btn-secondary float-end" onclick="tambahGaleri()">+ Tambah</a>
                     <input type="hidden" name="id" value="{{ Crypt::encrypt($post->id_post) }}">
@@ -301,7 +301,7 @@
               <div class="card-body">
                 <h4 class="card-title mb-3">Hastag</h4>
                 <div class="row mb-3">
-                 <form action="{{ route('p.hastag') }}" method="POST" enctype="multipart/form-data" class="row g-2">
+                 <form action="{{ route('t.hastag') }}" method="POST" enctype="multipart/form-data" class="row g-2">
                     @csrf
                     <div class="col-md-10">
                         <input type="hidden" name="id" value="{{ Crypt::encrypt($post->id_post) }}">
@@ -318,7 +318,7 @@
                   @foreach ($hastag as $ht)
                   <span>
                       <p style="display: inline;">{{ $ht->hastag }}</p>
-                      <a class="del-hastag btn btn-light btn-sm mb-3" href="/11475-adm/post/hastag/hapus/{{ Crypt::encrypt($ht->id_hastag) }}" style="display: inline;"> x </a>
+                      <a class="del-hastag btn btn-light btn-sm mb-3" href="/11475-adm/infotips/hastag/hapus/{{ Crypt::encrypt($ht->id_hastag) }}" style="display: inline;"> x </a>
                   </span>
                   @endforeach
                 </div>
@@ -381,7 +381,7 @@ Swal.fire({
   confirmButtonText: "Ya, Ubah Status!"
   }).then((result) => {
   if (result.isConfirmed) {
-    window.location = "/11475-adm/post/status/"+id_post
+    window.location = "/11475-adm/infotips/status/"+id_post
     }
   });
 });
@@ -402,7 +402,7 @@ Swal.fire({
   confirmButtonText: "Ya, Hapus Saja!"
   }).then((result) => {
   if (result.isConfirmed) {
-    window.location = "/11475-adm/post/galeri/hapus/"+id_galeri
+    window.location = "/11475-adm/infotips/galeri/hapus/"+id_galeri
     }
   });
 });

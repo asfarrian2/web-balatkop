@@ -28,6 +28,8 @@
        @endforeach
     <!-- link stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/css/icofont.min.css') }}" >
+
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}" >
     <link rel="stylesheet" href="{{ asset('assets/css/video-modal.css') }}" >
     <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}" >
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" >
@@ -228,13 +230,6 @@
                           </li>
                           <li>
                             <a
-                              href="./pages/ecommerce/product-details.html"
-                              class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                              >Maklumat Pelayanan
-                            </a>
-                          </li>
-                          <li>
-                            <a
                               href="/strukturorganisasi"
                               class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
                               >Struktur Organisasi
@@ -325,35 +320,11 @@
                   </li>
                   <li class="nav-item group relative">
                     <a
+                      href="#"
                       class="px-5 lg:px-10px 2xl:px-15px 3xl:px-5 py-10 lg:py-5 2xl:py-30px 3xl:py-10 leading-sm 2xl:leading-lg text-base lg:text-sm 2xl:text-base font-semibold block group-hover:text-primaryColor dark:text-whiteColor"
                     >
                       Info Tips
-                      <i class="icofont-rounded-down"></i>
                     </a>
-                    <!-- dropdown menu -->
-                    <div
-                      class="dropdown absolute left-0 translate-y-10 z-medium hidden opacity-0"
-                      style="transition: 0.3s">
-                      <div
-                        class="shadow-dropdown max-w-dropdown2 w-2000 py-14px rounded-standard bg-white dark:bg-whiteColor-dark">
-                        <ul>
-                          <li>
-                            <a
-                              href="./pages/ecommerce/product-details.html"
-                              class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                              >Koperasi
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="./pages/ecommerce/product-details.html"
-                              class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                              >UMKM
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
                   </li>
                 </ul>
               </div>
@@ -453,13 +424,6 @@
                             href="/visidanmisi"
                             class="leading-1 text-darkdeep1 text-sm pl-15px pt-3 pb-7px font-medium hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
                             >Visi dan Misi</a
-                          >
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <a
-                            href="#"
-                            class="leading-1 text-darkdeep1 text-sm pl-15px pt-3 pb-7px font-medium hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
-                            >Maklumat Pelayanan</a
                           >
                         </div>
                         <div class="flex items-center justify-between">
@@ -731,13 +695,6 @@
                     href="/visidanmisi"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
                     >Visi dan Misi</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Maklumat Pelayanan</a
                   >
                 </li>
                 <li>

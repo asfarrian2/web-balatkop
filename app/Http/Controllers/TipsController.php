@@ -95,7 +95,7 @@ class TipsController extends Controller
             'penulis'      => $penulis,
             'id_kategori'  => $kategori,
             'thumbail'     => $imageName,
-            'jenis'        => '1',
+            'jenis'        => '2',
             'views_count'  => '0',
             'status'       => '0'
         ];
@@ -107,7 +107,7 @@ class TipsController extends Controller
                 'slug'         => $slug,
                 'penulis'      => $penulis,
                 'id_kategori'  => $kategori,
-                'jenis'        => '1',
+                'jenis'        => '2',
                 'views_count'  => '0',
                 'status'       => '0'
             ];
@@ -131,7 +131,7 @@ class TipsController extends Controller
         $galeri  = Galeri::where('id_post', $id_post)->get();
         $hastag  = Hastag::where('id_fk', $id_post)->get();
 
-        return view('manager.post.edit', compact('post', 'kategori', 'galeri', 'hastag'));
+        return view('manager.tips.edit', compact('post', 'kategori', 'galeri', 'hastag'));
         
     }
 

@@ -4,184 +4,77 @@
 
     <!-- main body -->
     <main class="bg-transparent">
-      <!-- banner section -->
       <section>
-        <!-- banner section -->
+        <!-- bannaer section -->
         <div
-          class="hero bg-lightGrey11 dark:bg-lightGrey11-dark relative z-0 overflow-hidden py-50px md:pt-70px md:pb-30"
+          class="container2-xl bg-darkdeep1 pt-50px md:pt-20 pb-205px md:pb-35 rounded-2xl relative overflow-hidden shadow-brand"
         >
-          <!-- animated icons -->
-          <div>
-            <img
-              class="absolute md:left-[50px] md:left-[210px] md:top-[50px] animate-move-var2 hidden md:block"
-              src="./assets/images/herobanner/herobanner__3.png"
-              alt=""
-            >
-            <img
-              class="absolute top-20 left-[872px] md:left-[872px] lg:left-[595px] 2xl:left-[872px] hidden md:block animate-move-hor"
-              src="./assets/images/herobanner/herobanner__4.png"
-              alt=""
-            >
-            <img
-              class="absolute top-0 right-0 md:right-[110px] md:top-[100px] lg:right-[13px] lg:top[90px] 2xl:right-[82px] 2xl:top-[100px] 3xl:right-[110px] animate-move-hor"
-              src="./assets/images/herobanner/herobanner__5.png"
-              alt=""
-            >
-          </div>
-
-          <div class="container 2xl:container-secondary-md relative">
-            <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-30px">
-              <!-- banner Left -->
-              <div
-                data-aos="fade-up"
-                class="md:col-start-1 md:col-span-12 lg:col-start-1 lg:col-span-8"
+          <div class="container grid grid-cols-1 lg:grid-cols-2 items-center">
+            <!-- banner Left -->
+            <div data-aos="fade-up">
+              <h3
+                class="uppercase text-secondaryColor text-size-15 mb-5px md:mb-15px font-inter tracking-5px"
               >
-                <div class="3xl:pr-135px">
-                  <h3
-                    class="uppercase text-secondaryColor text-size-15 mb-5px md:mb-15px font-inter tracking-[4px] font-semibold"
-                  >
-                    {{ $beranda->where('nama', 'Sambutan Dinas/UPTD')->first()->keterangan_1 }}
-                  </h3>
-                  <h1
-                    class="text-size-35 md:text-size-65 lg:text-5xl 2xl:text-size-65 leading-42px md:leading-18 lg:leading-15 2xl:leading-18 text-blackColor dark:text-blackColor-dark md:tracking-half lg:tracking-normal 2xl:tracking-half font-bold mb-15px"
-                  >
-                    {!! $beranda->where('nama', 'Nama Dinas/UPTD')->first()->keterangan_1 !!}
-                  </h1>
-                  <p
-                    class="text-size-15md:text-lg text-blackColor dark:text-blackColor-dark font-medium"
-                  >
-                    {{ $beranda->where('nama', 'Motto Dinas/UPTD')->first()->keterangan_1 }}
-                  </p>
-
-                  <div class="mt-30px">
-                    <a
-                      href="{{ $beranda->where('nama', 'Tombol Primary')->first()->link }}"
-                      class="text-sm md:text-size-15 text-whiteColor bg-primaryColor border border-primaryColor px-25px py-15px hover:text-primaryColor hover:bg-whiteColor rounded inline-block mr-6px md:mr-30px dark:hover:bg-whiteColor-dark dark:hover:text-whiteColor"
-                    >
-                      {{ $beranda->where('nama', 'Tombol Primary')->first()->keterangan_1 }}
-                    </a>
-                    <a
-                      href="{{ $beranda->where('nama', 'Tombol Secondary')->first()->link }}"
-                      class="text-sm md:text-size-15 text-whiteColor bg-secondaryColor border border-secondaryColor px-25px py-15px hover:text-secondaryColor hover:bg-whiteColor rounded inline-block dark:hover:bg-whiteColor-dark dark:hover:text-secondaryColor"
-                    >
-                      {{ $beranda->where('nama', 'Tombol Secondary')->first()->keterangan_1 }} <i class="icofont-long-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- banner right -->
-              <div
-                data-aos="fade-up"
-                class="md:col-start-1 md:col-span-8 lg:col-start-9 lg:col-span-4"
+              {{ $beranda->where('nama', 'Sambutan Dinas/UPTD')->first()->keterangan_1 }}
+              </h3>
+              <h1
+                class="text-3xl text-whiteColor md:text-6xl lg:text-size-50 2xl:text-6xl leading-10 md:leading-18 lg:leading-62px 2xl:leading-18 md:tracking-half lg:tracking-normal 2xl:tracking-half font-bold mb-15px"
               >
-                <!-- Swiper -->
-                <div class="swiper card-slider px-30px md:px-0">
-                  <div class="swiper-wrapper">
-                    @foreach ($post as $ps)
-                    <!-- card 1 -->
-                    <div
-                      class="swiper-slide p-25px bg-whiteColor shadow-brand rounded-lg2 dark:bg-darkdeep3-dark dark:shadow-brand-dark mb-30px group"
-                    >
-                      <div class="">
-                        <!-- card image -->
-                        <div class="relative mb-4">
-                          <a
-                            href="/artikel/{{ $ps->slug }}"
-                            class="w-full overflow-hidden rounded"
-                          >
-                            <img
-                              src="./assets/images/grid/grid_1.png"
-                              alt=""
-                              class="w-full transition-all duration-300 group-hover:scale-110"
-                            >
-                          </a>
-                          <div
-                            class="absolute left-0 top-1 flex justify-between w-full items-center px-2"
-                          >
-                            <div>
-                              <p
-                                class="text-xs text-whiteColor px-4 py-[3px] bg-primaryColor rounded font-semibold"
-                              >
-                                {{ $ps->kategori->kategori}}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- card content -->
-                        <div>
-                          <div class="grid grid-cols-2 mb-15px">
-                            <div class="flex items-center">
-                              <div>
-                                <i
-                                  class="icofont-calendar pr-5px text-primaryColor text-lg"
-                                ></i>
-                              </div>
-                              <div>
-                                 @php
-                                \Carbon\Carbon::setLocale('id');
-                                 @endphp
-                                <span
-                                  class="text-sm text-black dark:text-blackColor-dark"
-                                  >{{ \Carbon\Carbon::parse($ps->created_at)->translatedFormat('d M Y') }}</span
-                                >
-                              </div>
-                            </div>
-                          </div>
-                          <a
-                            href="/artikel/{{ $ps->slug }}"
-                            class="text-lg font-semibold text-blackColor mb-10px font-hind dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
-                          >
-                            {{ $ps->judul }}
-                          </a>
-                          <div class="mb-3">
-                            <span class="text-contentColor dark:text-contentColor-dark mb-15px">
-                            {!! Str::limit((string) $ps->konten, 60) !!}
-                            </span>
-                          </div>
-                          <!-- author and rating-->
-                            <div
-                            class="grid grid-cols-1 md:grid-cols-2 pt-15px border-t border-borderColor"
-                          >
-                            <div>
-                              <a
-                                href="/artikel/{{ $ps->slug }}"
-                                class="text-base text-blackColor font-bold font-hind flex items-center hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                                ><i class="icofont-long-arrow-right"></i>
-                                Selengkapnya
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    @endforeach
+                {{ $beranda->where('nama', 'Nama Dinas/UPTD')->first()->keterangan_1 }}
+              </h1>
+              <p class="text-size-15md:text-lg text-white font-medium mb-45px">
+                {{ $beranda->where('nama', 'Motto Dinas/UPTD')->first()->keterangan_1 }}
+              </p>
 
-                  <div
-                    class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
-                  >
-                    <span
-                      class="swiper-pagination-bullet"
-                      tabindex="0"
-                      role="button"
-                      aria-label="Go to slide 1"
-                    ></span
-                    ><span
-                      class="swiper-pagination-bullet swiper-pagination-bullet-active"
-                      tabindex="0"
-                      role="button"
-                      aria-label="Go to slide 2"
-                      aria-current="true"
-                    ></span
-                    ><span
-                      class="swiper-pagination-bullet"
-                      tabindex="0"
-                      role="button"
-                      aria-label="Go to slide 3"
-                    ></span>
-                  </div>
-                </div>
+              <div>
+                <a
+                  href="{{ $beranda->where('nama', 'Tombol Primary')->first()->link }}"
+                  class="text-sm md:text-size-15 font-semibold text-darkdeep2 bg-whiteColor border border-whiteColor px-5 md:px-30px py-3 md:py-4 hover:text-whiteColor hover:bg-darkblack rounded inline-block mr-6px md:mr-30px shadow-hero-action dark:bg-whiteColor-dark dark:hover:bg-whiteColor dark:text-whiteColor dark:hover:text-whiteColor-dark dark:border-none"
+                >
+                  {{ $beranda->where('nama', 'Tombol Primary')->first()->keterangan_1 }}
+                </a>
+                <a
+                  href="{{ $beranda->where('nama', 'Tombol Secondary')->first()->link }}"
+                  class="text-sm md:text-size-15 font-semibold text-whiteColor py-3 md:py-4 hover:text-secondaryColor inline-block"
+                >
+                  {{ $beranda->where('nama', 'Tombol Secondary')->first()->keterangan_1 }} <i class="icofont-long-arrow-right"></i>
+                </a>
               </div>
             </div>
+            <!-- banner right -->
+            <div data-aos="fade-up">
+              <div class="tilt relative">
+                <img
+                  class="w-full"
+                  src="./assets/images/about/about_8.png"
+                  alt=""
+                ><img
+                  class="absolute left-0 top-0 lg:top-4 right-0 mx-auto"
+                  src="{{ asset('assets/images/beranda/'.$beranda->where('nama', 'Gambar')->first()->keterangan_1) }}"
+                  alt=""
+                >
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <img
+              class="absolute left-1/2 bottom-[15%] animate-spin-slow"
+              src="./assets/images/register/register__2.png"
+              alt=""
+            ><img
+              class="absolute left-[42%] sm:left-[65%] md:left-[42%] lg:left-[5%] top-[4%] sm:top-[1%] md:top-[4%] lg:top-[10%] animate-move-hor"
+              src="./assets/images/herobanner/herobanner__6.png"
+              alt=""
+            ><img
+              class="absolute right-[5%] bottom-[15%]"
+              src="./assets/images/herobanner/herobanner__7.png"
+              alt=""
+            ><img
+              class="absolute top-[5%] left-[45%]"
+              src="./assets/images/herobanner/herobanner__7.png"
+              alt=""
+            >
           </div>
         </div>
       </section>

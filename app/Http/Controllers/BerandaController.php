@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Header;
 use App\Models\Beranda;
 use App\Models\Agenda;
+use App\Models\Post;
 use App\Models\Footer;
 
 class BerandaController extends Controller
@@ -100,7 +101,9 @@ class BerandaController extends Controller
 
         $footer  = Footer::all();
 
-        return view('website.beranda.view', compact('headers', 'beranda', 'agenda', 'footer'));
+        $post = Post::latest()->take(3)->get(); 
+
+        return view('website.beranda.view', compact('headers', 'post', 'beranda', 'agenda', 'footer'));
 
     }
 

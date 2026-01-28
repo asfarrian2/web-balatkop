@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Post extends Model
 {
     protected $table='tb_post';
-    protected $fillable = ['id_post', 'judul', 'konten', 'slug', 'thumbail', 'penulis', 'views_count', 'id_kategori'];
+    protected $fillable = ['id_post', 'judul', 'konten', 'slug', 'thumbail', 'penulis', 'views_count', 'id_kategori', 'jenis', 'status'];
 
      /**
      * Relasi dengan model Kategori

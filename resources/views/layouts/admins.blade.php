@@ -155,14 +155,6 @@
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a href="./main/blog-detail.html" class="sidebar-link">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <i class="ti ti-circle"></i>
-                    </div>
-                    <span class="hide-menu">Maklumat Pelayanan</span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
                   <a href="{{ Route('storganisasi') }}" class="sidebar-link {{ Route::currentRouteName() == 'storganisasi' ? 'active' : '' }}">
                     <div class="round-16 d-flex align-items-center justify-content-center">
                       <i class="ti ti-circle"></i>
@@ -218,15 +210,7 @@
               <span class="hide-menu">Page</span>
             </li>
             <li class="sidebar-item">
-                  <a href="{{ Route('post') }}" class="sidebar-link {{ Route::currentRouteName() == 'post' ? 'active' : '' }}">
-                <span>
-                  <i class="ti ti-article"></i>
-                </span>
-                <span class="hide-menu">Post</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-                  <a href="{{ Route('agenda') }}" class="sidebar-link {{ Route::currentRouteName() == 'agenda' ? 'active' : '' }}">
+                <a href="{{ Route('agenda') }}" class="sidebar-link {{ Route::currentRouteName() == 'agenda' ? 'active' : '' }}">
                 <span>
                   <i class="ti ti-calendar"></i>
                 </span>
@@ -234,7 +218,15 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="javascript:void(0)" aria-expanded="false">
+                <a href="{{ Route('post') }}" class="sidebar-link {{ Route::currentRouteName() == 'post' ? 'active' : '' }}">
+                <span>
+                  <i class="ti ti-article"></i>
+                </span>
+                <span class="hide-menu">Post</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="{{ Route('tips') }}" class="sidebar-link {{ Route::currentRouteName() == 'tips' ? 'active' : '' }}">
                 <span class="d-flex">
                   <i class="ti ti-bulb"></i>
                 </span>
