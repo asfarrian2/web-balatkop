@@ -180,28 +180,6 @@
                 </li>
               </ul>
             </li>
-            <!-- Layanan Page -->
-            <!-- ---------------------------------- -->
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">Layanan</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./main/app-calendar.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-building-community"></i>
-                </span>
-                <span class="hide-menu">Diklat SDM Koperasi</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./main/app-calendar.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-building-store"></i>
-                </span>
-                <span class="hide-menu">Diklat SDM UMKM</span>
-              </a>
-            </li>
             <!-- ---------------------------------- -->
             <!-- Page -->
             <!-- ---------------------------------- -->
@@ -210,7 +188,15 @@
               <span class="hide-menu">Page</span>
             </li>
             <li class="sidebar-item">
-                <a href="{{ Route('agenda') }}" class="sidebar-link {{ Route::currentRouteName() == 'agenda' ? 'active' : '' }}">
+              <a href="{{ Route('layanan') }}" class="sidebar-link {{ Route::currentRouteName() == 'layanan' ? 'active' : '' }}">
+                <span>
+                  <i class="ti ti-building-community"></i>
+                </span>
+                <span class="hide-menu">Layanan UPTD</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="{{ Route('agenda') }}" class="sidebar-link {{ Route::currentRouteName() == 'agenda' ? 'active' : '' }}">
                 <span>
                   <i class="ti ti-calendar"></i>
                 </span>

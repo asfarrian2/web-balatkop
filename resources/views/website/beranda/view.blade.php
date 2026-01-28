@@ -350,7 +350,7 @@
                 <div>
                   <a
                     class="text-size-15 text-whiteColor bg-secondaryColor px-25px py-10px border border-secondaryColor hover:text-secondaryColor hover:bg-whiteColor inline-block rounded dark:hover:bg-whiteColor-dark dark:hover:text-whiteColor"
-                    href="#"
+                    href="/tentang"
                     >Selengkapnya <i class="icofont-long-arrow-right"></i>
                   </a>
                 </div>
@@ -960,7 +960,8 @@
             </h3>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-30px">
-            <!-- blog 1 -->
+            <!-- blog -->
+            @foreach ($post as $pt )
             <div
               data-aos="fade-up"
               class="shadow-dropdown-secodary bg-transparent"
@@ -973,129 +974,39 @@
                 >
                 <!-- social icons -->
                 <div class="absolute left-[30px] bottom-[30px]">
-                  <a
-                    href="#"
-                    class="px-12 py-10px text-size-15 leading-1 text-whiteColor bg-blackColor border border-blackColor hover:text-blackColor hover:bg-whiteColor rounded-full dark:text-whiteColor-dark dark:bg-blackColor-dark dark:hover:text-blackColor-dark dark:hover:bg-whiteColor-dark dark:border-blackColor-dark"
-                    >Story</a
+                  <p
+                    class="text-xs text-whiteColor px-4 py-[3px] bg-primaryColor rounded font-semibold"
                   >
+                    {{ $pt->kategori->kategori}}
+                  </p>
                 </div>
               </div>
-              <div
-                class="pt-30px pr-5 pb-10 pl-30px md:py-5 md:px-10 lg:pt-30px lg:pr-10px lg:pb-10 lg:pl-5 2xl:pt-30px 2xl:pr-5 2xl:pb-10 2xl:pl-30px"
-              >
-                <p
-                  class="text-base text-primaryColor uppercase font-bold mb-15px"
-                >
-                  20 APRIL 2024
-                </p>
-                <h5>
-                  <a
-                    href="#"
-                    class="text-2xl md:text-xl 2xl:text-2xl leading-8 md:leading-7 2xl:leading-8 font-bold text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor mb-15px"
-                  >
-                    Facebook design is dedicated to what's new in design
-                  </a>
-                </h5>
-                <a
-                  href="#"
-                  class="text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                  >Read More <i class="icofont-long-arrow-right"></i
-                ></a>
-              </div>
-            </div>
-            <!-- blog 2 -->
-            <div
-              data-aos="fade-up"
-              class="shadow-dropdown-secodary bg-transparent"
-            >
-              <div class="relative group p-10px">
-                <img
-                  src="./assets/images/blog/blog_24.png"
-                  alt=""
-                  class="w-full"
-                >
-                <!-- social icons -->
-                <div class="absolute left-[30px] bottom-[30px]">
-                  <a
-                    href="#"
-                    class="px-12 py-10px text-size-15 leading-1 text-whiteColor bg-blackColor border border-blackColor hover:text-blackColor hover:bg-whiteColor rounded-full dark:text-whiteColor-dark dark:bg-blackColor-dark dark:hover:text-blackColor-dark dark:hover:bg-whiteColor-dark dark:border-blackColor-dark"
-                    >Story</a
-                  >
+              <div class="pt-30px pr-5 pb-10 pl-30px md:py-5 md:px-10 lg:pt-30px lg:pr-10px lg:pb-10 lg:pl-5 2xl:pt-30px 2xl:pr-5 2xl:pb-10 2xl:pl-30px" >
+                <div style="display: flex; align-items: baseline;">
+                  <i class="icofont-calendar text-primaryColor text-lg mr-2"></i>
+                  <p class="text-base mb-15px">{{ \Carbon\Carbon::parse($pt->created_at)->translatedFormat('d M Y') }}</p>
                 </div>
-              </div>
-              <div
-                class="pt-30px pr-5 pb-10 pl-30px md:py-5 md:px-10 lg:pt-30px lg:pr-10px lg:pb-10 lg:pl-5 2xl:pt-30px 2xl:pr-5 2xl:pb-10 2xl:pl-30px"
-              >
-                <p
-                  class="text-base text-primaryColor uppercase font-bold mb-15px"
-                >
-                  20 APRIL 2024
-                </p>
                 <h5>
-                  <a
-                    href="#"
-                    class="text-2xl md:text-xl 2xl:text-2xl leading-8 md:leading-7 2xl:leading-8 font-bold text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor mb-15px"
-                  >
-                    Facebook design is dedicated to what's new in design
-                  </a>
+                  <a href="#" class="text-2xl md:text-xl 2xl:text-2xl leading-8 md:leading-7 2xl:leading-8 font-bold text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor mb-15px" >
+                    {{ $pt->judul}} </a>
                 </h5>
-                <a
-                  href="#"
-                  class="text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                  >Read More <i class="icofont-long-arrow-right"></i
-                ></a>
-              </div>
-            </div>
-            <!-- blog 3 -->
-            <div
-              data-aos="fade-up"
-              class="shadow-dropdown-secodary bg-transparent"
-            >
-              <div class="relative group p-10px">
-                <img
-                  src="./assets/images/blog/blog_25.png"
-                  alt=""
-                  class="w-full"
-                >
-                <!-- social icons -->
-                <div class="absolute left-[30px] bottom-[30px]">
-                  <a
-                    href="#"
-                    class="px-12 py-10px text-size-15 leading-1 text-whiteColor bg-blackColor border border-blackColor hover:text-blackColor hover:bg-whiteColor rounded-full dark:text-whiteColor-dark dark:bg-blackColor-dark dark:hover:text-blackColor-dark dark:hover:bg-whiteColor-dark dark:border-blackColor-dark"
-                    >Story</a
-                  >
+                <div class="mb-3 flex-grow">
+                  <span class="text-contentColor dark:text-contentColor-dark mb-15px">
+                    {!! Str::limit((string) $pt->konten, 60) !!}
+                  </span>
                 </div>
-              </div>
-              <div
-                class="pt-30px pr-5 pb-10 pl-30px md:py-5 md:px-10 lg:pt-30px lg:pr-10px lg:pb-10 lg:pl-5 2xl:pt-30px 2xl:pr-5 2xl:pb-10 2xl:pl-30px"
-              >
-                <p
-                  class="text-base text-primaryColor uppercase font-bold mb-15px"
-                >
-                  20 APRIL 2024
-                </p>
-                <h5>
-                  <a
-                    href="#"
-                    class="text-2xl md:text-xl 2xl:text-2xl leading-8 md:leading-7 2xl:leading-8 font-bold text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor mb-15px"
-                  >
-                    Facebook design is dedicated to what's new in design
-                  </a>
-                </h5>
-                <a
-                  href="#"
-                  class="text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor"
-                  >Read More <i class="icofont-long-arrow-right"></i
-                ></a>
+                <a href="#" class="text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor" >
+                  Selengkapnya <i class="icofont-long-arrow-right"></i ></a>
               </div>
             </div>
+            @endforeach
           </div>
 
           <div class="flex justify-center" data-aos="fade-up">
             <a
               href="#"
               class="text-size-15 px-47px py-15px bg-primaryColor text-whiteColor border border-primaryColor hover:text-primaryColor hover:bg-whiteColor dark:hover:bg-whiteColor-dark dark:hover:text-whiteColor mt-10 md:mt-50px rounded uppercase"
-              >Selengkapnya</a
+              >Artikel Lainnya</a
             >
           </div>
         </div>

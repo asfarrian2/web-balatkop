@@ -21,17 +21,16 @@ use App\Models\Seksi;
 class PegawaiController extends Controller
 {
 
-    public function view($id_seksi){
+    public function view($slug){
 
         $headers = Header::all();
 
         $footer  = Footer::all();
 
-        $id_seksi= Crypt::decrypt($id_seksi);
+        $sub     = Seksi::where('slug', $slug)->first();
 
-        $sub     = Seksi::where('id_seksi', $id_seksi)->first();
+        $pegawai = $sub->pegawai()->where('status', '1')->get();
 
-        $pegawai = Pegawai::where('status', '1')->where('id_seksi', $id_seksi)->get();
 
         return view('website.pegawai.view', compact('headers', 'footer', 'pegawai', 'sub'));
     }

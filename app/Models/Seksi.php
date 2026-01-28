@@ -9,4 +9,9 @@ class Seksi extends Model
 {
     protected $table = 'tb_seksi';
     protected $fillable = ['id_seksi', 'seksi', 'status'];
+
+     public function pegawai()
+    {
+        return $this->hasMany(Pegawai::class, 'id_seksi', 'id_seksi');
+    }
 }

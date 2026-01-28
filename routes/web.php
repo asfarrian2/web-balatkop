@@ -8,6 +8,7 @@ use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SeksiController;
@@ -110,6 +111,15 @@ Route::get('/11475-adm/profil/tentang', [TentangController::class, 'data'])->nam
 Route::post('/11475-adm/profil/tentang/edit', [TentangController::class, 'edit']);
 Route::post('/11475-adm/profil/tentang/update', [TentangController::class, 'update'])->name('u.tentang');
 
+//*-----Layanan-----*
+Route::get('/11475-adm/layanan', [LayananController::class, 'data'])->name('layanan');
+Route::post('/11475-adm/layanan/store', [LayananController::class, 'store'])->name('a.layanan');
+Route::get('/11475-adm/layanan/edit/{id_layanan}', [LayananController::class, 'edit']);
+Route::post('/11475-adm/layanan/update', [LayananController::class, 'update'])->name('u.layanan');
+Route::post('/11475-adm/layanan/keterangan', [LayananController::class, 'keterangan'])->name('edtlayanan.ket');
+Route::get('/11475-adm/layanan/status/{id_layanan}', [LayananController::class, 'status']);
+Route::get('/11475-adm/layanan/hapus/{id_layanan}', [LayananController::class, 'hapus']);
+
 //*-----Agenda-----*
 Route::get('/11475-adm/agenda', [AgendaController::class, 'data'])->name('agenda');
 Route::get('/11475-adm/agenda/{id_agenda}', [AgendaController::class, 'detail']);
@@ -167,5 +177,5 @@ Route::get('/visidanmisi', [VisimisiController::class, 'view']);
 Route::get('/strukturorganisasi', [StorganisasiController::class, 'view']);
 
 //---Pegawai---
-Route::get('/pegawai/{id_seksi}', [PegawaiController::class, 'view']);
+Route::get('/pegawai/{slug}', [PegawaiController::class, 'view']);
 

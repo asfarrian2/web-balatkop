@@ -250,7 +250,7 @@
                                   @foreach($seksi as $s)
                                   <li>
                                     <a
-                                      href="/pegawai/{{ Crypt::encrypt($s->id_seksi)}}"
+                                      href="/pegawai/{{ $s->slug}}"
                                       class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
                                       >{{$s->seksi}}
                                     </a>
@@ -285,27 +285,15 @@
                       <div
                         class="shadow-dropdown max-w-dropdown2 w-2000 py-14px rounded-standard bg-white dark:bg-whiteColor-dark">
                         <ul>
+                          @foreach ($layanan as $ly)
                           <li>
                             <a
-                              href="./pages/ecommerce/product-details.html"
+                              href="/layanan/{{ $ly->slug }}"
                               class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                              >Diklat SDM Koperasi
+                              >{{ $ly->nama }}
                             </a>
                           </li>
-                          <li>
-                            <a
-                              href="./pages/ecommerce/product-details.html"
-                              class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                              >Diklat SDM UMKM
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="./pages/ecommerce/product-details.html"
-                              class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
-                              >Rumah Kemasan
-                            </a>
-                          </li>
+                          @endforeach
                         </ul>
                       </div>
                     </div>
@@ -722,27 +710,15 @@
                 Layanan
               </h4>
               <ul class="flex flex-col gap-y-3">
+                @foreach ($layanan as $ly )
                 <li>
                   <a
-                    href="#"
+                    href="/layanan/{{ $ly->slug }}"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Diklat SDM Koperasi</a
+                    >{{ $ly->nama }}</a
                   >
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Diklat SDM UMKM</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
-                    >Rumah Kemasan</a
-                  >
-                </li>
+                @endforeach
               </ul>
             </div>
             <!-- right -->

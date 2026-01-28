@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Crypt;
 use App\Models\Seksi;
+use App\Models\Layanan;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         View::share('seksi', Seksi::all());
+        View::share('layanan', Layanan::all());
     }
 }

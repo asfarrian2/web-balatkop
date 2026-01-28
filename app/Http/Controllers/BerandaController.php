@@ -15,6 +15,7 @@ use App\Models\Header;
 use App\Models\Beranda;
 use App\Models\Agenda;
 use App\Models\Post;
+use App\Models\Layanan;
 use App\Models\Footer;
 
 class BerandaController extends Controller
