@@ -29,6 +29,8 @@
     <!-- link stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/css/icofont.min.css') }}" >
 
+    <link rel="stylesheet" href="{{ asset('assets/css/popup.css') }}" >
+
     <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}" >
     <link rel="stylesheet" href="{{ asset('assets/css/video-modal.css') }}" >
     <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}" >
@@ -300,7 +302,7 @@
                   </li>
                   <li class="nav-item group">
                     <a
-                      href="#"
+                      href="/berita"
                       class="px-5 lg:px-10px 2xl:px-15px 3xl:px-5 py-10 lg:py-5 2xl:py-30px 3xl:py-10 leading-sm 2xl:leading-lg text-base lg:text-sm 2xl:text-base font-semibold block group-hover:text-primaryColor dark:text-whiteColor"
                     >
                       Berita
@@ -544,7 +546,7 @@
                 <div class="flex items-center justify-between">
                   <a
                     class="leading-1 py-11px text-darkdeep1 font-medium hover:text-secondaryColor dark:text-whiteColor dark:hover:text-secondaryColor"
-                    href="index.html"
+                    href="/berita"
                     >Berita</a
                   >
                 </div>

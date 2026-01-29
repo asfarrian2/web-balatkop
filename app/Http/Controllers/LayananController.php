@@ -21,17 +21,15 @@ use App\Models\Layanan;
 class LayananController extends Controller
 {
 
-    public function view($id_seksi){
+    public function view($slug){
 
         $headers = Header::all();
 
         $footer  = Footer::all();
 
-        $id_seksi= Crypt::decrypt($id_seksi);
+        $itemlayanan = Layanan::where('slug', $slug)->first();
 
-        $layanan = Layanan::where('status', '1')->get();
-
-        return view('website.layanan.view', compact('headers', 'footer', 'layanan', 'sub'));
+        return view('website.layanan.view', compact('headers', 'footer', 'itemlayanan'));
     }
 
 

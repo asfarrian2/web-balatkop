@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\DashboardController;
@@ -178,4 +179,11 @@ Route::get('/strukturorganisasi', [StorganisasiController::class, 'view']);
 
 //---Pegawai---
 Route::get('/pegawai/{slug}', [PegawaiController::class, 'view']);
+
+//---Layanan---
+Route::get('/layanan/{slug}', [LayananController::class, 'view']);
+
+//---Layanan---
+Route::get('/berita', [ArtikelController::class, 'view']);
+
 

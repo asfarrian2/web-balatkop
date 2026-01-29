@@ -7,8 +7,8 @@
       <!-- banner section -->
       <section>
         <!-- banner section -->
-         <div
-            class="bg-lightGrey10 dark:bg-lightGrey10-dark relative z-0 overflow-y-visible py-20px md:py-10px lg:py-5px 2xl:pb-10px 2xl:pt-20px" >        >
+        <div
+          class="bg-lightGrey10 dark:bg-lightGrey10-dark relative z-0 overflow-y-visible py-20px md:py-10px lg:py-5px 2xl:pb-10px 2xl:pt-20px" >
           <!-- animated icons -->
           <div>
             <img
@@ -16,7 +16,6 @@
               src="./assets/images/herobanner/herobanner__3.png"
               alt=""
             >
-
             <img
               class="absolute right-[30px] top-[212px] md:right-10 md:top-[157px] lg:right-[45px] lg:top-[100px] animate-move-hor"
               src="./assets/images/herobanner/herobanner__5.png"
@@ -36,7 +35,7 @@
                 <li>
                   <span
                     class="text-lg text-blackColor2 dark:text-blackColor2-dark"
-                    >Visi dan Misi</span
+                    >{{ $itemlayanan->nama }}</span
                   >
                 </li>
               </ul>
@@ -58,7 +57,7 @@
                   alt=""
                 ><img
                   class="w-full"
-                  src="{{ asset ('assets/images/visimisi/'.$visi->where('jenis', 'logo')->where('status', 'file')->first()->deskripsi) }}"
+                  src="{{ asset ('assets/images/layanan/'.$itemlayanan->gambar) }}"
                   alt=""
                 >
               </div>
@@ -68,53 +67,18 @@
               <span
                 class="text-sm font-semibold text-primaryColor bg-whitegrey3 px-6 py-5px mb-5 rounded-full inline-block"
               >
-                Profil
+                Layanan
               </span>
               <h3
                 class="text-3xl md:text-size-45 leading-10 md:leading-2xl font-bold text-blackColor dark:text-blackColor-dark pb-25px"
               >
-                Visi dan Misi <br> Kalimantan Selatan
+                {{ $itemlayanan->nama }}
               </h3>
-              <p  
-                class="flex items-center gap-x-4 text-lg text-blackColor dark:text-blackColor-dark mb-25px"
-              >
-                <img
-                  loading="lazy"
-                  src="{{asset ('assets/images/visimisi/'.$visi->where('jenis', 'visi')->where('status', 'file')->first()->deskripsi) }}"
-                  alt="about"
-                  width= "48px"
-                >
-                <span
-                  ><b>Visi</b></span
-                >
-              </p>
               <p
                 class="text-sm md:text-base leading-7 text-contentColor dark:text-contentColor-dark"
               >
-                {{ $visi->where('jenis','visi')->where('status', 'text')->first()->deskripsi; }}
+                {!! $itemlayanan->keterangan !!}
               </p>
-              <br>
-              <p  
-                class="flex items-center gap-x-4 text-lg text-blackColor dark:text-blackColor-dark mb-25px"
-              >
-                <img
-                  loading="lazy"
-                  src="{{asset ('assets/images/visimisi/'.$visi->where('jenis', 'misi')->where('status', 'file')->first()->deskripsi) }}"
-                  alt="about"
-                  width= "48px"
-                >
-                <span
-                  ><b>Misi</b></span
-                >
-              </p>
-              <table>
-                @foreach ($misi as $d )
-                <tr>
-                <td style="text-align: center; vertical-align: top" class="text-sm md:text-base leading-7 text-contentColor dark:text-contentColor-dark" width="25px">{{ $loop->iteration}}.</td>
-                <td class="text-sm md:text-base leading-7 text-contentColor dark:text-contentColor-dark">{{ $d->deskripsi}}</td>
-                </tr>
-                @endforeach
-              </table>
             </div>
           </div>
         </div>

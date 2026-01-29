@@ -90,7 +90,7 @@
                             class="w-full overflow-hidden rounded"
                           >
                             <img
-                              src="./assets/images/grid/grid_1.png"
+                              src="{{asset('assets/images/postingan/'.$ps->thumbail) }}"
                               alt=""
                               class="w-full transition-all duration-300 group-hover:scale-110"
                             >
@@ -125,6 +125,35 @@
                                   >{{ \Carbon\Carbon::parse($ps->created_at)->translatedFormat('d M Y') }}</span
                                 >
                               </div>
+                            </div>
+                            <div class="flex items-center">
+                              @if ($ps->jenis == 1)
+                              <div>
+                                <i
+                                  class="icofont-newspaper pr-5px text-primaryColor text-lg"
+                                ></i>
+                              </div>
+                              <div>
+                                <span
+                                  class="text-sm text-black dark:text-blackColor-dark"
+                                >
+                                  Berita</span
+                                >
+                              </div>
+                              @else
+                              <div>
+                                <i
+                                  class="icofont-book pr-5px text-primaryColor text-lg"
+                                ></i>
+                              </div>
+                              <div>
+                                <span
+                                  class="text-sm text-black dark:text-blackColor-dark"
+                                >
+                                  Info Tips</span
+                                >
+                              </div>
+                              @endif
                             </div>
                           </div>
                           <a
@@ -968,7 +997,7 @@
             >
               <div class="relative group p-10px">
                 <img
-                  src="./assets/images/blog/blog_5.png"
+                  src="{{asset('assets/images/postingan/'.$pt->thumbail) }}"
                   alt=""
                   class="w-full"
                 >
@@ -982,12 +1011,25 @@
                 </div>
               </div>
               <div class="pt-30px pr-5 pb-10 pl-30px md:py-5 md:px-10 lg:pt-30px lg:pr-10px lg:pb-10 lg:pl-5 2xl:pt-30px 2xl:pr-5 2xl:pb-10 2xl:pl-30px" >
-                <div style="display: flex; align-items: baseline;">
-                  <i class="icofont-calendar text-primaryColor text-lg mr-2"></i>
-                  <p class="text-base mb-15px">{{ \Carbon\Carbon::parse($pt->created_at)->translatedFormat('d M Y') }}</p>
+                <div class="flex">
+                    <div style="display: flex; align-items: baseline; margin-right: 10px;">
+                        <i class="icofont-calendar text-primaryColor text-lg mr-2"></i>
+                        <p class="text-base mb-15px">{{ \Carbon\Carbon::parse($pt->created_at)->translatedFormat('d M Y') }}</p>
+                    </div>
+                    @if ($pt->jenis == 1)
+                    <div style="display: flex; align-items: baseline;">
+                        <i class="icofont-newspaper text-primaryColor text-lg mr-2"></i>
+                        <p class="text-base mb-15px">Berita</p>
+                    </div>
+                    @else
+                    <div style="display: flex; align-items: baseline;">
+                        <i class="icofont-book text-primaryColor text-lg mr-2"></i>
+                        <p class="text-base mb-15px">Info Tips</p>
+                    </div>
+                    @endif
                 </div>
                 <h5>
-                  <a href="#" class="text-2xl md:text-xl 2xl:text-2xl leading-8 md:leading-7 2xl:leading-8 font-bold text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor mb-15px" >
+                  <a href="/artikel/{{ $pt->slug}}" class="text-2xl md:text-xl 2xl:text-2xl leading-8 md:leading-7 2xl:leading-8 font-bold text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor mb-15px" >
                     {{ $pt->judul}} </a>
                 </h5>
                 <div class="mb-3 flex-grow">
@@ -995,7 +1037,7 @@
                     {!! Str::limit((string) $pt->konten, 60) !!}
                   </span>
                 </div>
-                <a href="#" class="text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor" >
+                <a href="/artikel/{{ $pt->slug}}" class="text-blackColor hover:text-primaryColor dark:text-blackColor-dark dark:hover:text-primaryColor" >
                   Selengkapnya <i class="icofont-long-arrow-right"></i ></a>
               </div>
             </div>
