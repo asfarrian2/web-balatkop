@@ -219,17 +219,17 @@
       <div data-aos="fade-up">
         <div class="container2-md flex flex-wrap items-center justify-center bg-white dark:bg-whiteColor-dark rounded-md mx-auto md:-translate-y-1/2 w-full shadow-brand">
           <div class="w-1/3 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px">
-            <a href="#">
+            <a href="{{ $beranda->where('nama', 'Kemitraan 1')->first()->link }}" target="_Blank">
               <img src="{{ asset('assets/images/beranda/'.$beranda->where('nama', 'Kemitraan 1')->first()->keterangan_1) }}" alt="Kemitraan">
             </a>
           </div>
           <div class="w-1/3 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px">
-            <a href="#">
+            <a href="{{ $beranda->where('nama', 'Kemitraan 2')->first()->link }}" target="_Blank">
               <img src="{{ asset('assets/images/beranda/'.$beranda->where('nama', 'Kemitraan 2')->first()->keterangan_1) }}" alt="Kemitraan">
             </a>
           </div>
           <div class="w-1/3 md:basis-1/4 lg:basis-1/5 flex justify-center py-5 lg:py-35px 2xl:py-45px">
-            <a href="#">
+            <a href="{{ $beranda->where('nama', 'Kemitraan 3')->first()->link }}" target="_Blank">
               <img src="{{ asset('assets/images/beranda/'.$beranda->where('nama', 'Kemitraan 3')->first()->keterangan_1) }}" alt="Kemitraan">
             </a>
           </div>
@@ -985,12 +985,12 @@
             <h3
               class="text-3xl md:text-size-35 lg:text-size-45 leading-10 md:leading-2xl font-bold text-blackColor dark:text-blackColor-dark"
             >
-              Berita dan Tips
+              Berita dan Info Tips
             </h3>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-30px">
             <!-- blog -->
-            @foreach ($post as $pt )
+            @foreach ($post->reverse() as $pt )
             <div
               data-aos="fade-up"
               class="shadow-dropdown-secodary bg-transparent"
@@ -1046,7 +1046,7 @@
 
           <div class="flex justify-center" data-aos="fade-up">
             <a
-              href="#"
+              href="/artikel"
               class="text-size-15 px-47px py-15px bg-primaryColor text-whiteColor border border-primaryColor hover:text-primaryColor hover:bg-whiteColor dark:hover:bg-whiteColor-dark dark:hover:text-whiteColor mt-10 md:mt-50px rounded uppercase"
               >Artikel Lainnya</a
             >

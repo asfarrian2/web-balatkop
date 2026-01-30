@@ -183,7 +183,10 @@ Route::get('/pegawai/{slug}', [PegawaiController::class, 'view']);
 //---Layanan---
 Route::get('/layanan/{slug}', [LayananController::class, 'view']);
 
-//---Layanan---
-Route::get('/berita', [ArtikelController::class, 'view']);
+//---Post---
+Route::get('/artikel', [ArtikelController::class, 'artikel']);
+Route::get('/berita', [ArtikelController::class, 'berita']);
+Route::get('/infotips', [ArtikelController::class, 'infotips']);
+Route::get('/artikel/{slug}', [ArtikelController::class, 'read']);
 
 

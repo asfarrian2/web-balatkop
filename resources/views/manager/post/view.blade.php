@@ -87,7 +87,7 @@
                             </div>
                             <div class="mb-3">
                               <label for="recipient-name" class="">Foto :</label>
-                              <input type="file" accept="image/png" name="image" class="form-control" id="recipient-name1" required/>
+                              <input type="file" accept="image/jpeg" name="image" class="form-control" id="recipient-name1" required/>
                             </div>
                         </div>
                         <div class="modal-footer">

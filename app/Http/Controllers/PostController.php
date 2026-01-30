@@ -129,7 +129,7 @@ class PostController extends Controller
         $post    = Post::where('id_post', $id_post)->first();
         $kategori= Kategori::all();
         $galeri  = Galeri::where('id_post', $id_post)->get();
-        $hastag  = Hastag::where('id_fk', $id_post)->get();
+        $hastag  = Hastag::where('id_post', $id_post)->get();
 
         return view('manager.post.edit', compact('post', 'kategori', 'galeri', 'hastag'));
         
@@ -315,7 +315,7 @@ class PostController extends Controller
     }
 
     public function add_hastag(Request $request){
-    $id_post = $request->id;
+    $id_post = $request->idpost;
     $id_post = Crypt::decrypt($id_post);
     $hastag = $request->hastag;
 
@@ -333,7 +333,7 @@ class PostController extends Controller
    
     $data = [
         'id_hastag' => $id,
-        'id_fk'  => $id_post,
+        'id_post'  => $id_post,
         'hastag' => $hastag,
     ];
         

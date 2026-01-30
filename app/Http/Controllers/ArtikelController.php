@@ -23,7 +23,59 @@ use App\Models\Hastag;
 
 class ArtikelController extends Controller
 {
-    public function view(){
+    public function artikel(){
+
+        $headers    = Header::all();
+
+        $footer     = Footer::all();
+
+        $tentang    = Tentang::all();
+
+        $hastag = Hastag::select('hastag', DB::raw('count(*) as total'))
+                  ->groupBy('hastag')
+                  ->orderBy('total', 'desc')
+                  ->take(7)
+                  ->get();
+
+        $kategori   = Kategori::withCount('posts')->get();
+
+        $sideberita = Post::where('status', '1')->where('jenis', '1')->latest('created_at')->paginate(3);
+
+        $sideinfotips = Post::where('status', '1')->where('jenis', '2')->latest('created_at')->paginate(3);
+
+        $post = Post::where('status', '1')->latest('created_at')->paginate(3);
+
+
+        return view('website.artikel.view', compact('post', 'headers', 'footer', 'hastag', 'sideberita', 'tentang', 'kategori', 'sideinfotips'));
+    }
+
+    public function berita(){
+
+        $headers    = Header::all();
+
+        $footer     = Footer::all();
+
+        $tentang    = Tentang::all();
+
+        $hastag = Hastag::select('hastag', DB::raw('count(*) as total'))
+                  ->groupBy('hastag')
+                  ->orderBy('total', 'desc')
+                  ->take(7)
+                  ->get();
+
+        $kategori   = Kategori::withCount('posts')->get();
+
+        $sideberita = Post::where('status', '1')->where('jenis', '1')->latest('created_at')->paginate(3);
+
+        $sideinfotips = Post::where('status', '1')->where('jenis', '2')->latest('created_at')->paginate(3);
+
+        $post = Post::where('status', '1')->where('jenis', '1')->latest('created_at')->paginate(3);
+
+
+        return view('website.artikel.view', compact('post', 'headers', 'footer', 'hastag', 'sideberita', 'tentang', 'kategori', 'sideinfotips'));
+    }
+
+    public function infotips(){
 
         $headers    = Header::all();
 
@@ -35,8 +87,44 @@ class ArtikelController extends Controller
 
         $kategori   = Kategori::withCount('posts')->get();
 
-        $sideartikel    = Post::where('status', '1')->get();
+        $sideberita = Post::where('status', '1')->where('jenis', '1')->latest('created_at')->paginate(3);
 
-        return view('website.artikel.view', compact('headers', 'footer', 'hastag', 'sideartikel', 'tentang', 'kategori'));
+        $sideinfotips = Post::where('status', '1')->where('jenis', '2')->latest('created_at')->paginate(3);
+
+        $post = Post::where('status', '1')->where('jenis', '2')->latest('created_at')->paginate(3);
+
+
+        return view('website.artikel.view', compact('post', 'headers', 'footer', 'hastag', 'sideberita', 'tentang', 'kategori', 'sideinfotips'));
     }
+
+    public function read($slug) {
+
+        $headers    = Header::all();
+
+        $footer     = Footer::all();
+
+        $tentang    = Tentang::all();
+
+        $hastag = Hastag::select('hastag', DB::raw('count(*) as total'))
+                  ->groupBy('hastag')
+                  ->orderBy('total', 'desc')
+                  ->take(7)
+                  ->get();
+
+        $kategori   = Kategori::withCount('posts')->get();
+
+        $sideberita = Post::where('status', '1')->where('jenis', '1')->latest('created_at')->paginate(3);
+
+        $sideinfotips = Post::where('status', '1')->where('jenis', '2')->latest('created_at')->paginate(3);
+
+        $post = Post::where('slug', $slug)->first();
+
+        $tag = Hastag::where('id_post', $post->id_post)->get();
+
+        $galeri = Galeri::where('id_post', $post->id_post)->get();
+
+
+        return view('website.artikel.detail', compact('post', 'headers', 'footer', 'tentang', 'hastag', 'kategori', 'sideberita', 'sideinfotips', 'tag', 'galeri'));
+    }
+
 }

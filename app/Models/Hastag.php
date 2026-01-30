@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Hastag extends Model
 {
     protected $table ='tb_hastag';
-    protected $fillable = ['id_hastag', 'hastag', 'id_fk'];
+    protected $fillable = ['id_hastag', 'hastag', 'id_post'];
     
 }

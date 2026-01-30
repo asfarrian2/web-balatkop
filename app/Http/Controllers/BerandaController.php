@@ -102,7 +102,7 @@ class BerandaController extends Controller
 
         $footer  = Footer::all();
 
-        $post = Post::latest()->take(3)->get(); 
+        $post = Post::where('status', '1')->latest()->take(3)->get(); 
 
         return view('website.beranda.view', compact('headers', 'post', 'beranda', 'agenda', 'footer'));
 

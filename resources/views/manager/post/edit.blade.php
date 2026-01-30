@@ -173,7 +173,7 @@
                   <i class="ti ti-upload fs-5"></i> Upload
                 </a>
                 <input type="hidden" name="id" value="{{ Crypt::encrypt($post->id_post) }}">
-                <input type="file" accept="image/png" name="image" id="file-thumbail" class="mb-4" style="display: none">
+                <input type="file" accept="image/jpeg" name="image" id="file-thumbail" class="mb-4" style="display: none">
                 </form>
               </div>
             </div>
@@ -304,7 +304,7 @@
                  <form action="{{ route('p.hastag') }}" method="POST" enctype="multipart/form-data" class="row g-2">
                     @csrf
                     <div class="col-md-10">
-                        <input type="hidden" name="id" value="{{ Crypt::encrypt($post->id_post) }}">
+                        <input type="hidden" name="idpost" value="{{ Crypt::encrypt($post->id_post) }}">
                         <input type="text" name="hastag" class="form-control" placeholder="#hastag" />
                     </div>
                     <div class="col-md-2">

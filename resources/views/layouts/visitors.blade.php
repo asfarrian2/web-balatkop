@@ -310,7 +310,7 @@
                   </li>
                   <li class="nav-item group relative">
                     <a
-                      href="#"
+                      href="/infotips"
                       class="px-5 lg:px-10px 2xl:px-15px 3xl:px-5 py-10 lg:py-5 2xl:py-30px 3xl:py-10 leading-sm 2xl:leading-lg text-base lg:text-sm 2xl:text-base font-semibold block group-hover:text-primaryColor dark:text-whiteColor"
                     >
                       Info Tips
@@ -803,5 +803,8 @@
     <script src="{{ asset('assets/js/vanilla-tilt.js') }}"></script>
     <script src="{{ asset('assets/js/aos.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    @stack('myscript')
+    
   </body>
 </html>

@@ -54,22 +54,22 @@
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-30px">
             <!-- blogs -->
             <div class="lg:col-start-1 lg:col-span-8 space-y-[35px]">
+              @foreach ($post as $d)
               <!-- blog 1 -->
               <div class="group shadow-blog2" data-aos="fade-up">
                 <!-- blog thumbnail -->
                 <div class="overflow-hidden relative">
                   <img
-                    src="./assets/images/blog/blog_6.png"
+                    src="{{ asset('assets/images/postingan/'.$d->thumbail) }}"
                     alt=""
                     class="w-full"
                   >
                   <div
-                    class="text-size-22 leading-6 font-semibold text-white px-15px py-5px md:px-6 md:py-2 bg-primaryColor rounded text-center absolute top-5 right-5"
+                    class="text-size-15 leading-6 font-semibold text-white px-15px py-5px md:px-6 md:py-2 bg-primaryColor rounded text-center absolute top-5 right-5"
                   >
-                    <h3>
-                      24 <br >
-                      Feb
-                    </h3>
+                    <p>
+                      {{ $d->kategori->kategori}}
+                    </p>
                   </div>
                 </div>
                 <!-- blog content -->
@@ -77,8 +77,8 @@
                   <h3
                     class="text-2xl md:text-size-32 lg:text-size-28 2xl:text-size-34 leading-34px md:leading-10 2xl:leading-13.5 font-bold text-blackColor2 hover:text-primaryColor dark:text-blackColor2-dark dark:hover:text-primaryColor"
                   >
-                    <a href="blog-details.html"
-                      >Delivering What Consumers Really Value?</a
+                    <a href="/artikel/{{$d->slug}}"
+                      >{{ $d->judul }}</a
                     >
                   </h3>
                   <div
@@ -87,24 +87,34 @@
                     <ul class="flex flex-wrap items-center gap-x-15px">
                       <li>
                         <a
-                          href="blog-details.html"
+                          
                           class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-business-man-alt-2"></i>
-                          Mirnsdo.H</a
+                          ><i class="icofont-calendar"></i>
+                          {{ \Carbon\Carbon::parse($d->created_at)->translatedFormat('d M Y') }}</a
                         >
                       </li>
+                      @if (@$d->jenis == 1)
                       <li>
                         <a
-                          href="blog-details.html"
+                          
                           class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-speech-comments"></i> 0 Comments</a
+                          ><i class="icofont-newspaper"></i> Berita</a
                         >
                       </li>
+                      @else
                       <li>
                         <a
-                          href="blog-details.html"
+                          
                           class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-eraser-alt"></i> Association</a
+                          ><i class="icofont-book"></i> Info Tips</a
+                        >
+                      </li>
+                      @endif
+                      <li>
+                        <a
+                          
+                          class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
+                          ><i class="icofont-user"></i> {{ $d->penulis }}</a
                         >
                       </li>
                     </ul>
@@ -112,29 +122,26 @@
                   <p
                     class="text-base text-contentColor dark:text-contentColor-dark mb-15px !leading-30px"
                   >
-                    These cases are perfectly simple and easy to distinguish. In
-                    a free hour, when our power of On the other hand,
-                    organizations have the need for integrating in IT
-                    departments
+                    {!! Str::limit((string) $d->konten, 180) !!}
                   </p>
                   <div class="flex justify-between items-center">
                     <div>
                       <a
-                        href="blog-details.html"
+                        href="/artikel/{{$d->slug}}"
                         class="uppercase text-secondaryColor hover:text-primaryColor"
                       >
-                        READ MORE <i class="icofont-double-right"></i
+                        Baca Selengkapnya <i class="icofont-double-right"></i
                       ></a>
                     </div>
                     <div
                       class="text-primaryColor hover:text-secondaryColor space-y-1"
                     >
-                      <a href="#"
+                      <a href="/artikel/{{$d->slug}}"
                         ><i
                           class="icofont-share bg-whitegrey1 dark:bg-whitegrey1-dark hover:text-whiteColor hover:bg-primaryColor w-8 h-7 leading-7 text-center inline-block rounded transition-all duration-300"
                         ></i
                       ></a>
-                      <a href="#"
+                      <a href="/artikel/{{$d->slug}}"
                         ><i
                           class="icofont-heart bg-whitegrey1 dark:bg-whitegrey1-dark hover:text-whiteColor hover:bg-primaryColor w-8 h-7 leading-7 text-center inline-block rounded transition-all duration-300"
                         ></i
@@ -143,331 +150,33 @@
                   </div>
                 </div>
               </div>
-              <!-- blog 2 -->
-              <div class="group shadow-blog2" data-aos="fade-up">
-                <!-- blog thumbnail -->
-                <div class="overflow-hidden relative">
-                  <img
-                    src="./assets/images/blog/blog_7.png"
-                    alt=""
-                    class="w-full"
-                  >
-                  <div
-                    class="text-size-22 leading-6 font-semibold text-white px-15px py-5px md:px-6 md:py-2 bg-primaryColor rounded text-center absolute top-5 right-5 z-20"
-                  >
-                    <h3>
-                      24 <br >
-                      Feb
-                    </h3>
-                  </div>
-                  <div
-                    class="absolute top-0 right-0 left-0 bottom-0 flex items-center justify-center z-10"
-                  >
-                    <div>
-                      <button
-                        data-url="https://www.youtube.com/watch?v=vHdclsdkp28"
-                        class="lvideo relative w-15 h-15 md:h-20 md:w-20 lg:w-15 lg:h-15 2xl:h-70px 2xl:w-70px 3xl:h-20 3xl:w-20 bg-secondaryColor rounded-full flex items-center justify-center"
-                      >
-                        <span
-                          class="animate-buble absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[180px] h-[180px] border-secondaryColor rounded-full"
-                        ></span
-                        ><span
-                          class="animate-buble2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-[180px] h-[180px] border-secondaryColor rounded-full"
-                        ></span>
-                        <img src="./assets/images/icon/video.png" alt="" >
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <!-- blog content -->
-                <div class="pt-26px pb-5 px-30px">
-                  <h3
-                    class="text-2xl md:text-size-32 lg:text-size-28 2xl:text-size-34 leading-34px md:leading-10 2xl:leading-13.5 font-bold text-blackColor2 hover:text-primaryColor dark:text-blackColor2-dark dark:hover:text-primaryColor"
-                  >
-                    <a href="blog-details.html"
-                      >Here at First Baptist Cape Coral we believe!</a
-                    >
-                  </h3>
-                  <div
-                    class="mb-14px pb-19px border-b border-borderColor dark:border-borderColor-dark"
-                  >
-                    <ul class="flex flex-wrap items-center gap-x-15px">
-                      <li>
-                        <a
-                          href="blog-details.html"
-                          class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-business-man-alt-2"></i>
-                          Mirnsdo.H</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          href="blog-details.html"
-                          class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-speech-comments"></i> 0 Comments</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          href="blog-details.html"
-                          class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-eraser-alt"></i> Association</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <p
-                    class="text-base text-contentColor dark:text-contentColor-dark mb-15px !leading-30px"
-                  >
-                    These cases are perfectly simple and easy to distinguish. In
-                    a free hour, when our power of On the other hand,
-                    organizations have the need for integrating in IT
-                    departments
-                  </p>
-                  <div class="flex justify-between items-center">
-                    <div>
-                      <a
-                        href="blog-details.html"
-                        class="uppercase text-secondaryColor hover:text-primaryColor"
-                      >
-                        READ MORE <i class="icofont-double-right"></i
-                      ></a>
-                    </div>
-                    <div
-                      class="text-primaryColor hover:text-secondaryColor space-y-1"
-                    >
-                      <a href="#"
-                        ><i
-                          class="icofont-share bg-whitegrey1 dark:bg-whitegrey1-dark hover:text-whiteColor hover:bg-primaryColor w-8 h-7 leading-7 text-center inline-block rounded transition-all duration-300"
-                        ></i
-                      ></a>
-                      <a href="#"
-                        ><i
-                          class="icofont-heart bg-whitegrey1 dark:bg-whitegrey1-dark hover:text-whiteColor hover:bg-primaryColor w-8 h-7 leading-7 text-center inline-block rounded transition-all duration-300"
-                        ></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- blog 3 -->
-              <div class="group shadow-blog2" data-aos="fade-up">
-                <!-- blog thumbnail -->
-                <div class="overflow-hidden relative">
-                  <img
-                    src="./assets/images/blog/blog_8.png"
-                    alt=""
-                    class="w-full"
-                  >
-                  <div
-                    class="text-size-22 leading-6 font-semibold text-white px-15px py-5px md:px-6 md:py-2 bg-primaryColor rounded text-center absolute top-5 right-5"
-                  >
-                    <h3>
-                      24 <br >
-                      Feb
-                    </h3>
-                  </div>
-                </div>
-                <!-- blog content -->
-                <div class="pt-26px pb-5 px-30px">
-                  <h3
-                    class="text-2xl md:text-size-32 lg:text-size-28 2xl:text-size-34 leading-34px md:leading-10 2xl:leading-13.5 font-bold text-blackColor2 hover:text-primaryColor dark:text-blackColor2-dark dark:hover:text-primaryColor"
-                  >
-                    <a href="blog-details.html"
-                      >We are praying for our community and for.</a
-                    >
-                  </h3>
-                  <div
-                    class="mb-14px pb-19px border-b border-borderColor dark:border-borderColor-dark"
-                  >
-                    <ul class="flex flex-wrap items-center gap-x-15px">
-                      <li>
-                        <a
-                          href="blog-details.html"
-                          class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-business-man-alt-2"></i>
-                          Mirnsdo.H</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          href="blog-details.html"
-                          class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-speech-comments"></i> 0 Comments</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          href="blog-details.html"
-                          class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-eraser-alt"></i> Association</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <p
-                    class="text-base text-contentColor dark:text-contentColor-dark mb-15px !leading-30px"
-                  >
-                    These cases are perfectly simple and easy to distinguish. In
-                    a free hour, when our power of On the other hand,
-                    organizations have the need for integrating in IT
-                    departments
-                  </p>
-                  <div class="flex justify-between items-center">
-                    <div>
-                      <a
-                        href="blog-details.html"
-                        class="uppercase text-secondaryColor hover:text-primaryColor"
-                      >
-                        READ MORE <i class="icofont-double-right"></i
-                      ></a>
-                    </div>
-                    <div
-                      class="text-primaryColor hover:text-secondaryColor space-y-1"
-                    >
-                      <a href="#"
-                        ><i
-                          class="icofont-share bg-whitegrey1 dark:bg-whitegrey1-dark hover:text-whiteColor hover:bg-primaryColor w-8 h-7 leading-7 text-center inline-block rounded transition-all duration-300"
-                        ></i
-                      ></a>
-                      <a href="#"
-                        ><i
-                          class="icofont-heart bg-whitegrey1 dark:bg-whitegrey1-dark hover:text-whiteColor hover:bg-primaryColor w-8 h-7 leading-7 text-center inline-block rounded transition-all duration-300"
-                        ></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- blog 4 -->
-              <div class="group shadow-blog2" data-aos="fade-up">
-                <!-- blog thumbnail -->
-                <div class="overflow-hidden relative">
-                  <img
-                    src="./assets/images/blog/blog_9.png"
-                    alt=""
-                    class="w-full"
-                  >
-                  <div
-                    class="text-size-22 leading-6 font-semibold text-white px-15px py-5px md:px-6 md:py-2 bg-primaryColor rounded text-center absolute top-5 right-5"
-                  >
-                    <h3>
-                      24 <br >
-                      Feb
-                    </h3>
-                  </div>
-                </div>
-                <!-- blog content -->
-                <div class="pt-26px pb-5 px-30px">
-                  <h3
-                    class="text-2xl md:text-size-32 lg:text-size-28 2xl:text-size-34 leading-34px md:leading-10 2xl:leading-13.5 font-bold text-blackColor2 hover:text-primaryColor dark:text-blackColor2-dark dark:hover:text-primaryColor"
-                  >
-                    <a href="blog-details.html"
-                      >Delivering What Consumers Really Value?</a
-                    >
-                  </h3>
-                  <div
-                    class="mb-14px pb-19px border-b border-borderColor dark:border-borderColor-dark"
-                  >
-                    <ul class="flex flex-wrap items-center gap-x-15px">
-                      <li>
-                        <a
-                          href="blog-details.html"
-                          class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-business-man-alt-2"></i>
-                          Mirnsdo.H</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          href="blog-details.html"
-                          class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-speech-comments"></i> 0 Comments</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          href="blog-details.html"
-                          class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-eraser-alt"></i> Association</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <p
-                    class="text-base text-contentColor dark:text-contentColor-dark mb-15px !leading-30px"
-                  >
-                    These cases are perfectly simple and easy to distinguish. In
-                    a free hour, when our power of On the other hand,
-                    organizations have the need for integrating in IT
-                    departments
-                  </p>
-                  <div class="flex justify-between items-center">
-                    <div>
-                      <a
-                        href="blog-details.html"
-                        class="uppercase text-secondaryColor hover:text-primaryColor"
-                      >
-                        READ MORE <i class="icofont-double-right"></i
-                      ></a>
-                    </div>
-                    <div
-                      class="text-primaryColor hover:text-secondaryColor space-y-1"
-                    >
-                      <a href="#"
-                        ><i
-                          class="icofont-share bg-whitegrey1 dark:bg-whitegrey1-dark hover:text-whiteColor hover:bg-primaryColor w-8 h-7 leading-7 text-center inline-block rounded transition-all duration-300"
-                        ></i
-                      ></a>
-                      <a href="#"
-                        ><i
-                          class="icofont-heart bg-whitegrey1 dark:bg-whitegrey1-dark hover:text-whiteColor hover:bg-primaryColor w-8 h-7 leading-7 text-center inline-block rounded transition-all duration-300"
-                        ></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              @endforeach
               <!-- pagination -->
               <div>
-                <ul
-                  class="flex items-center justify-center gap-15px mt-60px mb-30px"
-                >
-                  <li>
-                    <a
-                      href="#"
-                      class="w-10 h-10 leading-10 md:w-50px md:h-50px md:leading-50px text-center text-blackColor2 hover:text-whiteColor bg-whitegrey1 hover:bg-primaryColor dark:text-blackColor2-dark dark:hover:text-whiteColor dark:bg-whitegrey1-dark dark:hover:bg-primaryColor cursor-not-allowed"
-                      ><i class="icofont-double-left"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="w-10 h-10 leading-10 md:w-50px md:h-50px md:leading-50px text-center text-whiteColor hover:text-whiteColor bg-primaryColor hover:bg-primaryColor dark:text-blackColor2-dark dark:hover:text-whiteColor dark:bg-whitegrey1-dark dark:hover:bg-primaryColor"
-                      >1</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="w-10 h-10 leading-10 md:w-50px md:h-50px md:leading-50px text-center text-blackColor2 hover:text-whiteColor bg-whitegrey1 hover:bg-primaryColor dark:text-blackColor2-dark dark:hover:text-whiteColor dark:bg-whitegrey1-dark dark:hover:bg-primaryColor"
-                      >2</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="w-10 h-10 leading-10 md:w-50px md:h-50px md:leading-50px text-center text-blackColor2 hover:text-whiteColor bg-whitegrey1 hover:bg-primaryColor dark:text-blackColor2-dark dark:hover:text-whiteColor dark:bg-whitegrey1-dark dark:hover:bg-primaryColor"
-                      >3</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="w-10 h-10 leading-10 md:w-50px md:h-50px md:leading-50px text-center text-blackColor2 hover:text-whiteColor bg-whitegrey1 hover:bg-primaryColor dark:text-blackColor2-dark dark:hover:text-whiteColor dark:bg-whitegrey1-dark dark:hover:bg-primaryColor"
-                      ><i class="icofont-double-right"></i
-                    ></a>
-                  </li>
+                <ul class="flex items-center justify-center gap-15px mt-60px mb-30px">
+                    @if ($post->currentPage() > 1)
+                        <li>
+                            <a href="{{ $post->previousPageUrl() }}" class="w-10 h-10 leading-10 md:w-50px md:h-50px md:leading-50px text-center text-blackColor2 hover:text-whiteColor bg-whitegrey1 hover:bg-primaryColor dark:text-blackColor2-dark dark:hover:text-whiteColor dark:bg-whitegrey1-dark dark:hover:bg-primaryColor">
+                                <i class="icofont-double-left"></i>
+                            </a>
+                        </li>
+                    @endif
+                      
+                    @for ($i = 1; $i <= $post->lastPage(); $i++)
+                        <li>
+                            <a href="{{ $post->url($i) }}" class="w-10 h-10 leading-10 md:w-50px md:h-50px md:leading-50px text-center {{ $post->currentPage() == $i ? '10 text-whiteColor hover:text-whiteColor bg-primaryColor hover:bg-primaryColor dark:text-blackColor2-dark dark:hover:text-whiteColor dark:bg-whitegrey1-dark dark:hover:bg-primaryColor' : 'text-blackColor2 hover:text-whiteColor bg-whitegrey1 hover:bg-primaryColor dark:text-blackColor2-dark dark:hover:text-whiteColor dark:bg-whitegrey1-dark dark:hover:bg-primaryColor'}}">
+                                {{ $i }}
+                            </a>
+                        </li>
+                    @endfor
+                      
+                    @if ($post->currentPage() < $post->lastPage())
+                        <li>
+                            <a href="{{ $post->nextPageUrl() }}" class="w-10 h-10 leading-10 md:w-50px md:h-50px md:leading-50px text-center text-blackColor2 hover:text-whiteColor bg-whitegrey1 hover:bg-primaryColor dark:text-blackColor2-dark dark:hover:text-whiteColor dark:bg-whitegrey1-dark dark:hover:bg-primaryColor">
+                                <i class="icofont-double-right"></i>
+                            </a>
+                        </li>
+                    @endif
                 </ul>
               </div>
             </div>
@@ -511,7 +220,7 @@
                   data-aos="fade-up"
                 >
                   <h4
-                    class="text-size-22 text-blackColor dark:text-blackColor-dark font-bold pl-2 before:w-0.5 relative before:h-[21px] before:bg-primaryColor before:absolute before:bottom-[5px] before:left-0 leading-30px mb-25px"
+                    class="text-size-22 text-blackColor dark:text-blackColor-dark font-bold pl-2 before:w-0.5 relative before:h-[21px] before:bg-blackColor before:absolute before:bottom-[5px] before:left-0 leading-30px mb-25px"
                   >
                     Pencarian
                   </h4>
@@ -534,7 +243,7 @@
                   data-aos="fade-up"
                 >
                   <h4
-                    class="text-size-22 text-blackColor dark:text-blackColor-dark font-bold pl-2 before:w-0.5 relative before:h-[21px] before:bg-primaryColor before:absolute before:bottom-[5px] before:left-0 leading-30px mb-25px"
+                    class="text-size-22 text-blackColor dark:text-blackColor-dark font-bold pl-2 before:w-0.5 relative before:h-[21px] before:bg-blackColor before:absolute before:bottom-[5px] before:left-0 leading-30px mb-25px"
                   >
                     Kategori
                   </h4>
@@ -556,10 +265,10 @@
                   <h4
                     class="text-size-22 text-blackColor dark:text-blackColor-dark font-bold pl-2 before:w-0.5 relative before:h-[21px] before:bg-primaryColor before:absolute before:bottom-[5px] before:left-0 leading-30px mb-25px"
                   >
-                    Artikel Terbaru
+                    Berita Terbaru
                   </h4>
                   <ul class="flex flex-col gap-y-25px">
-                    @foreach ($sideartikel as $sart )
+                    @foreach ($sideberita as $sart )
                     <li class="flex items-center">
                       <div class="w-2/5 pr-5 relative">
                         <a href="blog-details.html" class="w-full"
@@ -591,145 +300,49 @@
                     @endforeach
                   </ul>
                 </div>
-                <!-- photo gallary -->
+
+                <!-- recent posts -->
                 <div
                   class="p-5 md:p-30px lg:p-5 2xl:p-30px mb-30px border border-borderColor2 dark:border-borderColor2-dark"
                   data-aos="fade-up"
                 >
                   <h4
-                    class="text-size-22 text-blackColor dark:text-blackColor-dark font-bold pl-2 before:w-0.5 relative before:h-[21px] before:bg-primaryColor before:absolute before:bottom-[5px] before:left-0 leading-30px mb-25px"
+                    class="text-size-22 text-blackColor dark:text-blackColor-dark font-bold pl-2 before:w-0.5 relative before:h-[21px] before:bg-secondaryColor before:absolute before:bottom-[5px] before:left-0 leading-30px mb-25px"
                   >
-                    Photo Gallery
+                    Info Tips Terbaru
                   </h4>
-                  <div class="gallary-container">
-                    <div class="popup">
-                      <div id="slider-container" class="slider-container">
-                        <span class="close-btn">&times;</span>
-                        <div class="slider-container-wrapper"></div>
+                  <ul class="flex flex-col gap-y-25px">
+                    @foreach ($sideinfotips as $sart )
+                    <li class="flex items-center">
+                      <div class="w-2/5 pr-5 relative">
+                        <a href="blog-details.html" class="w-full"
+                          ><img
+                            src="{{ asset('assets/images/postingan/'.$sart->thumbail) }}"
+                            alt=""
+                            class="w-full"
+                        ></a>
+                        <span
+                          class="text-xs font-medium text-whiteColor h-6 w-6 leading-6 text-center bg-primaryColor absolute top-0 left-0"
+                          >{{$loop->iteration}}</span
+                        >
                       </div>
-                      <div class="slider-navigation">
-                        <button class="prev-btn">Prev</button>
-                        <button class="next-btn">Next</button>
+                      <div class="w-3/5">
+                        <a
+                          href="/artikel/{{ $sart->slug }}"
+                          class="w-full text-sm text-contentColor font-medium leading-7 dark:text-contentColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
+                          >{{ \Carbon\Carbon::parse($sart->created_at)->translatedFormat('d M Y') }}</a
+                        >
+                        <h3 class="font-bold leading-22px mb-15px">
+                          <a
+                            class="text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
+                            href="/artikel/{{ $sart->slug }}"
+                            >{{ $sart->judul }}</a
+                          >
+                        </h3>
                       </div>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-5px">
-                      <div
-                        class="image-wrapper relative group"
-                        data-aos="fade-up"
-                      >
-                        <img
-                          src="./assets/images/blog/blog_15.png"
-                          alt="Image 1"
-                          class="gallery-image w-full"
-                        >
-                        <div
-                          class="absolute left-0 top-0 right-0 bottom-0 bg-blackColor bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-60 text-whiteColor flex items-center justify-center"
-                        >
-                          <button class="popup-open">
-                            <i
-                              class="icofont-eye-alt opacity-0 group-hover:opacity-100"
-                            ></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div
-                        class="image-wrapper relative group"
-                        data-aos="fade-up"
-                      >
-                        <img
-                          src="./assets/images/blog/blog_16.png"
-                          alt="Image 1"
-                          class="gallery-image w-full"
-                        >
-                        <div
-                          class="absolute left-0 top-0 right-0 bottom-0 bg-blackColor bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-60 text-whiteColor flex items-center justify-center"
-                        >
-                          <button class="popup-open">
-                            <i
-                              class="icofont-eye-alt opacity-0 group-hover:opacity-100"
-                            ></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div
-                        class="image-wrapper relative group"
-                        data-aos="fade-up"
-                      >
-                        <img
-                          src="./assets/images/blog/blog_17.png"
-                          alt="Image 1"
-                          class="gallery-image w-full"
-                        >
-                        <div
-                          class="absolute left-0 top-0 right-0 bottom-0 bg-blackColor bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-60 text-whiteColor flex items-center justify-center"
-                        >
-                          <button class="popup-open">
-                            <i
-                              class="icofont-eye-alt opacity-0 group-hover:opacity-100"
-                            ></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div
-                        class="image-wrapper relative group"
-                        data-aos="fade-up"
-                      >
-                        <img
-                          src="./assets/images/blog/blog_18.png"
-                          alt="Image 1"
-                          class="gallery-image w-full"
-                        >
-                        <div
-                          class="absolute left-0 top-0 right-0 bottom-0 bg-blackColor bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-60 text-whiteColor flex items-center justify-center"
-                        >
-                          <button class="popup-open">
-                            <i
-                              class="icofont-eye-alt opacity-0 group-hover:opacity-100"
-                            ></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div
-                        class="image-wrapper relative group"
-                        data-aos="fade-up"
-                      >
-                        <img
-                          src="./assets/images/blog/blog_19.png"
-                          alt="Image 1"
-                          class="gallery-image w-full"
-                        >
-                        <div
-                          class="absolute left-0 top-0 right-0 bottom-0 bg-blackColor bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-60 text-whiteColor flex items-center justify-center"
-                        >
-                          <button class="popup-open">
-                            <i
-                              class="icofont-eye-alt opacity-0 group-hover:opacity-100"
-                            ></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div
-                        class="image-wrapper relative group"
-                        data-aos="fade-up"
-                      >
-                        <img
-                          src="./assets/images/blog/blog_20.png"
-                          alt="Image 1"
-                          class="gallery-image w-full"
-                        >
-                        <div
-                          class="absolute left-0 top-0 right-0 bottom-0 bg-blackColor bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-60 text-whiteColor flex items-center justify-center"
-                        >
-                          <button class="popup-open">
-                            <i
-                              class="icofont-eye-alt opacity-0 group-hover:opacity-100"
-                            ></i>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    </li>
+                    @endforeach
+                  </ul>
                 </div>
                 
                 <!-- tags -->
@@ -753,56 +366,6 @@
                     </li>
                     @endforeach
                   </ul>
-                </div>
-                <!-- social area -->
-                <div
-                  class="p-5 md:p-30px lg:p-5 2xl:p-30px mb-30px border border-borderColor2 dark:border-borderColor2-dark"
-                  data-aos="fade-up"
-                >
-                  <h4
-                    class="text-size-22 text-blackColor dark:text-blackColor-dark font-bold pl-2 before:w-0.5 relative before:h-[21px] before:bg-primaryColor before:absolute before:bottom-[5px] before:left-0 leading-30px mb-25px"
-                  >
-                    Follow Us
-                  </h4>
-                  <div>
-                    <ul class="flex gap-10px items-center">
-                      <li>
-                        <a
-                          href="#"
-                          class="w-38px h-38px leading-38px text-center text-blackColor2 bg-whitegrey2 hover:text-whiteColor hover:bg-primaryColor dark:bg-whitegrey2-dark dark:text-blackColor2-dark dark:hover:text-whiteColor dark:hover:bg-primaryColor rounded"
-                          ><i class="icofont-facebook"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          class="w-38px h-38px leading-38px text-center text-blackColor2 bg-whitegrey2 hover:text-whiteColor hover:bg-primaryColor dark:bg-whitegrey2-dark dark:text-blackColor2-dark dark:hover:text-whiteColor dark:hover:bg-primaryColor rounded"
-                          ><i class="icofont-youtube-play"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          class="w-38px h-38px leading-38px text-center text-blackColor2 bg-whitegrey2 hover:text-whiteColor hover:bg-primaryColor dark:bg-whitegrey2-dark dark:text-blackColor2-dark dark:hover:text-whiteColor dark:hover:bg-primaryColor rounded"
-                          ><i class="icofont-instagram"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          class="w-38px h-38px leading-38px text-center text-blackColor2 bg-whitegrey2 hover:text-whiteColor hover:bg-primaryColor dark:bg-whitegrey2-dark dark:text-blackColor2-dark dark:hover:text-whiteColor dark:hover:bg-primaryColor rounded"
-                          ><i class="icofont-twitter"></i
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          class="w-38px h-38px leading-38px text-center text-blackColor2 bg-whitegrey2 hover:text-whiteColor hover:bg-primaryColor dark:bg-whitegrey2-dark dark:text-blackColor2-dark dark:hover:text-whiteColor dark:hover:bg-primaryColor rounded"
-                          ><i class="icofont-instagram"></i
-                        ></a>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>
