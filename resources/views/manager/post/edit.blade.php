@@ -72,9 +72,15 @@
                       </div>
                       <div class="col-md-12">
                         <div class="mb-3">
-                          <label class="mb-2" for="recipient-name">Penulis :</label>
-                          <input type="text" name="penulis" value="{{ $post->penulis }}" class="form-control" id="tb-email" required />
-                        </div>
+                              <label class="mb-2" for="recipient-name" class="">Penulis :</label>
+                              <select name="penulis" class="form-select" required>
+                              <option value="">-Pilih Penulis-</option>
+                              @foreach ($penulis as $d)
+                                  <option {{ $post->id_penulis == $d->id_penulis ? 'selected' : '' }}
+                                  value="{{ Crypt::encrypt($d->id_penulis) }}">{{$d->nickname }}</option>
+                              @endforeach
+                              </select>
+                          </div>
                       </div>
                       <div class="col-md-12">
                         <div class="mb-3">
@@ -210,7 +216,7 @@
                     @csrf
                     <a type="button" class="btn btn-secondary float-end" onclick="tambahGaleri()">+ Tambah</a>
                     <input type="hidden" name="id" value="{{ Crypt::encrypt($post->id_post) }}">
-                    <input type="file" accept="image/png" name="image" id="tambah-galeri" class="mb-4" style="display: none">
+                    <input type="file" accept="image/*" name="image" id="tambah-galeri" class="mb-4" style="display: none">
                   </form>
                  </div> 
                 {{-- Galery --}}

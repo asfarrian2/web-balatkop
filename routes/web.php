@@ -5,12 +5,14 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PenulisController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SeksiController;
 use App\Http\Controllers\StorganisasiController;
@@ -107,6 +109,22 @@ Route::post('/11475-adm/profil/pegawai/update', [PegawaiController::class, 'upda
 Route::get('/11475-adm/profil/pegawai/status/{id_pegawai}', [PegawaiController::class, 'status']);
 Route::get('/11475-adm/profil/pegawai/hapus/{id_pegawai}', [PegawaiController::class, 'hapus']);
 
+//*-----Penulis-----*
+Route::get('/11475-adm/penulis', [PenulisController::class, 'view'])->name('penulis');
+Route::post('/11475-adm/penulis/store', [PenulisController::class, 'store'])->name('a.penulis');
+Route::post('/11475-adm/penulis/edit', [PenulisController::class, 'edit']);
+Route::post('/11475-adm/penulis/update', [PenulisController::class, 'update'])->name('u.penulis');
+Route::get('/11475-adm/penulis/status/{id_penulis}', [PenulisController::class, 'status']);
+Route::get('/11475-adm/penulis/hapus/{id_penulis}', [PenulisController::class, 'hapus']);
+
+//*-----Fasilitas-----*
+Route::get('/11475-adm/profil/fasilitas', [FasilitasController::class, 'data'])->name('fasilitas');
+Route::post('/11475-adm/profil/fasilitas/store', [FasilitasController::class, 'store'])->name('a.fasilitas');
+Route::post('/11475-adm/profil/fasilitas/edit', [FasilitasController::class, 'edit']);
+Route::post('/11475-adm/profil/fasilitas/update', [FasilitasController::class, 'update'])->name('u.fasilitas');
+Route::get('/11475-adm/profil/fasilitas/status/{id_fasilitas}', [FasilitasController::class, 'status']);
+Route::get('/11475-adm/profil/fasilitas/hapus/{id_fasilitas}', [FasilitasController::class, 'hapus']);
+
 //*-----Tentang-----*
 Route::get('/11475-adm/profil/tentang', [TentangController::class, 'data'])->name('tentang');
 Route::post('/11475-adm/profil/tentang/edit', [TentangController::class, 'edit']);
@@ -176,6 +194,9 @@ Route::get('/visidanmisi', [VisimisiController::class, 'view']);
 
 //---Struktur Organisasi---
 Route::get('/strukturorganisasi', [StorganisasiController::class, 'view']);
+
+//---Fasilitas---
+Route::get('/fasilitas', [FasilitasController::class, 'view']);
 
 //---Pegawai---
 Route::get('/pegawai/{slug}', [PegawaiController::class, 'view']);

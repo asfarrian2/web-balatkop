@@ -264,7 +264,7 @@
                           </li>
                           <li>
                             <a
-                              href="./pages/ecommerce/product-details.html"
+                              href="/fasilitas"
                               class="text-sm 2xl:text-base font-semibold text-contentColor border-l-2 border-transparent transition duration-300 hover:border-primaryColor px-25px py-10px hover:bg-whitegrey1 block hover:text-primaryColor leading-sm lg:leading-lg 2xl:leading-lg dark:text-contentColor-dark dark:hover:text-primaryColor dark:hover:bg-whitegrey1-dark"
                               >Fasilitas
                             </a>
@@ -696,7 +696,7 @@
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/fasilitas"
                     class="text-darkgray relative hover:text-primaryColor after:transition-all after:duration-300 after:w-0 after:h-2px after:absolute after:bg-primaryColor hover:after:w-full after:bottom-0 after:left-0"
                     >Fasilitas</a
                   >

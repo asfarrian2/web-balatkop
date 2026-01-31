@@ -19,6 +19,7 @@ use App\Models\Post;
 use App\Models\Kategori;
 use App\Models\Galeri;
 use App\Models\Hastag;
+use App\Models\Penulis;
 
 class PostController extends Controller
 {
@@ -41,8 +42,9 @@ class PostController extends Controller
 
         $post       = Post::orderBy('id_post', 'desc')->where('jenis', '1')->get();
         $kategori   = Kategori::all();
+        $penulis    = Penulis::all();
 
-        return view('manager.post.view', compact('post', 'kategori'));
+        return view('manager.post.view', compact('post', 'kategori', 'penulis'));
     }
 
     public function detail($id_post){
@@ -92,7 +94,7 @@ class PostController extends Controller
             'judul'        => $judul,
             'konten'       => 'Konten Belum Ada',
             'slug'         => $slug,
-            'penulis'      => $penulis,
+            'id_penulis'   => $penulis,
             'id_kategori'  => $kategori,
             'thumbail'     => $imageName,
             'jenis'        => '1',
@@ -105,7 +107,7 @@ class PostController extends Controller
                 'judul'        => $judul,
                 'konten'       => 'Konten Belum Ada',
                 'slug'         => $slug,
-                'penulis'      => $penulis,
+                'id_penulis'      => $penulis,
                 'id_kategori'  => $kategori,
                 'jenis'        => '1',
                 'views_count'  => '0',
@@ -128,10 +130,11 @@ class PostController extends Controller
 
         $post    = Post::where('id_post', $id_post)->first();
         $kategori= Kategori::all();
+        $penulis = Penulis::all();
         $galeri  = Galeri::where('id_post', $id_post)->get();
         $hastag  = Hastag::where('id_post', $id_post)->get();
 
-        return view('manager.post.edit', compact('post', 'kategori', 'galeri', 'hastag'));
+        return view('manager.post.edit', compact('post', 'kategori', 'galeri', 'hastag', 'penulis'));
         
     }
 
@@ -177,9 +180,10 @@ class PostController extends Controller
             ];
         } else {
             $kategori   = Crypt::decrypt($kategori);
+            $penulis   = Crypt::decrypt($penulis);
             $data = [
                 'judul'        => $post,
-                'penulis'      => $penulis,
+                'id_penulis'      => $penulis,
                 'slug'         => $slug,
                 'id_kategori'  => $kategori
             ];

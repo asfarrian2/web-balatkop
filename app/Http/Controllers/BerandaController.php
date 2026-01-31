@@ -60,7 +60,7 @@ class BerandaController extends Controller
         $id_beranda   = $request->id;
         $id_beranda   = Crypt::decrypt($id_beranda);
         $caption      = $request->caption;
-        $keterangan   = $request->keterangan;
+        $keterangan   = $request->keterangan2;
         $link         = $request->link;
 
         if ($request->hasFile('image')) {

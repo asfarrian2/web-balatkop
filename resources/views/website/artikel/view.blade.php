@@ -114,7 +114,7 @@
                         <a
                           
                           class="text-contentColor text-sm hover:text-primaryColor dark:text-contentColor-dark dark:hover:text-primaryColor"
-                          ><i class="icofont-user"></i> {{ $d->penulis }}</a
+                          ><i class="icofont-user"></i> {{ $d->penulis->nickname }}</a
                         >
                       </li>
                     </ul>
@@ -288,7 +288,7 @@
                           class="w-full text-sm text-contentColor font-medium leading-7 dark:text-contentColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
                           >{{ \Carbon\Carbon::parse($sart->created_at)->translatedFormat('d M Y') }}</a
                         >
-                        <h3 class="font-bold leading-22px mb-15px">
+                        <h3 class="font-bold leading-22px">
                           <a
                             class="text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
                             href="/artikel/{{ $sart->slug }}"
@@ -332,7 +332,7 @@
                           class="w-full text-sm text-contentColor font-medium leading-7 dark:text-contentColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
                           >{{ \Carbon\Carbon::parse($sart->created_at)->translatedFormat('d M Y') }}</a
                         >
-                        <h3 class="font-bold leading-22px mb-15px">
+                        <h3 class="font-bold leading-22px">
                           <a
                             class="text-blackColor dark:text-blackColor-dark hover:text-primaryColor dark:hover:text-primaryColor"
                             href="/artikel/{{ $sart->slug }}"

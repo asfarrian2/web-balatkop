@@ -30,13 +30,13 @@
             <div class="card-body px-4 py-3">
               <div class="row align-items-center">
                 <div class="col-9">
-                  <h4 class="fw-semibold mb-8">Postingan</h4>
+                  <h4 class="fw-semibold mb-8">Penulis</h4>
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">
                         <a class="text-muted text-decoration-none" href="{{ Route('dashboard')}}">Dashboard</a>
                       </li>
-                      <li class="breadcrumb-item" aria-current="page">Postingan</li>
+                      <li class="breadcrumb-item" aria-current="page">Penulis</li>
                     </ol>
                   </nav>
                 </div>
@@ -56,8 +56,8 @@
                   <h4 class="card-title mb-0">Data</h4>
                   <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambah-modal" data-bs-whatever="@getbootstrap">+ Tambah Data</a>
                   {{-- Modal Tambah --}}
-                  <div class="modal fade" id="tambah-modal" tabindex="-1" aria-labelledby="scroll-long-outer-modal" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                  <div class="modal fade" id="tambah-modal" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                    <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header d-flex align-items-center">
                           <h4 class="modal-title" id="exampleModalLabel1">
@@ -65,34 +65,29 @@
                           </h4>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                        <form action="{{ Route('a.post')}}" method="POST" id="formStore" enctype="multipart/form-data">
+                        <form action="{{ Route('a.penulis')}}" method="POST">
                         @csrf
+                        <div class="modal-body">
                             <div class="mb-3">
-                              <label for="recipient-name" class="">Judul :</label>
-                              <input type="text" name="judul" class="form-control" id="recipient-name1" required/>
-                            </div>
-                            <div class="mb-3">
-                              <label for="recipient-name" class="">Penulis :</label>
-                              <select name="penulis" class="form-select" required>
-                                <option value="">- Pilih Penulis -</option>
-                                 @foreach ($penulis as $d)
-                                <option value="{{ Crypt::encrypt($d->id_penulis) }}">{{ $d->penulis }}</option>
+                              <label for="recipient-name" class="">Pegawai :</label>
+                              <select name="pegawai" class="form-select" required>
+                                <option value="">- Pilih Pegawai -</option>
+                                 @foreach ($pegawai as $d)
+                                <option value="{{ Crypt::encrypt($d->id_pegawai) }}">{{ $d->nama }}-{{ $d->nip }}</option>
                                  @endforeach
                               </select>
                             </div>
                             <div class="mb-3">
-                              <label for="recipient-name" class="">Kategori :</label>
-                              <select name="kategori" class="form-select" required>
-                                <option value="">- Pilih Kategori -</option>
-                                 @foreach ($kategori as $d)
-                                <option value="{{ Crypt::encrypt($d->id_kategori) }}">{{ $d->kategori }}</option>
-                                 @endforeach
-                              </select>
+                              <label for="recipient-name" class="">Nama Panggilan :</label>
+                              <input type="text" name="nama" class="form-control" id="recipient-name1" required/>
                             </div>
                             <div class="mb-3">
-                              <label for="recipient-name" class="">Foto :</label>
-                              <input type="file" accept="image/jpeg" name="image" class="form-control" id="recipient-name1" required/>
+                              <label for="recipient-name" class="">Username :</label>
+                              <input type="text" name="username" class="form-control" id="recipient-name1" required/>
+                            </div>
+                            <div class="mb-3">
+                              <label for="recipient-name" class="">Password :</label>
+                              <input type="text" name="password" class="form-control" id="recipient-name1" required/>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -115,54 +110,41 @@
                       <!-- start row -->
                       <tr>
                         <th class="text-center">No.</th>
-                        <th class="text-center" style="width: 10px">Judul</th>
-                        <th class="text-center">Tanggal</th>
-                        <th class="text-center">Kategori</th>
-                        <th class="text-center">Dilihat</th>
+                        <th class="text-center">Nama Lengkap</th>
+                        <th class="text-center">Nama Panggilan</th>
+                        <th class="text-center">Username</th>
                         <th class="text-center">Status</th>
                         <th class="text-center">Aksi</th>
                       </tr>
                       <!-- end row -->
                     </thead>
                     <tbody>
-                       @foreach ($post as $d)
+                       @foreach ($penulis as $d)
                       <!-- start row -->
                       <tr>
                         <td style="text-align:center;">{{ $loop->iteration }}</td>
-                        <td> <b class="mb-0">
-                          @php
-                            $kata = explode(' ', $d->judul);
-                            $hasil = implode('<br>', array_map(function($chunk) {
-                              return implode(' ', $chunk);
-                            }, array_chunk($kata, 4)));
-                          @endphp
-                          {!! $hasil !!} </b>
-                          <br>Penulis : {{ $d->penulis->nickname }}
-                        </td>
-                        <td style="text-align: center">{{ date('d-m-Y', strtotime($d->created_at)) }}</td>
-                        <td style="text-align: center">{{ $d->kategori->kategori }}</td> 
-                        <td style="text-align: center">{{ $d->views_count }}</td>                        
+                        <td><h6 class="mb-0"> {{ $d->pegawai->nama}}</h6></td>
+                        <td style="text-align:center;">{{ $d->nickname }}</td>
+                        <td style="text-align:center;">{{ $d->username }}</td>
                         @if ($d->status == 1)
-                        <td style="text-align:center;"><span class="mb-1 badge text-bg-success">Terposting</span></td>
+                        <td style="text-align:center;"><span class="mb-1 badge text-bg-success">Aktif</span></td>
                         @else
-                        <td style="text-align:center;"><span class="mb-1 badge text-bg-danger">Draft</span></td>
+                        <td style="text-align:center;"><span class="mb-1 badge text-bg-danger">Nonaktif</span></td>
                         @endif
                         <td style="text-align:center;">
-                          <a title="Edit" href="/11475-adm/post/edit/{{ Crypt::encrypt($d->id_post) }}" class="btn mb-1 bg-primary-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
-                              <i class="fs-5 ti ti-edit"></i>
-                          </a>
-                          <br>
                           @if ($d->status == 1)
-                          <a title="Nonaktifkan" data-id="{{ Crypt::encrypt($d->id_post) }}" class="status btn mb-1 bg-success-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
+                          <a title="Nonaktifkan" data-id="{{ Crypt::encrypt($d->id_penulis) }}" class="status btn mb-1 bg-success-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
                               <i class="fs-5 ti ti-toggle-left"></i>
                           </a>
                           @else
-                          <a title="Aktifkan" data-id="{{ Crypt::encrypt($d->id_post) }}" class="status btn mb-1 bg-warning-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
+                          <a title="Aktifkan" data-id="{{ Crypt::encrypt($d->id_penulis) }}" class="status btn mb-1 bg-warning-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
                               <i class="fs-5 ti ti-toggle-right"></i>
                           </a>
                           @endif
-                          <br>
-                          <a title="Hapus" data-id="{{ Crypt::encrypt($d->id_post) }}" class="hapus btn mb-1 bg-danger-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
+                          <a title="Edit" data-id="{{ Crypt::encrypt($d->id_penulis) }}" class="edit btn mb-1 bg-primary-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#editdata" data-bs-whatever="@getbootstrap">
+                              <i class="fs-5 ti ti-pencil"></i>
+                          </a>
+                          <a title="Hapus" data-id="{{ Crypt::encrypt($d->id_penulis) }}" class="hapus btn mb-1 bg-danger-subtle rounded-circle round-40 btn-sm d-inline-flex align-items-center justify-content-center">
                               <i class="fs-5 ti ti-trash"></i>
                           </a>
                         </td>
@@ -174,10 +156,9 @@
                       <!-- start row -->
                       <tr>
                         <th class="text-center">No.</th>
-                        <th class="text-center" style="width: 10px">Judul</th>
-                        <th class="text-center">Tanggal</th>
-                        <th class="text-center">Kategori</th>
-                        <th class="text-center">Dilihat</th>
+                        <th class="text-center">Nama Lengkap</th>
+                        <th class="text-center">Nama Panggilan</th>
+                        <th class="text-center">Username</th>
                         <th class="text-center">Status</th>
                         <th class="text-center">Aksi</th>
                       </tr>
@@ -194,7 +175,7 @@
                           </h4>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="{{ Route('u.post') }}" method="POST" id="formStore" enctype="multipart/form-data">
+                        <form action="{{ Route('u.penulis') }}" method="POST" id="formStore">
                         @csrf
                         <div class="modal-body" id="loadedit">
 
@@ -235,14 +216,14 @@ $('#zero_config').DataTable({
   // konfigurasi DataTables
   initComplete: function() {
     $('#zero_config tbody').on('click', '.edit', function(){
-      var id_post = $(this).attr('data-id');
+      var id_penulis = $(this).attr('data-id');
       $.ajax({
         type: 'POST',
-        url: '/11475-adm/post/edit',
+        url: '/11475-adm/penulis/edit',
         cache: false,
         data: {
           _token: "{{ csrf_token() }}",
-          id_post: id_post
+          id_penulis: id_penulis
         },
         success: function(respond) {
           $("#loadedit").html(respond);
@@ -252,7 +233,7 @@ $('#zero_config').DataTable({
     });
 
     $('#zero_config tbody').on('click', '.status', function(){
-      var id_post = $(this).attr('data-id');
+      var id_penulis = $(this).attr('data-id');
       Swal.fire({
         title: "Apakah Anda Yakin Ingin Mengubah Status Data Ini ?",
         text: "Jika Ya Maka Status Data Akan Diubah",
@@ -263,13 +244,13 @@ $('#zero_config').DataTable({
         confirmButtonText: "Ya, Ubah Status!"
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location = "/11475-adm/post/status/"+id_post
+          window.location = "/11475-adm/penulis/status/"+id_penulis
         }
       });
     });
 
     $('#zero_config tbody').on('click', '.hapus', function(){
-      var id_post = $(this).attr('data-id');
+      var id_penulis = $(this).attr('data-id');
       Swal.fire({
         title: "Apakah Anda Yakin Data Ini Ingin Di Hapus ?",
         text: "Jika Ya Maka Data Akan Terhapus Permanen",
@@ -280,7 +261,7 @@ $('#zero_config').DataTable({
         confirmButtonText: "Ya, Hapus Saja!"
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location = "/11475-adm/post/hapus/"+id_post
+          window.location = "/11475-adm/penulis/hapus/"+id_penulis
         }
       });
     });

@@ -171,7 +171,7 @@
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a href="./main/blog-detail.html" class="sidebar-link">
+                  <a href="{{ Route('fasilitas') }}" class="sidebar-link {{ Route::currentRouteName() == 'fasilitas' ? 'active' : '' }}">
                     <div class="round-16 d-flex align-items-center justify-content-center">
                       <i class="ti ti-circle"></i>
                     </div>
@@ -220,6 +220,22 @@
               </a>
             </li>
             <!-- ---------------------------------- -->
+            <!-- ---------------------------------- -->
+            <!-- Page -->
+            <!-- ---------------------------------- -->
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">User</span>
+            </li>
+            <li class="sidebar-item">
+              <a href="{{ Route('penulis') }}" class="sidebar-link {{ Route::currentRouteName() == 'penulis' ? 'active' : '' }}">
+                <span>
+                  <i class="ti ti-users"></i>
+                </span>
+                <span class="hide-menu">Penulis</span>
+              </a>
+            </li>
+        <!-- ---------------------------------- -->
         </nav>
         <div class="fixed-profile p-3 mx-4 mb-2 bg-secondary-subtle rounded mt-3">
           <div class="hstack gap-3">
