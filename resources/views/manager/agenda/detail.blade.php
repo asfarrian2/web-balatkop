@@ -97,6 +97,12 @@
                           <p>{{ $agenda->alamat}}</p>
                       </div>
                   </div>
+                   <div class="form-group row">
+                      <label class="form-label text-end col-md-3">Sumber Dana :</label>
+                      <div class="col-md-9">
+                          <p>{{ $agenda->sumber_dana}}</p>
+                      </div>
+                  </div>
                   <div class="form-group row">
                       <label class="form-label text-end col-md-3">Status :</label>
                       <div class="col-md-9">
@@ -123,7 +129,7 @@
               <div class="card overflow-hidden">
                 <div class="el-card-content text-center">
                   <br>
-                    <h4 class="mb-1 card-title">Gambar Tajuk</h4>
+                    <h4 class="mb-1 card-title">Thumbail</h4>
                     <input type="file" accept="image/png" name="image" id="file-upload" style="display: none;">
                     <a class="upload btn btn-primary btn-sm mb-3" style="width: 90%;" data-bs-toggle="modal" data-bs-target="#uploaddata" data-bs-whatever="@getbootstrap">
                         <i class="ti ti-upload fs-5"></i> Upload
@@ -139,7 +145,7 @@
                       position-relative
                       text-center
                     ">
-                    <img src="{{ asset('assets/images/agenda/'.$agenda->foto) }}" class="d-block position-relative w-100" alt="Gambar" />
+                    <img src="{{ asset('assets/images/agenda/'.$agenda->thumbail) }}" class="d-block position-relative w-100" alt="Gambar" />
                   </div>
                 </div>
                 <!-- Modal -->
@@ -179,6 +185,10 @@
                           <div class="mb-3">
                               <label for="recipient-name" class="">Alamat :</label>
                               <textarea name="alamat" rows="2" class="form-control" id="recipient-name1" required>{{ $agenda->alamat }}</textarea>
+                          </div>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="">Sumber Dana :</label>
+                            <input type="text" name="dana" value="{{ $agenda->tempat}}" class="form-control" id="recipient-name1" required/>
                           </div>
                           <div class="mb-3">
                               <label for="recipient-name" class="">Kategori :</label>

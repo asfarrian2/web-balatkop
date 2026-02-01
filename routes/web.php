@@ -210,4 +210,8 @@ Route::get('/berita', [ArtikelController::class, 'berita']);
 Route::get('/infotips', [ArtikelController::class, 'infotips']);
 Route::get('/artikel/{slug}', [ArtikelController::class, 'read']);
 
+//---Agenda---
+Route::get('/agenda', [AgendaController::class, 'view']);
+Route::get('/agenda/{slug}', [AgendaController::class, 'read']);
+
 

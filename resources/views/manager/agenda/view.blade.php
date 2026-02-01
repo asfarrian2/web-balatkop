@@ -93,6 +93,10 @@
                               <input type="text" name="alamat" class="form-control" id="recipient-name1" required/>
                             </div>
                             <div class="mb-3">
+                              <label for="recipient-name" class="">Sumber Dana :</label>
+                              <input type="text" name="dana" class="form-control" id="recipient-name1" required/>
+                            </div>
+                            <div class="mb-3">
                               <label for="recipient-name" class="">Kategori :</label>
                               <select name="kategori" class="form-select" required>
                                 <option value="">- Pilih Kategori -</option>

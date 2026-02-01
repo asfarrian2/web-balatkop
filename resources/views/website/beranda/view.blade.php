@@ -303,7 +303,7 @@
                 {{ $beranda->where('nama', 'Deskripsi Peringatan')->first()->keterangan_1 }}
               </p>
               <ul class="space-y-5">
-                <li class="flex items-center group">
+                {{-- <li class="flex items-center group">
                   <i
                     class="icofont-check px-2 py-2 text-primaryColor bg-whitegrey3 bg-opacity-40 group-hover:bg-primaryColor group-hover:text-white group-hover:opacity-100 mr-15px dark:bg-whitegrey1-dark"
                   ></i>
@@ -312,7 +312,7 @@
                   >
                     {{ $beranda->where('nama', 'Hastag 1')->first()->keterangan_1 }}
                   </p>
-                </li>
+                </li> --}}
                 <li class="flex items-center group">
                   <i
                     class="icofont-check px-2 py-2 text-primaryColor bg-whitegrey3 bg-opacity-40 group-hover:bg-primaryColor group-hover:text-white group-hover:opacity-100 mr-15px dark:bg-whitegrey1-dark"
@@ -917,7 +917,7 @@
                       <!-- event thumb -->
                       <div class="flex-shrink-0">
                         <img
-                          src="{{ asset('assets/images/agenda/'.$ag->foto) }}"
+                          src="{{ asset('assets/images/agenda/'.$ag->thumbail) }}"
                           alt=""
                           class="w-170px"
                         >
@@ -945,7 +945,7 @@
                           class="text-size-15 md:text-lg lg:text-2xl text-contentColor dark: font-semibold pb-18px group-hover:text-whiteColor dark:text-contentColor-dark dark:group-hover:text-whiteColor"
                         >
                           <a
-                            href="event-details.html"
+                            href="/agenda/{{ $ag->slug }}"
                             class="hover:text-secondaryColor dark:hover:text-secondaryColor"
                             >{{ $ag->judul }}
                           </a>
@@ -955,7 +955,7 @@
                         >
                           <a
                             class="hover:text-secondaryColor dark:hover:text-secondaryColor"
-                            href="#"
+                            href="/agenda/{{ $ag->slug }}"
                             >Selengkapnya
                             <i class="icofont-simple-right"></i>
                           </a>

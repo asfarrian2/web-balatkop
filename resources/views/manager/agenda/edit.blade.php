@@ -28,6 +28,6 @@
         </select>
     </div>
     <div class="mb-3">
-        <label for="recipient-name" class="">Foto :</label>
+        <label for="recipient-name" class="">Thumbail :</label>
         <input type="file" accept="image/png" name="image" class="form-control" id="recipient-name1"/>
     </div>

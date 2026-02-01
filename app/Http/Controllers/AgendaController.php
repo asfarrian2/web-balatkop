@@ -11,11 +11,14 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use App\Models\Header;
 use App\Models\Beranda;
 use App\Models\Footer;
 use App\Models\Agenda;
 use App\Models\Kategori;
+use App\Models\Tentang;
+use App\Models\Post;
 
 
 class AgendaController extends Controller
@@ -34,6 +37,21 @@ class AgendaController extends Controller
         $agenda     = agenda::where('status', '1')->where('id_kategori', $id_kategori)->get();
 
         return view('website.agenda.view', compact('headers', 'footer', 'agenda', 'sub'));
+    }
+
+    public function read($slug){
+
+        $headers    = Header::all();
+
+        $footer     = Footer::all();
+
+        $tentang    = Tentang::all();
+
+        $agenda     = Agenda::where('slug', $slug)->first();
+
+        $sideagenda = Agenda::where('status', '1')->latest('tgl_awal')->paginate(6);
+
+        return view('website.agenda.detail', compact('headers', 'footer', 'agenda', 'tentang', 'sideagenda'));
     }
 
 
@@ -63,6 +81,7 @@ class AgendaController extends Controller
         $tgl_akhir     = $request->tgl_akhir;
         $tempat        = $request->tempat;
         $alamat        = $request->alamat;
+        $dana          = $request->dana;
         $kategori      = $request->kategori;
 
         $tahun = date('Y', strtotime($tgl_awal));
@@ -85,7 +104,7 @@ class AgendaController extends Controller
 
         $image = $request->file('image');
             $extension = $image->getClientOriginalExtension();
-            $imageName = $nomorurut.'-jadiklat' . '.' . $extension;
+            $imageName = $tahun.$nomorurut.'-jadiklat' . '.' . $extension;
             $image->move(public_path('assets/images/agenda'), $imageName);
 
         $data = [
@@ -96,8 +115,10 @@ class AgendaController extends Controller
             'tgl_akhir'    => $tgl_akhir,
             'tempat'       => $tempat,
             'alamat'       => $alamat,
+            'sumber_dana'  => $dana,
+            'slug'         => Str::slug($agenda.'-'.$tgl_awal.'-'.$tgl_akhir.'-'.$tempat),
             'id_kategori'  => $kategori,
-            'foto'         => $imageName,
+            'thumbail'     => $imageName,
             'status'       => '1'
         ];
          } else {
@@ -109,6 +130,8 @@ class AgendaController extends Controller
                 'tgl_akhir'    => $tgl_akhir,
                 'tempat'       => $tempat,
                 'alamat'       => $alamat,
+                'sumber_dana'  => $dana,
+                'slug'         => Str::slug($agenda.'-'.$tgl_awal.'-'.$tgl_akhir.'-'.$tempat),
                 'id_kategori'  => $kategori,
                 'status'       => '1'
             ];
@@ -138,12 +161,15 @@ class AgendaController extends Controller
 
         $id_agenda   = $request->id;
         $id_agenda   = Crypt::decrypt($id_agenda);
-        $namafoto    = agenda::where('id_agenda', $id_agenda)->value('foto');
+        $namafoto    = agenda::where('id_agenda', $id_agenda)->value('thumbail');
 
         $agenda        = $request->judul;
         $deskripsi     = $request->deskripsi;
         $tgl_awal      = $request->tgl_awal;
         $tgl_akhir     = $request->tgl_akhir;
+        $tempat        = $request->tempat;
+        $alamat        = $request->alamat;
+        $dana          = $request->dana;
         $kategori      = $request->kategori;
 
         if ($request->hasFile('image')) {
@@ -153,7 +179,7 @@ class AgendaController extends Controller
             $imageName = $namafoto;
             $image->move(public_path('assets/images/agenda'), $imageName);
             $data = [
-                'foto'         => $imageName
+                'thumbail'         => $imageName
             ];
         } else {
             $kategori   = Crypt::decrypt($kategori);
@@ -162,6 +188,10 @@ class AgendaController extends Controller
                 'deskripsi'    => $deskripsi,
                 'tgl_awal'     => $tgl_awal,
                 'tgl_akhir'    => $tgl_akhir,
+                'tempat'       => $tempat,
+                'alamat'       => $alamat,
+                'sumber_dana'  => $dana,
+                'slug'         => Str::slug($agenda.'-'.$tgl_awal.'-'.$tgl_akhir.'-'.$tempat),
                 'id_kategori'  => $kategori
             ];
         }
